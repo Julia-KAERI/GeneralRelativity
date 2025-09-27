@@ -1,0 +1,46 @@
+project:
+  type: book
+  output-dir : docs
+
+book:
+  title: "일반상대성이론과 우주론"
+  author: "Norah Jones"
+  date: "2/11/2024"
+  page-navigation: true
+
+  
+  chapters:
+    - index.qmd
+    
+    - part: src/ClassicalFieldTheory/00_index.qmd
+      chapters:
+      - src/ClassicalFieldTheory/01_principle_of_relativity.qmd
+
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    title-block-banner: true
+    # include-in-header: 
+    #   - html-hacks/load-font-awesome.html
+    #   - html-hacks/load-xkcd-font.html
+    # resources: web-resources/**
+    # https://quarto.org/src/output-formats/html-themes.html#overview
+    # theme: darkly
+    theme: cosmo
+    fontsize: 0.9em
+    toc: true
+    collapse: true
+    # css: styles.css
+    number-sections: true
+
+    code-fold: true
+    code-summary: "Show the code"
+  
+    html-math-method: mathjax
+
+
+
+
