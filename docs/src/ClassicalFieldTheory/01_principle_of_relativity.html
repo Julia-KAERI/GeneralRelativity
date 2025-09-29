@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-6a6044446bafb874b35005e6d630eb70.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -495,7 +495,7 @@ v_x = \dfrac{v_x' + V}{1+ v_x'\dfrac{V}{c^2}},\quad v_y = \dfrac{v_y'\sqrt{1-\df
 <h3 data-number="1.5.1" class="anchored" data-anchor-id="sec-CFT_contravariant_covariant_einstein"><span class="header-section-number">1.5.1</span> 공변벡터, 반변벡터, 아인슈타인 표기법</h3>
 <section id="공변벡터와-반변벡터" class="level4">
 <h4 class="anchored" data-anchor-id="공변벡터와-반변벡터"><strong>공변벡터와 반변벡터</strong></h4>
-<p>여기서는 유한차원 벡터공간 <span class="math inline">\(V\)</span> 와 그 쌍대공간 <span class="math inline">\(V^\ast\)</span> 에 대해 생각한다. <span class="math inline">\(V\)</span> 의 기저 <span class="math inline">\((e_1,\ldots,\,e_n)\)</span> 에 대해 <span class="math inline">\(\exists \theta^i\in V^\ast\)</span>, <span class="math inline">\(\theta^i(e_j)=\delta^i_j\)</span> 이며 <span class="math inline">\((\theta^1,\ldots,\,\theta^n)\)</span> 이 <span class="math inline">\(V^\ast\)</span> 의 기저가 된다는 것을 안다. 이 때 <span class="math inline">\(\omega \in V^\ast\)</span> 를 <strong>공변벡터(covariant vector 혹은 covector)</strong> 라고 하고 <span class="math inline">\(v\in V\)</span> 를 <strong>반변 벡터(contravariant vector)</strong> 라고 한다.</p>
+<p>여기서는 유한차원 벡터공간 <span class="math inline">\(V\)</span> 와 그 쌍대공간 <span class="math inline">\(V^\ast\)</span> 에 대해 생각한다. <span class="math inline">\(V\)</span> 의 기저 <span class="math inline">\((e_1,\ldots,\,e_n)\)</span> 의 각각의 <span class="math inline">\(e_j\)</span> 에 대해 <span class="math inline">\(\theta^i\in V^\ast\)</span> 가 존재하여 <span class="math inline">\(\theta^i(e_j)=\delta^i_j\)</span> 이며, <span class="math inline">\((\theta^1,\ldots,\,\theta^n)\)</span> 이 <span class="math inline">\(V^\ast\)</span> 의 기저가 된다는 것을 안다. 이 때 <span class="math inline">\(\omega \in V^\ast\)</span> 를 <strong>공변벡터(covariant vector 혹은 covector)</strong> 라고 하고 <span class="math inline">\(v\in V\)</span> 를 <strong>반변 벡터(contravariant vector)</strong> 라고 한다.</p>
 <p><br></p>
 </section>
 <section id="벡터의-성분값과-자연쌍대" class="level4">
@@ -525,7 +525,11 @@ v=v^ie_i = v'^ie'_i=v'^i {R_i}^j e_j = {R_i}^jv'^i e_j
 <p><span id="eq-CFT_transform_of_contavariant_vector_component"><span class="math display">\[
 v'^i = ({R_i}^j)^{-1}v^j
 \tag{1.12}\]</span></span></p>
-<p>이어야 한다. 즉 <span class="math inline">\(v\in V\)</span> 의 성분은 기저의 변환에 대해 반대로(contra-) 변하므로(정확히는 역행렬에 따라 변하므로) 반변벡터라는 이름이 붙었다. 이에 반해</p>
+<p>이어야 한다. 즉 <span class="math inline">\(v\in V\)</span> 의 성분은 기저의 변환에 대해 반대로(contra-) 변하므로(정확히는 역행렬에 따라 변하므로) 반변벡터라는 이름이 붙었다. 또한 이로부터</p>
+<p><span class="math display">\[
+\left({R_i}^j\right)^{-1} = \dfrac{\partial (x')^i}{\partial x^j},\qquad {R_i}^j = \dfrac{\partial x^j}{\partial (x')^i}
+\]</span></p>
+<p>임을 안다. 이에 반해</p>
 <p><span id="eq-CFT_transform_of_covariant_vector_component"><span class="math display">\[
 \omega'_i = \omega(e'_i)= {R_i}^j \omega(e_j)= {R_i}^j \omega_j
 \tag{1.13}\]</span></span></p>

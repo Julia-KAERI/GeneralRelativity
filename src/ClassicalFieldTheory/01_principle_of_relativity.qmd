@@ -322,7 +322,7 @@ $${#eq-CFT-aberration_of_light}
 
 #### **공변벡터와 반변벡터** 
 
-여기서는 유한차원 벡터공간 $V$ 와 그 쌍대공간 $V^\ast$ 에 대해 생각한다. $V$ 의 기저 $(e_1,\ldots,\,e_n)$ 에 대해 $\exists \theta^i\in V^\ast$, $\theta^i(e_j)=\delta^i_j$ 이며 $(\theta^1,\ldots,\,\theta^n)$ 이 $V^\ast$ 의 기저가 된다는 것을 안다. 이 때 $\omega \in V^\ast$ 를 **공변벡터(covariant vector 혹은 covector)** 라고 하고 $v\in V$ 를 **반변 벡터(contravariant vector)** 라고 한다.
+여기서는 유한차원 벡터공간 $V$ 와 그 쌍대공간 $V^\ast$ 에 대해 생각한다. $V$ 의 기저 $(e_1,\ldots,\,e_n)$ 의 각각의 $e_j$ 에 대해 $\theta^i\in V^\ast$ 가 존재하여 $\theta^i(e_j)=\delta^i_j$ 이며, $(\theta^1,\ldots,\,\theta^n)$ 이 $V^\ast$ 의 기저가 된다는 것을 안다. 이 때 $\omega \in V^\ast$ 를 **공변벡터(covariant vector 혹은 covector)** 라고 하고 $v\in V$ 를 **반변 벡터(contravariant vector)** 라고 한다.
 
 </br>
 
@@ -365,7 +365,13 @@ $$
 v'^i = ({R_i}^j)^{-1}v^j
 $$ {#eq-CFT_transform_of_contavariant_vector_component}
 
-이어야 한다. 즉 $v\in V$ 의 성분은 기저의 변환에 대해 반대로(contra-) 변하므로(정확히는 역행렬에 따라 변하므로) 반변벡터라는 이름이 붙었다. 이에 반해 
+이어야 한다. 즉 $v\in V$ 의 성분은 기저의 변환에 대해 반대로(contra-) 변하므로(정확히는 역행렬에 따라 변하므로) 반변벡터라는 이름이 붙었다. 또한 이로부터
+
+$$
+\left({R_i}^j\right)^{-1} = \dfrac{\partial (x')^i}{\partial x^j},\qquad {R_i}^j = \dfrac{\partial x^j}{\partial (x')^i}
+$$
+
+임을 안다. 이에 반해 
 
 $$
 \omega'_i = \omega(e'_i)= {R_i}^j \omega(e_j)= {R_i}^j \omega_j
