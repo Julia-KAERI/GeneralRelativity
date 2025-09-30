@@ -201,7 +201,7 @@ $v \le c$ 이므로 $\Delta \tau = t'_2-t'_1 \le t_2-t_1$ 임을 안다. 즉 움
 
 ## 로런츠 변환
 
-고전역학과는 달리 상대성 이론에서 보존하는 것은 거리가 아니라 시공간 간격이다. 4차원 시공간 간격을 보존하는 변환을 로렌츠 변환이라고 한다. 두 기준틀 사이에 시공간 간격을 보존시키는 변환을 **로렌츠 변환 (Lorentz transformation)** 이라고 한다. 
+고전역학과는 달리 상대성 이론에서 보존하는 것은 거리가 아니라 시공간 간격이다. 4차원 시공간 간격을 보존하는 변환을 로런츠 변환이라고 한다. 두 기준틀 사이에 시공간 간격을 보존시키는 변환을 **로런츠 변환 (Lorentz transformation)** 이라고 한다. 
 
 </br>
 
@@ -243,7 +243,7 @@ $c\to \infty$ 극한에서 우리는 갈릴레이 변환을 얻는다는 것을 
 
 </br>
 
-### 고유길이와 로렌츠 수축 {#sec-CFT_proper_length_and_lorentz_contraction}
+### 고유길이와 로런츠 수축 {#sec-CFT_proper_length_and_lorentz_contraction}
 
 막대기가 $\Sigma$ 기준틀의 $x$ 축상에 위치한다고 하자. 이 때 그 길이 $L=\Delta x = x_2-x_1$ 이라고 하자. 앞서와 마찬가지로 $\Sigma$ 에 대해 $V\hat{\bf{x}}$ 의 속도로 움직이는 $\Sigma'$ 기준틀에서 $t'$ 일 때의 위치를 $x'_1,\,x'_2$ 라고 하면
 
@@ -280,7 +280,7 @@ $$
 
 </br>
 
-### 속도의 로렌츠 변환 {#sec-CFT_lorentz_tranfrom_of_velocity}
+### 속도의 로런츠 변환 {#sec-CFT_lorentz_tranfrom_of_velocity}
 
 역시 정지된 $\Sigma$ 에 대해 $V\hat{\bf{x}}$ 의 속도로 움직이는 $\Sigma'$ 기준틀을 생각하자. $\Sigma$ 기준틀에서의 속도가 $\Sigma'$ 기준틀에서 어떻게 변화하는지 알아보자. @eq-CFT_lorent_transform_in_1d 로부터
 
@@ -368,7 +368,7 @@ $$ {#eq-CFT_transform_of_contavariant_vector_component}
 이어야 한다. 즉 $v\in V$ 의 성분은 기저의 변환에 대해 반대로(contra-) 변하므로(정확히는 역행렬에 따라 변하므로) 반변벡터라는 이름이 붙었다. 또한 이로부터
 
 $$
-\left({R_i}^j\right)^{-1} = \dfrac{\partial (x')^i}{\partial x^j},\qquad {R_i}^j = \dfrac{\partial x^j}{\partial (x')^i}
+\left({R_i}^j\right)^{-1} =  {\left(R^{-1}\right)^i}_j = \dfrac{\partial (x')^i}{\partial x^j},\qquad {R_i}^j = \dfrac{\partial x^j}{\partial (x')^i}
 $$
 
 임을 안다. 이에 반해 
@@ -441,8 +441,41 @@ $$ {#eq-CFT-transform_of_rank_2_tensor}
 
 #### **계량 텐서**
 
+$\F$-벡터공간 $V$ 에 대해, 정확히는 다양체 $M$ 의 탄젠트 공간 $V=T_pM$ 에서 정의되는 **계량 텐서 (metric tensor)** $g \in \mathcal{T}^2(V)$ 는 다음의 성질을 가진다.
+
+&emsp;($1$) **대칭성** : $g(u,\,v) = g (v,\,u)$, 
+
+&emsp;($2$) **비축퇴성** : $\forall u\in V,\, g(v,\,u)=0 \iff v=0$
+
+계량텐서는 내적벡터공간의 내적과 같이 벡터공간에 부여되는 구조이다. 이 때 계량텐서가 $0$ 이 아닌 모든 $u,\,v\in V$ 에 대해 $g(u,\,v) > 0$ 이면 이 텐서를 **리만 계량(Riemann metric)** 이라고 하고 아래와 같이 주어졌을 때 **로런츠 계량(Lorentz metric)** 이라고 한다. 텐서의 인덱스 규칙에 따라 $g_{ij} = g(e_i,\,e_j)$ 라고 하자. 로런츠 계량은 아래와 같이 주어진다.
+
+$$
+g_{ij} = \left[\,\begin{array}{rrrr} 1 & 0 & 0 & 0 \\ 0 & -1 & 0 & 0 \\ 0 & 0 & -1 & 0 \\ 0 & 0 & 0 &-1\end{array}\,\right].
+$$ {#eq-CFT_lorentz_metric}
+
+이 때 내림 사상 $\flat : V\to V^\ast$ 을 다음과 같이 정의한다.
+
+$$
+\flat(v) (u) := g(v,\,u).
+$$ {#eq-CFT_flat_map}
+
+$g$ 가 쌍선형 사상이므로 $\flat$ 은 선형사상이며 $g$ 의 비축퇴성으로 인해 $\flat$ 은 가역사상이다.
+
+이 때, $v=v^ie_i,\, u=u^je_j$ 에 대해 
+$$
+\flat (v^ie_i)(u^ie_i) = g(v^ie_i,\, u^je_j) = \sum_{i,j}v^iu^jg(e_i,\,e_j) = g_{ij}v^iu^j
+$$
+
+이므로 $v_j = g_{ij}v^i$ 로 놓으면 $g(v,\,u) = v_ju^j$ 이다. 
+
+$\flat$ 이 가역사상이므로 $\flat$ 의 역사상이 존재한다. 이를 $\sharp$ 라고 하자. 그렇다면 $v^j = (g_{ij})^{-1}v_i$ 이며 $(g_{ij})^{-1}$ 은 아래 인덱스를 위 인덱스로 바꾸저 주는 역할을 하므로 $g^{ij}$ 와 같이 쓸 수 있다. 즉
+
+$$
+g^{ij} = (g_{ij})^{-1}
+$$
 
 
+이다. 
 
 
 </br>
@@ -464,7 +497,13 @@ $$
 \|X\|^2 = \left(x^0\right)^2 - \left(x^1\right)^2 -\left(x^2\right)^2 - \left(x^3\right)^2.
 $$
 
-이 길이는 로렌츠 변환에 대해 불변이다. 이렇게 반경 4-벡터와 같이 변환되는 4 값으로 구성된 튜플 $A=(A^0,\,A^1,\,A^2,\,A^3)$ 혹은 $A=\begin{bmatrix} A^0 &A^1 & A^2 & A^3\end{bmatrix}^T$ 를 **4-벡터** 라고 하며 $A^0$ 를 시간 성분, 그리고 $A^1,\,A^2,\,A^3$ 를 공간성분이라고 한다. $A=(A^0,\, \bf{A})$ 와 같이 표기하기도 한다. 3차원 공간상의 벡터는 $\bf{x}$ 와 같이 표기하고 4-벡터는 그렇지 않다. 4-벡터 $A=(A^0,\,A^1,\,A^2,\,A^3)=(A^0,\,\bf{A})$ 의 제곱크기는 시공간 4-벡터와 마찬가지로 음의 값도, $0$ 도 될 수 있으며, 마찬가지로 시간꼴, 공간꼴 벡터를 말할 수 있다.
+이 길이는 로런츠 변환에 대해 불변이다. 이것은 앞서 4차원 시공간에 로런츠 계량 $g$(@eq-CFT_lorentz_metric) 을 부여했을 때의 결과와 같다. 즉 
+
+$$
+\|X\|^2=g_{ij}x^ix^j
+$$
+
+이다. 이렇게 반경 4-벡터와 같이 변환되는 4 값으로 구성된 튜플 $A=(A^0,\,A^1,\,A^2,\,A^3)$ 혹은 $A=\begin{bmatrix} A^0 &A^1 & A^2 & A^3\end{bmatrix}^T$ 를 **4-벡터** 라고 하며 $A^0$ 를 시간 성분, 그리고 $A^1,\,A^2,\,A^3$ 를 공간성분이라고 한다. $A=(A^0,\, \bf{A})$ 와 같이 표기하기도 한다. 3차원 공간상의 벡터는 $\bf{x}$ 와 같이 표기하고 4-벡터는 그렇지 않다. 4-벡터 $A=(A^0,\,A^1,\,A^2,\,A^3)=(A^0,\,\bf{A})$ 의 제곱크기는 시공간 4-벡터와 마찬가지로 음의 값도, $0$ 도 될 수 있으며, 마찬가지로 시간꼴, 공간꼴 벡터를 말할 수 있다.
 
 
 $\Sigma$ 기준틀에 대해 $\Sigma$ 기준틀이 $V$ 의 속력으로 움직일 때 $\beta,\,\gamma$ 값을 아래와 같이 정하자.
@@ -473,39 +512,20 @@ $$
 \beta := \dfrac{V}{c},\qquad \gamma := \dfrac{1}{\sqrt{1-V^2/c^2}} = \dfrac{1}{\sqrt{1-\beta^2}}
 $$ {#eq-CFT-definition_of_beta_and_gamma}
 
-$V$ 가 $x$ 축 방향일 때 4-벡터의 로렌츠 변환은 아래와 같다.
+$V$ 가 $x$ 축 방향일 때 4-벡터의 로런츠 변환은 아래와 같다.
 
 $$
 A^0 = \gamma (A'^0 + \beta A'^1),\quad A^1 = \gamma (A'^1+ \beta A'^0),\quad A^2 = A'^2 ,\quad A^3 = A'^3.
 $$ {#eq-CFT-lorentz_transform_of_contravariant_vector}
 
-위와 같이 위첨자로 표현되는 벡터를 반변 벡터(contravariant vector) 라고 한다. 여기에 대해 공변 벡터(covariant vector) 는 아래와 같이 정의된다.
-
-$$
-A_0 = A^1,\quad A_1 = -A^1,\quad A_2=-A^2,\quad A_3 = -A^3.
-$$ {#eq-CFT-relation_between_contravariant_and_covariant_vector}
-
-공변벡터의 로렌츠 변환은 아래와 같다.
+로런츠 계량을 이용하여 공변벡터의 로런츠 변환을 구하면 아래와 같다.
 
 $$
 A_0= \gamma (A'_0 - \beta A'_1),\quad A_1 = \gamma (A'_1- \beta A'_0),\quad A_2 = A'_2 ,\quad A_3 = A'_3.
 $$ {#eq-CFT-lorentz_transform_of_covariant_vector}
 
-그렇다면 벡터 $A$ 의 제곱 크기는 아래와 같다.
 
-$$
-\begin{aligned}
-\|A\| &=  \left(A^0\right)^2 - \left(A^1\right)^2 -\left(A^2\right)^2 - \left(A^3\right)^2 \\[0.3em]
-&= A^0A_0 + A^1A_1 +A^2A_2 + A^3A_3  .
-\end{aligned}
-$$ {#eq-CFT_magnitude_of_four_vector}
-
-관습적으로 같은 인덱스에 대해 위첨자로 표현되는 양과 아래첨자로 표현되는 양이 곱해져 있으면 그 첨자 인덱스에 대한 합으로 보는 것을 아인슈타인 표기법이라고 한다. 
-$$
-A^iB_i := \sum_{i=0}^3 A^iB_i=A^0B_0 + A^1B_1 +A^2B_2 + A^3B_3  .
-$$ {#eq-CFT-einstein_notation}
-
-여기서 $A^iB_i$ 는 4-벡터의 곱인 스칼라이므로 **4-스칼라** 라고 불린다. @eq-CFT-lorentz_transform_of_contravariant_vector 와 @eq-CFT-lorentz_transform_of_covariant_vector 로부터 4-스칼라가 로렌츠 변환에 대해 불변임을 보일 수 있다.
+$A^iB_i =g_{ij}A^iB^j$ 는 두 4-벡터의 곱으로 정의되는 스칼라량으로 **4-스칼라** 라고 불린다. @eq-CFT-lorentz_transform_of_contravariant_vector 와 @eq-CFT-lorentz_transform_of_covariant_vector 로부터 4-스칼라가 로런츠 변환에 대해 불변임을 보일 수 있다.
 
 $$
 \begin{aligned}
@@ -520,13 +540,6 @@ $$
 </br>
 
 ### 4-텐서 {#sec-CFT_4_tensor}
-
-::: {.callout-warning icon="false"}
-
-#### 텐서 해석의 참고자료 
-
-기초적인 텐서에 대해서는 [텐서 해석](https://julia-kaeri.github.io/MathematicalPhysics/src/tensor/tensor01.html) 을 참고하라.
-:::
 
 4차원 2차 텐서는 16 개의 값으로 이루어졌으며 $0\le i,\,j\le 3$ 에 대해 반변 텐서 $A^{ij}$, 공변 텐서 $B_{ij}$, 혼합 텐서 ${C^i}_j$ 와 같이 표기한다. ${C^i}_j$ 와 ${C_j}^i$ 는 구별된다. 4차원 텐서에 대한 일반적인 인덱스 반전 규칙은 다음과 같다.
 
