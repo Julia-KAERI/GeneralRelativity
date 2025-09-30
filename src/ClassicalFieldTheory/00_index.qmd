@@ -14,7 +14,7 @@ crossref:
 ### 참고문헌
 ::: {#refs}
 
-@Landau1975classical
+@Landau1975Classical
 
 
 :::

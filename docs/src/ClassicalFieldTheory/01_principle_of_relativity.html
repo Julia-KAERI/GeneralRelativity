@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,14 +34,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/ClassicalFieldTheory/00_index.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6a6044446bafb874b35005e6d630eb70.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-3e2728906df7980cb53b491a61d13d7e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -84,7 +85,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -140,7 +141,9 @@ window.Quarto = {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">일반상대성이론과 우주론</a> 
     </div>
@@ -215,12 +218,18 @@ window.Quarto = {
   <li><a href="#sec-CFT_proper_time_by_lorentz_transform" id="toc-sec-CFT_proper_time_by_lorentz_transform" class="nav-link" data-scroll-target="#sec-CFT_proper_time_by_lorentz_transform"><span class="header-section-number">1.4.3</span> 로런츠 변환으로 본 고유시간</a></li>
   <li><a href="#sec-CFT_lorentz_tranfrom_of_velocity" id="toc-sec-CFT_lorentz_tranfrom_of_velocity" class="nav-link" data-scroll-target="#sec-CFT_lorentz_tranfrom_of_velocity"><span class="header-section-number">1.4.4</span> 속도의 로렌츠 변환</a></li>
   </ul></li>
-  <li><a href="#벡터" id="toc-벡터" class="nav-link" data-scroll-target="#벡터"><span class="header-section-number">1.5</span> 4-벡터</a>
+  <li><a href="#수학적-기초" id="toc-수학적-기초" class="nav-link" data-scroll-target="#수학적-기초"><span class="header-section-number">1.5</span> 수학적 기초</a>
   <ul class="collapse">
-  <li><a href="#sec-CFT_4_vector" id="toc-sec-CFT_4_vector" class="nav-link" data-scroll-target="#sec-CFT_4_vector"><span class="header-section-number">1.5.1</span> 4-벡터와 4-스칼라</a></li>
-  <li><a href="#sec-CFT_4_tensor" id="toc-sec-CFT_4_tensor" class="nav-link" data-scroll-target="#sec-CFT_4_tensor"><span class="header-section-number">1.5.2</span> 4-텐서</a></li>
-  <li><a href="#sec-CFT_psedoscala_and_pseudo_vector" id="toc-sec-CFT_psedoscala_and_pseudo_vector" class="nav-link" data-scroll-target="#sec-CFT_psedoscala_and_pseudo_vector"><span class="header-section-number">1.5.3</span> 유사 스칼라와 유사 벡터</a></li>
-  <li><a href="#쌍대-텐서" id="toc-쌍대-텐서" class="nav-link" data-scroll-target="#쌍대-텐서"><span class="header-section-number">1.5.4</span> 쌍대 텐서</a></li>
+  <li><a href="#sec-CFT_contravariant_covariant_einstein" id="toc-sec-CFT_contravariant_covariant_einstein" class="nav-link" data-scroll-target="#sec-CFT_contravariant_covariant_einstein"><span class="header-section-number">1.5.1</span> 공변벡터, 반변벡터, 아인슈타인 표기법</a></li>
+  <li><a href="#sec-CFT_rule_of_transformation" id="toc-sec-CFT_rule_of_transformation" class="nav-link" data-scroll-target="#sec-CFT_rule_of_transformation"><span class="header-section-number">1.5.2</span> 변환의 규칙</a></li>
+  <li><a href="#텐서" id="toc-텐서" class="nav-link" data-scroll-target="#텐서"><span class="header-section-number">1.5.3</span> 텐서</a></li>
+  </ul></li>
+  <li><a href="#벡터" id="toc-벡터" class="nav-link" data-scroll-target="#벡터"><span class="header-section-number">1.6</span> 4-벡터</a>
+  <ul class="collapse">
+  <li><a href="#sec-CFT_4_vector" id="toc-sec-CFT_4_vector" class="nav-link" data-scroll-target="#sec-CFT_4_vector"><span class="header-section-number">1.6.1</span> 4-벡터와 4-스칼라</a></li>
+  <li><a href="#sec-CFT_4_tensor" id="toc-sec-CFT_4_tensor" class="nav-link" data-scroll-target="#sec-CFT_4_tensor"><span class="header-section-number">1.6.2</span> 4-텐서</a></li>
+  <li><a href="#sec-CFT_psedoscala_and_pseudo_vector" id="toc-sec-CFT_psedoscala_and_pseudo_vector" class="nav-link" data-scroll-target="#sec-CFT_psedoscala_and_pseudo_vector"><span class="header-section-number">1.6.3</span> 유사스칼라와 유사벡터</a></li>
+  <li><a href="#sec-CFT_dual_tensor" id="toc-sec-CFT_dual_tensor" class="nav-link" data-scroll-target="#sec-CFT_dual_tensor"><span class="header-section-number">1.6.4</span> 쌍대 텐서</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -483,10 +492,102 @@ v_x = \dfrac{v_x' + V}{1+ v_x'\dfrac{V}{c^2}},\quad v_y = \dfrac{v_y'\sqrt{1-\df
 <p><br></p>
 </section>
 </section>
-<section id="벡터" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="벡터"><span class="header-section-number">1.5</span> 4-벡터</h2>
-<section id="sec-CFT_4_vector" class="level3" data-number="1.5.1">
-<h3 data-number="1.5.1" class="anchored" data-anchor-id="sec-CFT_4_vector"><span class="header-section-number">1.5.1</span> 4-벡터와 4-스칼라</h3>
+<section id="수학적-기초" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="수학적-기초"><span class="header-section-number">1.5</span> 수학적 기초</h2>
+<section id="sec-CFT_contravariant_covariant_einstein" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="sec-CFT_contravariant_covariant_einstein"><span class="header-section-number">1.5.1</span> 공변벡터, 반변벡터, 아인슈타인 표기법</h3>
+<section id="공변벡터와-반변벡터" class="level4">
+<h4 class="anchored" data-anchor-id="공변벡터와-반변벡터"><strong>공변벡터와 반변벡터</strong></h4>
+<p>여기서는 유한차원 벡터공간 <span class="math inline">\(V\)</span> 와 그 쌍대공간 <span class="math inline">\(V^\ast\)</span> 에 대해 생각한다. <span class="math inline">\(V\)</span> 의 기저 <span class="math inline">\((e_1,\ldots,\,e_n)\)</span> 의 각각의 <span class="math inline">\(e_j\)</span> 에 대해 <span class="math inline">\(\theta^i\in V^\ast\)</span> 가 존재하여 <span class="math inline">\(\theta^i(e_j)=\delta^i_j\)</span> 이며, <span class="math inline">\((\theta^1,\ldots,\,\theta^n)\)</span> 이 <span class="math inline">\(V^\ast\)</span> 의 기저가 된다는 것을 안다. 이 때 <span class="math inline">\(\omega \in V^\ast\)</span> 를 <strong>공변벡터(covariant vector 혹은 covector)</strong> 라고 하고 <span class="math inline">\(v\in V\)</span> 를 <strong>반변 벡터(contravariant vector)</strong> 라고 한다.</p>
+<p><br></p>
+</section>
+<section id="벡터의-성분값과-자연쌍대" class="level4">
+<h4 class="anchored" data-anchor-id="벡터의-성분값과-자연쌍대"><strong>벡터의 성분값과 자연쌍대</strong></h4>
+<p><span class="math inline">\(v\in V\)</span> 를 <span class="math inline">\(v=v^ie_i\)</span>, <span class="math inline">\(\omega \in V^\ast\)</span> 를 <span class="math inline">\(\omega = \omega_i \theta^i\)</span> 와 같이 표기하는 것이 표준적이다. 이 때 다음이 성립한다는 것을 알 수 있다. <span id="eq-CFT_componant_of_contravariant_and_covariant_vector"><span class="math display">\[
+v^i = \theta^i(v),\qquad \omega_i = \omega(e_i).
+\tag{1.10}\]</span></span></p>
+<p><span class="math inline">\(\omega\in V^\ast,\, v\in V\)</span> 에 대해 <span class="math inline">\(\omega (v)\)</span> 가 존재한다. 이를 <strong>자연 쌍대(natural pairing)</strong> 이라고 한다. 이 때 다음이 성립한다.</p>
+<p><span id="eq-CFT_natural_pariaing"><span class="math display">\[
+\omega (v) =\sum_{i, j} \omega_i \theta^i(v^j e_j) = \sum_{i, j} \omega_iv^j \theta^i(e_j) = \underbrace{\sum_i \omega_iv^i \equiv \omega_i v^i}_{\text{Einstein notation}}
+\tag{1.11}\]</span></span></p>
+<p><a href="#eq-CFT_natural_pariaing" class="quarto-xref">식&nbsp;<span>1.11</span></a> 에서와 같이 <span class="math inline">\(\sum_i \omega_iv^i\)</span> 를 <span class="math inline">\(\omega_iv^i\)</span> 와 같이 표기하는 것을 <strong>아인슈타인 표기법 (Einsteine notation)</strong> 이라고 한다.</p>
+<p><br></p>
+</section>
+</section>
+<section id="sec-CFT_rule_of_transformation" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="sec-CFT_rule_of_transformation"><span class="header-section-number">1.5.2</span> 변환의 규칙</h3>
+<p><span class="math inline">\(V\)</span> 의 기저를 <span class="math inline">\((e_1,\ldots,\,e_n)\)</span> 에서 <span class="math inline">\((e'_1,\ldots,\,e'_n)\)</span> 으로 변경한다고 하자. 이 때</p>
+<p><span class="math display">\[
+e'_i = {R_i}^j e_j
+\]</span></p>
+<p>라고 하면</p>
+<p><span class="math display">\[
+v=v^ie_i = v'^ie'_i=v'^i {R_i}^j e_j = {R_i}^jv'^i e_j
+\]</span></p>
+<p>이므로</p>
+<p><span id="eq-CFT_transform_of_contavariant_vector_component"><span class="math display">\[
+v'^i = ({R_i}^j)^{-1}v^j
+\tag{1.12}\]</span></span></p>
+<p>이어야 한다. 즉 <span class="math inline">\(v\in V\)</span> 의 성분은 기저의 변환에 대해 반대로(contra-) 변하므로(정확히는 역행렬에 따라 변하므로) 반변벡터라는 이름이 붙었다. 또한 이로부터</p>
+<p><span class="math display">\[
+\left({R_i}^j\right)^{-1} = \dfrac{\partial (x')^i}{\partial x^j},\qquad {R_i}^j = \dfrac{\partial x^j}{\partial (x')^i}
+\]</span></p>
+<p>임을 안다. 이에 반해</p>
+<p><span id="eq-CFT_transform_of_covariant_vector_component"><span class="math display">\[
+\omega'_i = \omega(e'_i)= {R_i}^j \omega(e_j)= {R_i}^j \omega_j
+\tag{1.13}\]</span></span></p>
+<p>이다. 즉 <span class="math inline">\(\omega\)</span> 의 성분은 기저의 변환에 대해 변환행렬에 맟추어(co-) 변하므로 공변벡터 라는 이름이 붙었다.</p>
+<br>
+<div class="border" style="background-color:#FFF0F5 ;padding:5px;">
+<div id="prp-CFT_invairanice_of_scalar" class="theorem proposition">
+<p><span class="theorem-title"><strong>명제 1.1</strong></span> <span class="math inline">\(v\in V,\, \omega\in V^\ast\)</span> 에서 <span class="math inline">\(v^i\omega_i\)</span> 는 좌표변환에 대해 불변이다.</p>
+</div>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>(증명)</em>. </span><span class="math inline">\(v'^i\omega'_i = ({R_i}^j)^{-1}v^j({R_i}^k)\omega_k = v^j\omega_j.\)</span></p>
+</div>
+<p><br></p>
+</section>
+<section id="텐서" class="level3" data-number="1.5.3">
+<h3 data-number="1.5.3" class="anchored" data-anchor-id="텐서"><span class="header-section-number">1.5.3</span> 텐서</h3>
+<section id="텐서와-변환규칙" class="level4">
+<h4 class="anchored" data-anchor-id="텐서와-변환규칙"><strong>텐서와 변환규칙</strong></h4>
+<p><span class="math inline">\(\mathbb{F}\)</span>-벡터공간 <span class="math inline">\(V_1,\,V_2,\ldots,\,V_k\)</span> 에 대해 <span class="math inline">\(V_1 \times \cdots \times V_k \mapsto \mathbb{R}\)</span> 함수이며 각각의 벡터공간에 대해 다중선형인 함수를 <span class="math inline">\(k\)</span>-차 <strong>텐서 (tensor)</strong> 라고 한다. 즉 <span class="math inline">\(v_i,\,u_i \in V_i\)</span> 와 <span class="math inline">\(c\in \mathbb{F}\)</span> 에 대해</p>
+<p><span class="math display">\[
+T(\ldots,\,v_i + cu_i,\ldots) = T(\ldots,v_i,\ldots) + c T(\ldots,u_i,\ldots)
+\]</span></p>
+<p>이어야 한다. 여기에서 다루는 텐서가 정의되는 벡터공간은 일반적으로 정해진 벡터공간 <span class="math inline">\(V\)</span> 에 대해 <span class="math inline">\(V\)</span> 이거나 <span class="math inline">\(V^\ast\)</span> 이다. <span class="math inline">\(V\)</span> 에 대해 정해진 기저 <span class="math inline">\((e_i)\)</span> 를 생각하자. <span class="math inline">\(T\)</span> 가 <span class="math inline">\(V\times V\)</span> 에서 정의된 텐서라면, 즉 2차 텐서라면</p>
+<p><span class="math display">\[
+T(u,\,v) = \sum_{i, j} u^iv^jT(e_i,\,e_j) \equiv T_{ij} u^iv^j
+\]</span></p>
+<p>이다. 우리는 <span class="math inline">\(T_{ij} := T(e_i,\,e_j)\)</span> 라고 정의 할 수 있다. 반대로 <span class="math inline">\(S\)</span> 가 <span class="math inline">\(V^\ast \times V^\ast\)</span> 에서 정의된 2차 텐서라면</p>
+<p><span class="math display">\[
+S(\omega,\, \eta) = \sum \omega_i \eta_j S(\theta^i,\, \theta^j) \equiv  S^{ij}\omega_i \eta_j
+\]</span></p>
+<p>이다. 우리는 <span class="math inline">\(S^{ij} = S(\theta^i,\,\theta^j)\)</span> 라고 정의 할 수 있다. 만약 <span class="math inline">\(A\)</span> 가 <span class="math inline">\(V \times V^\ast\)</span> 에서 정의된 텐서라면</p>
+<p><span class="math display">\[
+A(v,\,\omega) = \sum_{i,j} v^i\omega_j A(e_i,\,\theta^j) \equiv {A_i}^j v^i\omega_j
+\]</span></p>
+<p>이다. 우리는 <span class="math inline">\({A_i}^j\)</span> 를 <span class="math inline">\(A(e_i,\,\theta^j)\)</span> 로 정의 할 수 있다. 또한 이것을 확장하여 임의의 <span class="math inline">\(k\)</span> 차 텐서에 대해서도 텐서의 위첨자-아래첨자 표기법을 사용 할 수 있다. <span id="eq-CFT-transform_of_rank_2_tensor"><span class="math display">\[
+\begin{aligned}
+T'_{ij} &amp;:= T(e'_i,\,e'_j) = \sum_{k,\,l}T({R_i}^k e_k,\, {R_j^l} e_l) = {R_i}^k {R_j}^l T_{kl} , \\[0.3em]
+S'^{ij} &amp;:= S(\theta'_i,\, \theta'_j) = \sum_{k,\,l}S\left(({R_i}^k)^{-1}\theta_k, ({R_j}^l)^{-1}\theta_l\right) = ({R_i}^k)^{-1}({R_j}^l)^{-1}\theta_l S^{kl}, \\[0.3em]
+{{A'}_i}^j &amp;= A(e'_i,\,\theta'^j) = {R_i}^k({R_j}^l)^{-1} {A_k}^l.
+\end{aligned}
+\tag{1.14}\]</span></span></p>
+<p>이 식을 보면 알 수 있듯이 이것은 2차 이상의 텐서에 대해서도 그대로 적용된다. 텐서의 공변 성분은 공변벡터의 변환을 따르고 반변 성분은 반번 벡터의 변환을 따른다.</p>
+<p><br></p>
+</section>
+<section id="계량-텐서" class="level4">
+<h4 class="anchored" data-anchor-id="계량-텐서"><strong>계량 텐서</strong></h4>
+<p><br></p>
+</section>
+</section>
+</section>
+<section id="벡터" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="벡터"><span class="header-section-number">1.6</span> 4-벡터</h2>
+<section id="sec-CFT_4_vector" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="sec-CFT_4_vector"><span class="header-section-number">1.6.1</span> 4-벡터와 4-스칼라</h3>
 <p>사건 <span class="math inline">\((ct,\,x,\,y,\,z)\)</span> 는 4차원 시공간에서의 반경 벡터(radius vector)로 생각 할 수 있다. 이 벡터를 기술하는데</p>
 <p><span class="math display">\[
 x^0=ct,\quad x^1=x,\quad x^2=y,\quad x^3=z
@@ -499,30 +600,30 @@ x^0=ct,\quad x^1=x,\quad x^2=y,\quad x^3=z
 <p><span class="math inline">\(\Sigma\)</span> 기준틀에 대해 <span class="math inline">\(\Sigma\)</span> 기준틀이 <span class="math inline">\(V\)</span> 의 속력으로 움직일 때 <span class="math inline">\(\beta,\,\gamma\)</span> 값을 아래와 같이 정하자.</p>
 <p><span id="eq-CFT-definition_of_beta_and_gamma"><span class="math display">\[
 \beta := \dfrac{V}{c},\qquad \gamma := \dfrac{1}{\sqrt{1-V^2/c^2}} = \dfrac{1}{\sqrt{1-\beta^2}}
-\tag{1.10}\]</span></span></p>
+\tag{1.15}\]</span></span></p>
 <p><span class="math inline">\(V\)</span> 가 <span class="math inline">\(x\)</span> 축 방향일 때 4-벡터의 로렌츠 변환은 아래와 같다.</p>
 <p><span id="eq-CFT-lorentz_transform_of_contravariant_vector"><span class="math display">\[
 A^0 = \gamma (A'^0 + \beta A'^1),\quad A^1 = \gamma (A'^1+ \beta A'^0),\quad A^2 = A'^2 ,\quad A^3 = A'^3.
-\tag{1.11}\]</span></span></p>
+\tag{1.16}\]</span></span></p>
 <p>위와 같이 위첨자로 표현되는 벡터를 반변 벡터(contravariant vector) 라고 한다. 여기에 대해 공변 벡터(covariant vector) 는 아래와 같이 정의된다.</p>
 <p><span id="eq-CFT-relation_between_contravariant_and_covariant_vector"><span class="math display">\[
 A_0 = A^1,\quad A_1 = -A^1,\quad A_2=-A^2,\quad A_3 = -A^3.
-\tag{1.12}\]</span></span></p>
+\tag{1.17}\]</span></span></p>
 <p>공변벡터의 로렌츠 변환은 아래와 같다.</p>
 <p><span id="eq-CFT-lorentz_transform_of_covariant_vector"><span class="math display">\[
 A_0= \gamma (A'_0 - \beta A'_1),\quad A_1 = \gamma (A'_1- \beta A'_0),\quad A_2 = A'_2 ,\quad A_3 = A'_3.
-\tag{1.13}\]</span></span></p>
+\tag{1.18}\]</span></span></p>
 <p>그렇다면 벡터 <span class="math inline">\(A\)</span> 의 제곱 크기는 아래와 같다.</p>
 <p><span id="eq-CFT_magnitude_of_four_vector"><span class="math display">\[
 \begin{aligned}
 \|A\| &amp;=  \left(A^0\right)^2 - \left(A^1\right)^2 -\left(A^2\right)^2 - \left(A^3\right)^2 \\[0.3em]
 &amp;= A^0A_0 + A^1A_1 +A^2A_2 + A^3A_3  .
 \end{aligned}
-\tag{1.14}\]</span></span></p>
+\tag{1.19}\]</span></span></p>
 <p>관습적으로 같은 인덱스에 대해 위첨자로 표현되는 양과 아래첨자로 표현되는 양이 곱해져 있으면 그 첨자 인덱스에 대한 합으로 보는 것을 아인슈타인 표기법이라고 한다. <span id="eq-CFT-einstein_notation"><span class="math display">\[
 A^iB_i := \sum_{i=0}^3 A^iB_i=A^0B_0 + A^1B_1 +A^2B_2 + A^3B_3  .
-\tag{1.15}\]</span></span></p>
-<p>여기서 <span class="math inline">\(A^iB_i\)</span> 는 4-벡터의 곱인 스칼라이므로 <strong>4-스칼라</strong> 라고 불린다. <a href="#eq-CFT-lorentz_transform_of_contravariant_vector" class="quarto-xref">식&nbsp;<span>1.11</span></a> 와 <a href="#eq-CFT-lorentz_transform_of_covariant_vector" class="quarto-xref">식&nbsp;<span>1.13</span></a> 로부터 4-스칼라가 로렌츠 변환에 대해 불변임을 보일 수 있다.</p>
+\tag{1.20}\]</span></span></p>
+<p>여기서 <span class="math inline">\(A^iB_i\)</span> 는 4-벡터의 곱인 스칼라이므로 <strong>4-스칼라</strong> 라고 불린다. <a href="#eq-CFT-lorentz_transform_of_contravariant_vector" class="quarto-xref">식&nbsp;<span>1.16</span></a> 와 <a href="#eq-CFT-lorentz_transform_of_covariant_vector" class="quarto-xref">식&nbsp;<span>1.18</span></a> 로부터 4-스칼라가 로렌츠 변환에 대해 불변임을 보일 수 있다.</p>
 <p><span class="math display">\[
 \begin{aligned}
 A^iB_i &amp;= \gamma^2 (A'^0+\beta A'^1)(A'_0 - \beta A'_1) + \gamma^2(A'^1+\beta A'^0)(A'_1 - \beta A'_0) + A'^2A'_2 + A'^3A'_3 \\[0.3em]
@@ -532,8 +633,21 @@ A^iB_i &amp;= \gamma^2 (A'^0+\beta A'^1)(A'_0 - \beta A'_1) + \gamma^2(A'^1+\bet
 <p>이 불변성은 모든 로런츠 변환에 대해 성립한다.</p>
 <p><br></p>
 </section>
-<section id="sec-CFT_4_tensor" class="level3" data-number="1.5.2">
-<h3 data-number="1.5.2" class="anchored" data-anchor-id="sec-CFT_4_tensor"><span class="header-section-number">1.5.2</span> 4-텐서</h3>
+<section id="sec-CFT_4_tensor" class="level3" data-number="1.6.2">
+<h3 data-number="1.6.2" class="anchored" data-anchor-id="sec-CFT_4_tensor"><span class="header-section-number">1.6.2</span> 4-텐서</h3>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">경고</span>텐서 해석의 참고자료
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>기초적인 텐서에 대해서는 <a href="https://julia-kaeri.github.io/MathematicalPhysics/src/tensor/tensor01.html">텐서 해석</a> 을 참고하라.</p>
+</div>
+</div>
 <p>4차원 2차 텐서는 16 개의 값으로 이루어졌으며 <span class="math inline">\(0\le i,\,j\le 3\)</span> 에 대해 반변 텐서 <span class="math inline">\(A^{ij}\)</span>, 공변 텐서 <span class="math inline">\(B_{ij}\)</span>, 혼합 텐서 <span class="math inline">\({C^i}_j\)</span> 와 같이 표기한다. <span class="math inline">\({C^i}_j\)</span> 와 <span class="math inline">\({C_j}^i\)</span> 는 구별된다. 4차원 텐서에 대한 일반적인 인덱스 반전 규칙은 다음과 같다.</p>
 <p><span class="math display">\[
 \begin{gather}
@@ -557,7 +671,7 @@ A_{00} = A^{00},\quad A_{01}=-A^{01},\quad A_{11}=A^{11},\ldots,\\[0.3em]
 <p>텐서 <span class="math inline">\(A^{ij}\)</span> 에 대해 행렬과 같이 <strong>trace</strong> <span class="math inline">\(\operatorname{tr}(A^{ij})\)</span> 를 아래와 같이 정의한다.</p>
 <p><span id="eq-CFT_definition_of_trace_of_rank_2_tensor"><span class="math display">\[
 \operatorname{tr}(A^{ij}) = {A^i}_i = {A^0}_0 + {A^1}_1 + {A^2}_2 + {A^3}_3.
-\tag{1.16}\]</span></span></p>
+\tag{1.21}\]</span></span></p>
 <p><br></p>
 </section>
 <section id="단위-텐서-unit-tensor" class="level4">
@@ -565,7 +679,7 @@ A_{00} = A^{00},\quad A_{01}=-A^{01},\quad A_{11}=A^{11},\ldots,\\[0.3em]
 <p><span class="math inline">\(\delta^i_j\)</span> 는 아래와 같이 정의된다.</p>
 <p><span id="eq-CFT_definition_of_unit_tensor"><span class="math display">\[
 \delta_i^j = \left\{\begin{array}{ll} 1, \qquad&amp;\text{if } i = j,\\ 0. &amp;\text{if } i \ne j\end{array}\right.
-\tag{1.17}\]</span></span></p>
+\tag{1.22}\]</span></span></p>
 <p>따라서 임의의 4-벡터 <span class="math inline">\(A^i\)</span> 에 대해</p>
 <p><span class="math display">\[
 \delta_i^j A^i = A^j
@@ -573,20 +687,20 @@ A_{00} = A^{00},\quad A_{01}=-A^{01},\quad A_{11}=A^{11},\ldots,\\[0.3em]
 <p>이다.</p>
 <p><br></p>
 </section>
-<section id="계량-텐서" class="level4">
-<h4 class="anchored" data-anchor-id="계량-텐서"><strong>계량 텐서</strong></h4>
+<section id="계량-텐서-1" class="level4">
+<h4 class="anchored" data-anchor-id="계량-텐서-1"><strong>계량 텐서</strong></h4>
 <p>단위 텐서에 대해 한 인덱스를 올리거나 내린 <span class="math inline">\(g_{ij}\)</span> 혹은 <span class="math inline">\(g^{ij}\)</span> 를 <strong>계량텐서 (metric tensor)</strong> 라고 한다. 행렬로 아래와 같다.</p>
 <p><span id="eq-CFT_definition_of_metric_tensor"><span class="math display">\[
 g_{ij} = g^{ij} = \left[\,\begin{array}{rrrr} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp;-1\end{array}\,\right].
-\tag{1.18}\]</span></span></p>
+\tag{1.23}\]</span></span></p>
 <p>이로부터 다음을 얻는다.</p>
 <p><span id="eq-CFT_index_shift_using_metric_tensor"><span class="math display">\[
 g_{ij}A^j = A_j,\qquad g^{ij}A_i = A^j.
-\tag{1.19}\]</span></span></p>
+\tag{1.24}\]</span></span></p>
 <p>또한 다음이 성립한다.</p>
 <p><span id="eq-CFT_contraction_using_metric_tensor"><span class="math display">\[
 A^iA_i = g_{ij}A^iA^j = g^{ij}A_iA_j.
-\tag{1.20}\]</span></span></p>
+\tag{1.25}\]</span></span></p>
 <p><br></p>
 </section>
 <section id="완전-반대칭-4차-단위-텐서" class="level4">
@@ -600,26 +714,26 @@ A^iA_i = g_{ij}A^iA^j = g^{ij}A_iA_j.
 <p>(<span class="math inline">\(1\)</span>) <span class="math inline">\(\varepsilon_{ijkl}= - \varepsilon^{ijkl}\)</span> 이며 <span class="math inline">\(0\)</span> 이 아닌 가능한 조합이 <span class="math inline">\(4!=24\)</span> 이므로</p>
 <p><span id="eq-CFT_basic_properties_of_CA4UT_1"><span class="math display">\[
 \varepsilon^{ijkl}\varepsilon_{ijkl}=-24.
-\tag{1.21}\]</span></span></p>
+\tag{1.26}\]</span></span></p>
 <p>(<span class="math inline">\(2\)</span>) <span class="math inline">\(\varepsilon^{ijkl}\varepsilon_{pjkl}\)</span> 를 생각하자. <span class="math inline">\(i=p\)</span> 이어야 하며 가능한 조합이 6개 이므로</p>
 <p><span id="eq-CFT_basic_properties_of_CA4UT_2"><span class="math display">\[
 \varepsilon^{ijkl}\varepsilon_{pjkl}=-6\delta^i_p
-\tag{1.22}\]</span></span></p>
+\tag{1.27}\]</span></span></p>
 <p>(<span class="math inline">\(3\)</span>) <span class="math inline">\(\varepsilon^{ijkl}\varepsilon_{pqkl}\)</span> 를 생각하자. <span class="math inline">\(i=p,\, j=q\)</span> 일 때와 <span class="math inline">\(i=q,\,j=p\)</span> 일 경우가 각각 2가지 이다. <span class="math inline">\(i=p,\,j=q\)</span> 일경우의 곱은 <span class="math inline">\(-1\)</span> 이며, <span class="math inline">\(i=q,\, j=p\)</span> 일 경우 <span class="math inline">\(\varepsilon_{pqlm}=-\varepsilon_{qplm}\)</span> 이므로 곱은 <span class="math inline">\(1\)</span> 이다. 따라서</p>
 <p><span id="eq-CFT_basic_properties_of_CA4UT_3"><span class="math display">\[
 \varepsilon^{ijlm}\varepsilon_{pqlm}=-2\delta^i_p \delta^j_q + 2 \delta^i_q \delta^j_p.
-\tag{1.23}\]</span></span></p>
+\tag{1.28}\]</span></span></p>
 <p>(<span class="math inline">\(4\)</span>) <span class="math inline">\(\varepsilon^{ijkl}\varepsilon_{pqrl}\)</span> 를 생각하자. <span class="math inline">\(i=p,\, j=q,\, k=r\)</span> 일 경우 곱은 <span class="math inline">\(-1\)</span> 이며 <span class="math inline">\(i=p,\, j=r,\, k=q\)</span> 인 경우 <span class="math inline">\(1\)</span> 이다. 이것을 6가지 경우 모두를 생각하면</p>
 <p><span id="eq-CFT_basic_properties_of_CA4UT_4"><span class="math display">\[
 \begin{aligned}
 \varepsilon^{ijkl}\varepsilon_{pqrl} &amp;= - \delta^i_p\delta^j_q \delta^k_r + \delta^i_p\delta^j_r\delta^k_p + \delta^i_q\delta^j_p\delta^k_r - \delta^i_q\delta^j_r\delta^k_p - \delta^i_r\delta^j_p\delta^k_q + \delta^i_r\delta^j_q\delta^k_r \\[0.3em]
 &amp;= - \det \left(\begin{bmatrix} \delta^i_p &amp; \delta^i_q &amp; \delta^i_r \\ \delta^j_p &amp; \delta^j_q &amp; \delta^j_r \\ \delta^k_p &amp; \delta^k_q &amp; \delta^k_r\end{bmatrix}\right).
 \end{aligned}
-\tag{1.24}\]</span></span></p>
+\tag{1.29}\]</span></span></p>
 <p>(<span class="math inline">\(5\)</span>) <span class="math inline">\(\varepsilon^{ijkl}\varepsilon_{pqrs}\)</span> 를 생각하자. (<span class="math inline">\(4\)</span>) 의 경우를 확장하면</p>
 <p><span id="eq-CFT_basic_properties_of_CA4UT_5"><span class="math display">\[
 \varepsilon^{ijkl}\varepsilon_{pqrs} = -\det \left(\begin{bmatrix} \delta^i_p &amp; \delta^i_q &amp; \delta^i_r &amp; \delta^i_s\\ \delta^j_p &amp; \delta^j_q &amp; \delta^j_r &amp; \delta^j_s\\ \delta^k_p &amp; \delta^k_q &amp; \delta^k_r &amp; \delta^k_s \\  \delta^l_p &amp; \delta^l_q &amp; \delta^l_r &amp; \delta^l_s\end{bmatrix}\right).
-\tag{1.25}\]</span></span></p>
+\tag{1.30}\]</span></span></p>
 <p>(<span class="math inline">\(6\)</span>) <span class="math inline">\(\varepsilon^{pqrs}A_{ip}A_{jq}A_{kr}A_{ls}\)</span> 를 구해보자.</p>
 <p><span class="math display">\[
 \varepsilon^{pqrs}A_{ip}A_{jq}A_{kr}A_{ls} = \sum_{0\le p,q,r,s \le 3}\operatorname{sgn}(pqrs) A_{ip}A_{jq}A_{kr}A_{ls} \\[0.3em]
@@ -627,40 +741,61 @@ A^iA_i = g_{ij}A^iA^j = g^{ij}A_iA_j.
 <p>이다. <span class="math inline">\((i,j,\,k,\,l)\)</span> 이 <span class="math inline">\((0,\,1,\,2,\,3)\)</span> 의 짝순열이면 위 식은 <span class="math inline">\(\det (A_{\alpha\beta})\)</span> 이지만 홀순열이면 <span class="math inline">\(-\det(A_{\alpha \beta})\)</span> 이다. 이로부터</p>
 <p><span id="eq-CFT_basic_properties_of_CA4UT_6"><span class="math display">\[
 \varepsilon^{pqrs}A_{ip}A_{jq}A_{kr}A_{ls} =\det (A_{\alpha\beta})\varepsilon^{ijkl} =  -\det (A_{\alpha\beta})\varepsilon_{ijkl}.
-\tag{1.26}\]</span></span></p>
-<p>(<span class="math inline">\(7\)</span>) <span class="math inline">\(\varepsilon^{ijkl}\varepsilon^{pqrs}A_{ip}A_{jq}A_{kr}A_{ls}\)</span> 를 구해보자. <a href="#eq-CFT_basic_properties_of_CA4UT_6" class="quarto-xref">식&nbsp;<span>1.26</span></a> 와 <a href="#eq-CFT_basic_properties_of_CA4UT_1" class="quarto-xref">식&nbsp;<span>1.21</span></a> 로 부터</p>
+\tag{1.31}\]</span></span></p>
+<p>(<span class="math inline">\(7\)</span>) <span class="math inline">\(\varepsilon^{ijkl}\varepsilon^{pqrs}A_{ip}A_{jq}A_{kr}A_{ls}\)</span> 를 구해보자. <a href="#eq-CFT_basic_properties_of_CA4UT_6" class="quarto-xref">식&nbsp;<span>1.31</span></a> 와 <a href="#eq-CFT_basic_properties_of_CA4UT_1" class="quarto-xref">식&nbsp;<span>1.26</span></a> 로 부터</p>
 <p><span id="eq-CFT_basic_properties_of_CA4UT_7"><span class="math display">\[
 \begin{aligned}
 \varepsilon^{ijkl}&amp;\varepsilon^{pqrs}A_{ip}A_{jq}A_{kr}A_{ls} = \varepsilon^{ijkl}\varepsilon_{ijkl}\det (A_{\alpha\beta}) = 24 \det (A_{\alpha\beta}).
 \end{aligned}
-\tag{1.27}\]</span></span></p>
+\tag{1.32}\]</span></span></p>
 </div>
 </div>
 <p><br></p>
 </section>
 </section>
-<section id="sec-CFT_psedoscala_and_pseudo_vector" class="level3" data-number="1.5.3">
-<h3 data-number="1.5.3" class="anchored" data-anchor-id="sec-CFT_psedoscala_and_pseudo_vector"><span class="header-section-number">1.5.3</span> 유사 스칼라와 유사 벡터</h3>
-<p>3차원 좌표계에서 원점 대칭 변환에 대해 그 부호가 일반적인 스칼라 혹은 벡터와 다를 때 이 스칼라와 벡터를 <strong>유사 스칼라 (pseudo scalar)</strong>, <strong>유사 벡터(pseudo vector)</strong> 라고 한다. 유사 벡터는 <strong>축벡터 (axial vector)</strong> 라고도 한다. 반면 읿반적인 벡터는 <strong>극벡터 (polar vector)</strong> 라고 한다. 3차원 공간에서 스칼라는 거울반사애 대해 부호가 바뀌지 않으며, 벡터는 부호가 바뀌지만 유사 스칼라는 부호가 바뀌며 유사벡터는 부호가 바뀌지 않는다. 대표적인 유사 스칼라는 세 벡터에 대해 <span class="math inline">\(\boldsymbol{a\cdot}(\boldsymbol{b}\times \boldsymbol{c})\)</span> 가 있으며 유사벡터는 각운동량 벡터 <span class="math inline">\(\boldsymbol{L}=\boldsymbol{r}\times \boldsymbol{v}\)</span> 가 있다. 극벡터와 축벡터의 내적으로 표현되는 스칼라는 유사스칼라이다.</p>
+<section id="sec-CFT_psedoscala_and_pseudo_vector" class="level3" data-number="1.6.3">
+<h3 data-number="1.6.3" class="anchored" data-anchor-id="sec-CFT_psedoscala_and_pseudo_vector"><span class="header-section-number">1.6.3</span> 유사스칼라와 유사벡터</h3>
+<p>3차원 좌표계에서 원점 대칭 변환에 대해 그 부호가 일반적인 스칼라 혹은 벡터와 다를 때 이 스칼라와 벡터를 <strong>유사스칼라 (pseudo scalar)</strong>, <strong>유사벡터(pseudo vector)</strong> 라고 한다. 유사 벡터는 <strong>축벡터 (axial vector)</strong> 라고도 한다. 반면 읿반적인 벡터는 <strong>극벡터 (polar vector)</strong> 라고 한다. 3차원 공간에서 스칼라는 거울반사애 대해 부호가 바뀌지 않으며, 벡터는 부호가 바뀌지만 유사 스칼라는 부호가 바뀌며 유사벡터는 부호가 바뀌지 않는다. 대표적인 유사 스칼라는 세 벡터에 대해 <span class="math inline">\(\boldsymbol{a\cdot}(\boldsymbol{b}\times \boldsymbol{c})\)</span> 가 있으며 유사벡터는 각운동량 벡터 <span class="math inline">\(\boldsymbol{L}=\boldsymbol{r}\times \boldsymbol{v}\)</span> 가 있다. 극벡터와 축벡터의 내적으로 표현되는 스칼라는 유사스칼라이다.</p>
+<p>스칼라는 0차 텐서, 벡터는 1차텐서이며 이것을 포괄적으로 텐서라고 하자. <span class="math inline">\(k\)</span>-차 텐서는 <span class="math inline">\(X\to X'\)</span> 좌표변환 <span class="math inline">\(R\)</span> 에 대해</p>
+<p><span id="eq-CFT_coordinate_transform_of_rank_k_tensor"><span class="math display">\[
+\begin{aligned}
+(A')^{i_1,\ldots,i_k} &amp;= \dfrac{\partial (x')^{i_1}}{\partial x^{j_1}}\cdots \dfrac{\partial (x')^{i_k}}{\partial x^{j_k}} A^{j_1,\ldots,\,j_k}, \\[0.3em]
+(A')_{i_1,\ldots,i_k} &amp;= \dfrac{\partial x^{j_1}}{\partial (x')^{i_1}}\cdots \dfrac{\partial x^{j_k}}{\partial (x')^{i_k}} A_{j_1,\ldots,\,j_k} \\[0.3em]
+\end{aligned}
+\tag{1.33}\]</span></span></p>
+<p>와 같이 변환되며, 혼합텐서는 위의 두 식으로부터 변환을 유추 할 수 있다. 위의 변환을 <span class="math inline">\(A'=\Lambda(R) A\)</span> 라고 표현하자. 그러나 유사텐서는</p>
+<p><span class="math display">\[
+A' = \det (R) \Lambda (R) A
+\]</span></p>
+<p>와 같이 변환된다.</p>
+<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+<div id="exm-CFT_antisymmetric_4th_unit_tensor_is_pseudo_tensor" class="theorem example">
+<p><span class="theorem-title"><strong>예제 1.3 (완전 반대칭 4차 단위 텐서는 유사텐서)</strong></span> 이제 <span class="math inline">\(\varepsilon^{ijkl}\)</span> 이 유사텐서임을 보이자. <span class="math inline">\({\Lambda^i}_p\)</span> 를 아래와 같이 정의한다.</p>
+<p><span class="math display">\[
+{\Lambda^{i}}_{p}:= \dfrac{\partial (x')^i}{\partial x^p}.
+\]</span></p>
+<p>그러</p>
+</div>
+</div>
 <p><br></p>
 </section>
-<section id="쌍대-텐서" class="level3" data-number="1.5.4">
-<h3 data-number="1.5.4" class="anchored" data-anchor-id="쌍대-텐서"><span class="header-section-number">1.5.4</span> 쌍대 텐서</h3>
-<p><span class="math inline">\(A^{ij}\)</span> 가 반대칭 텐서 일 때 <span class="math inline">\(A^{ij}\)</span> 와 <span class="math inline">\(A^{\ast ij}:=\frac{1}{2} \varepsilon^{ijkl}A_{kl}\)</span> 은 서로에 대한 <strong>쌍대 텐서 (dual tensor)</strong> 라고 한다. 같은 방식으로 <span class="math inline">\(A^i\)</span> 에 대해 <span class="math inline">\(A^{\ast i} = \varepsilon^{ijkl}A_m\)</span> 은 쌍대 텐서이다.</p>
+<section id="sec-CFT_dual_tensor" class="level3" data-number="1.6.4">
+<h3 data-number="1.6.4" class="anchored" data-anchor-id="sec-CFT_dual_tensor"><span class="header-section-number">1.6.4</span> 쌍대 텐서</h3>
+<p><span class="math inline">\(A^{ij}\)</span> 가 반대칭 텐서 일 때 <span class="math inline">\(A^{ij}\)</span> 와 <span class="math inline">\(A^{\ast ij}:=\frac{1}{2} \varepsilon^{ijkl}A_{kl}\)</span> 은 서로에 대한 <strong>쌍대 텐서 (dual tensor)</strong> 라고 한다. 같은 방식으로 <span class="math inline">\(A^i\)</span> 에 대해 <span class="math inline">\(A^{\ast i} = \varepsilon^{ijkl}A_m\)</span> 은 쌍대 텐서이며, 미분기하학 용어로는 호지 쌍대(Hodge dual) 이다.</p>
 <p>3차원 유클리드 공간에서 <span class="math inline">\(\boldsymbol{C}=\boldsymbol{A}\times \boldsymbol{B}\)</span> 일 때 <span class="math inline">\(C_{jk} = A_jB_k - A_kB_j\)</span> 에 대해 <span class="math inline">\(C_i =\dfrac{1}{2}\varepsilon_{ijk}C_{jk}\)</span> 이다. <span class="math inline">\(C_{jk}\)</span> 는 정의에 의해 반대칭 2차 텐서이며 3차원 유클리드 공간에서 <span class="math inline">\(C_{jk}\)</span> 와 <span class="math inline">\(C_i\)</span> 는 쌍대관계이다.</p>
 <p>반대칭 4-텐서 <span class="math inline">\(A^{ij}\)</span> 는 아래의 형태를 갖는다.</p>
 <p><span id="eq-CFT_matrix_representation_of_antisymmetric_tensor"><span class="math display">\[
 \left[A^{ij}\right] = \left[\,\begin{array}{rrrr} 0 &amp; p_x &amp; p_y &amp; p_z \\ -p_x &amp; 0 &amp; -a_z &amp; a_y \\ -p_y &amp; a_z &amp; 0 &amp; -a_x \\ -p_z &amp; -a_y &amp; a_x &amp; 0\end{array} \,\right].
-\tag{1.28}\]</span></span></p>
+\tag{1.34}\]</span></span></p>
 <p>위의 4-텐서 에서 <span class="math inline">\(p_x,\,p_y,\,p_z\)</span> 는 시간성분으로 공간의 변화에 대해 스칼라와 같이 변하는</p>
 <p>이에 대해 텐서의 인덱스 규칙을 사용하면 공변텐서는 아래와 같다.</p>
 <p><span id="eq-CFT_matrix_representation_of_antisymmetric_tensor"><span class="math display">\[
 \left[A_{ij}\right] = \left[\,\begin{array}{rrrr} 0 &amp; -p_x &amp; -p_y &amp; -p_z \\ p_x &amp; 0 &amp; -a_z &amp; a_y \\ p_y &amp; a_z &amp; 0 &amp; -a_x \\ p_z &amp; -a_y &amp; a_x &amp; 0\end{array} \,\right].
-\tag{1.29}\]</span></span></p>
+\tag{1.35}\]</span></span></p>
 <p>그렇다면,</p>
 <p><span id="eq-CFT_matrix_representation_of_antisymmetric_tensor"><span class="math display">\[
 \left[A^{\ast ij}\right] = \left[\,\begin{array}{rrrr} 0 &amp; -a_x &amp; -a_y &amp; -a_z \\ a_x &amp; 0 &amp; -p_z &amp; p_y \\ a_y &amp; p_z &amp; 0 &amp; -p_x \\ a_z &amp; -p_y &amp; p_x &amp; 0\end{array} \,\right].
-\tag{1.30}\]</span></span></p>
+\tag{1.36}\]</span></span></p>
 
 
 </section>
@@ -718,13 +853,14 @@ A^iA_i = g_{ij}A^iA^j = g^{ij}A_iA_j.
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
