@@ -21,7 +21,8 @@ format: html
 \newcommand{\rank}{\operatorname{rank}}
 \newcommand{\tr}{\operatorname{tr}}
 \newcommand{\sgn}{\operatorname{sgn}}
-
+\newcommand{\div}{\nabla \bf{\cdot}}
+\newcommand{\curl}{\nabla \times}
 
 
 \def\Xint#1{\mathchoice

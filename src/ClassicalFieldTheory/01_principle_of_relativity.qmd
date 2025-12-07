@@ -161,7 +161,7 @@ $a\mathcal{O}c$ 영역에서의 사건 $(t,\,\bf{x})$ 를 생각하자. 여기�
 어떤 기준틀 $\Sigma$ 에서 자유롭게 움직이는 시계를 관찰한다고 생각해보자. 각각의 시간마다 이 움직임은 국소적으로 등속운동으로 생각 할 수 있으며, 따라서 각 순간마다 움직이는 시계에 고정된 관성 기준틀을 생각 할 수 있다. 즉 $dt$ 의 시간 간격에 $\|d\bf{x}\|^2$ 만큼의 거리를 움직인다고 생각 할 수 있다. 시계에 고정된 기준틀 $\Sigma'$ 에서는 $d\bf{x}=0$ 이므로 시공간 간격의 불변을 생각하면
 
 $$
-c^2 dt^2 - \|d\bf{x}\|^2 = c^2dt'^2
+ds^2=c^2 dt^2 - \|d\bf{x}\|^2 = c^2dt'^2
 $$
 
 이며, 이로부터
@@ -182,19 +182,34 @@ $$
 dt' = dt\sqrt{1-\dfrac{v^2}{c^2}}
 $$
 
-이며, 이것을 기준틀 $\Sigma$ 의 시간에 대해 적분하면 시계에 고정된 기준틀에서의 시간 간격을 얻는다. 어떤 움직이는 물체에서 그 물체에 고정되어 움직이는 시계에서 측정한 시간 간격과 그 물체의 속도를 측정하는 기준틀에서의 시간 간격의 관계로 이 때 움직이는 물체의 시간 간격을 **고유 시간** (*proper time*) 이라고 하며 $\Delta \tau$ 로 표기한다. 
+이며, 이것을 기준틀 $\Sigma$ 의 시간에 대해 적분하면 시계에 고정된 기준틀에서의 시간 간격을 얻는다. 어떤 움직이는 물체에서 그 물체에 고정되어 움직이는 시계에서 측정한 시간 간격과 그 물체의 속도를 측정하는 기준틀에서의 시간 간격의 관계로 이 때 움직이는 물체의 시간 간격을 **고유 시간** (*proper time*) 이라고 하며 $\tau$ 로 표기한다. 
 
 $$
-\Delta \tau : = t'_2-t'_1 = \int_{t_1}^{t_2} \sqrt{1-\dfrac{v^2}{c^2}} \, dt.
+\tau : = t'_2-t'_1 = \int_{t_1}^{t_2} \sqrt{1-\dfrac{v^2}{c^2}} \, dt.
 $$ {#eq-CFT-proper_time}
 
-$v \le c$ 이므로 $\Delta \tau = t'_2-t'_1 \le t_2-t_1$ 임을 안다. 즉 움직이는 기준틀에서의 시간 간격은 정지된 기준틀에서의 시간 간격보다 항상 작다. 
+$v \le c$ 이므로 $\tau = t'_2-t'_1 \le t_2-t_1$ 임을 안다. 즉 움직이는 기준틀에서의 시간 간격은 정지된 기준틀에서의 시간 간격보다 항상 작다. 
 
 </br>
 
-### 두 좌표계의 고유시간 {#sec-CFT_proper_time_in_different_frame}
+### 고유시간과 세계선 {#sec-CFT_proper_time_and_world_line}
 
-... to be fiiled...
+기준틀 $\Sigma'$ 이 관성기준틀 $\Sigma$ 에 대해 등속도로 움직인다고 하면 $\Sigma'$ 역시 관성기준틀이다. $\Sigma$ 기준틀의 관찰자에 입장에서 $\Sigma'$ 의 시계가 느리게 가며 $\Sigma'$ 기준틀의 관찰자의 입장에서는 $\Sigma$ 의 시계가 느리게 간다.
+
+세계점 $a$ 에서 $b$ 까지 이동한 시계의 시간은 아래의 적분과 같다.
+
+$$
+\dfrac{1}{c}\int_a^b ds.
+$$
+
+위 적분은 시계가 움직인 세계선에 대한 4차원 경로적분이다. 여기서 중요한 사실은 위 적분값이 최대가 되는 값은 경로가 두 세계점 $a,\,b$ 를 잇는 사차원상의 직선일 때라는 것이다. 즉 두 세계점 $a,\,b$ 를 잇는 모든 가능한 경로에 대해 아래 적분값을 최대화 하는 경로는 두 점을 잇는 사차원 직선이다.
+
+$$
+\int_a^b ds.
+$$
+
+
+
 
 
 </br>
@@ -319,10 +334,9 @@ $${#eq-CFT-aberration_of_light}
 
 ### 공변벡터, 반변벡터, 아인슈타인 표기법 {#sec-CFT_contravariant_covariant_einstein}
 
-
 #### **공변벡터와 반변벡터** 
 
-여기서는 유한차원 벡터공간 $V$ 와 그 쌍대공간 $V^\ast$ 에 대해 생각한다. $V$ 의 기저 $(e_1,\ldots,\,e_n)$ 의 각각의 $e_j$ 에 대해 $\theta^i\in V^\ast$ 가 존재하여 $\theta^i(e_j)=\delta^i_j$ 이며, $(\theta^1,\ldots,\,\theta^n)$ 이 $V^\ast$ 의 기저가 된다는 것을 안다. 이 때 $\omega \in V^\ast$ 를 **공변벡터(covariant vector 혹은 covector)** 라고 하고 $v\in V$ 를 **반변 벡터(contravariant vector)** 라고 한다.
+여기서는 유한차원 벡터공간 $V$ 와 그 쌍대공간 $V^\ast$ 에 대해 생각한다. $V$ 의 기저 $(e_1,\ldots,\,e_n)$ 에서 각각의 $e_j$ 에 대해 $\theta^i\in V^\ast$ 가 존재하여 $\theta^i(e_j)=\delta^i_j$ 이며, $(\theta^1,\ldots,\,\theta^n)$ 이 $V^\ast$ 의 기저가 된다는 것을 안다. 이 때 $\omega \in V^\ast$ 를 **공변벡터(covariant vector 혹은 covector)** 라고 하고 $v\in V$ 를 **반변 벡터(contravariant vector)** 라고 한다.
 
 </br>
 
@@ -371,13 +385,13 @@ $$
 \left({R_i}^j\right)^{-1} =  {\left(R^{-1}\right)^i}_j = \dfrac{\partial (x')^i}{\partial x^j},\qquad {R_i}^j = \dfrac{\partial x^j}{\partial (x')^i}
 $$
 
-임을 안다. 이에 반해 
+임을 안다. 이에 반해 쌍대 공간에 대해서느느 다음이 성립한다.
 
 $$
-\omega'_i = \omega(e'_i)= {R_i}^j \omega(e_j)= {R_i}^j \omega_j
+\omega'_i = \omega(e'_i)= {R_i}^j \omega(e_j)= {R_i}^j \omega_j.
 $$ {#eq-CFT_transform_of_covariant_vector_component}
 
-이다. 즉 $\omega$ 의 성분은 기저의 변환에 대해 변환행렬에 맟추어(co-) 변하므로 공변벡터 라는 이름이 붙었다. 
+즉 $\omega$ 의 성분은 기저의 변환에 대해 변환행렬에 맟추어(co-) 변하므로 공변벡터 라는 이름이 붙었다. 
 
 
 </br><div class="border" style="background-color:#FFF0F5 ;padding:5px;">
@@ -395,7 +409,6 @@ $v'^i\omega'_i = ({R_i}^j)^{-1}v^j({R_i}^k)\omega_k = v^j\omega_j.$
 
 :::
 
-
 </br>
 
 ### 텐서
@@ -408,34 +421,67 @@ $$
 T(\ldots,\,v_i + cu_i,\ldots) = T(\ldots,v_i,\ldots) + c T(\ldots,u_i,\ldots)
 $$
 
-이어야 한다. 여기에서 다루는 텐서가 정의되는 벡터공간은 일반적으로 정해진 벡터공간 $V$ 에 대해 $V$ 이거나 $V^\ast$ 이다. $V$ 에 대해 정해진 기저 $(e_i)$ 를 생각하자. $T$ 가 $V\times V$ 에서 정의된 텐서라면, 즉 2차 텐서라면
+이어야 한다. 여기에서 다루는 텐서가 정의되는 벡터공간은 일반적으로 정해진 벡터공간 $V$ 에 대해 $V$ 이거나 $V^\ast$ 이다. $V$ 에 대해 정해진 기저 $(e_i)$ 를 생각하자. $T$ 가 $V\times V$ 에서 정의된 2차 텐서이고 
 
 $$
-T(u,\,v) = \sum_{i, j} u^iv^jT(e_i,\,e_j) \equiv T_{ij} u^iv^j
-$$
+v=v^ie_i,\quad u = u^je_j,\quad T_{ij} = T(e_i,\,e_j)
+$$ 
 
-이다. 우리는 $T_{ij} := T(e_i,\,e_j)$ 라고 정의 할 수 있다. 반대로 $S$ 가 $V^\ast \times V^\ast$ 에서 정의된 2차 텐서라면
-
-$$
-S(\omega,\, \eta) = \sum \omega_i \eta_j S(\theta^i,\, \theta^j) \equiv  S^{ij}\omega_i \eta_j
-$$
-
-이다. 우리는 $S^{ij} = S(\theta^i,\,\theta^j)$ 라고 정의 할 수 있다. 만약 $A$ 가 $V \times V^\ast$ 에서 정의된 텐서라면
+라면
 
 $$
-A(v,\,\omega) = \sum_{i,j} v^i\omega_j A(e_i,\,\theta^j) \equiv {A_i}^j v^i\omega_j
+T(u,\,v) = \sum_{i, j} u^iv^jT(e_i,\,e_j) = T_{ij} u^iv^j
 $$
 
-이다. 우리는 ${A_i}^j$ 를 $A(e_i,\,\theta^j)$ 로 정의 할 수 있다. 또한 이것을 확장하여 임의의 $k$ 차 텐서에 대해서도 텐서의 위첨자-아래첨자 표기법을 사용 할 수 있다.
+이다. 반대로 $S$ 가 $V^\ast \times V^\ast$ 에서 정의된 2차 텐서이고
+
+$$
+\omega = \omega_i \theta^i,\quad \eta = \eta_j \theta^j,\quad S^{ij}=S(\theta^i,\,\eta^i)
+$$
+
+라면
+
+$$
+S(\omega,\, \eta) = \sum \omega_i \eta_j S(\theta^i,\, \theta^j) = S^{ij}\omega_i \eta_j
+$$
+
+이다. 만약 $A$ 가 $V \times V^\ast$ 에서 정의된 일 때
+
+$$
+v=v^ie_i,\quad \omega = \omega_i\theta^i,\quad {A_i}^j = A(e_i,\,\theta^j)
+$$
+
+라면
+$$
+A(v,\,\omega) = \sum_{i,j} v^i\omega_j A(e_i,\,\theta^j) = {A_i}^j v^i\omega_j
+$$
+
+이다. 우리는 ${A_i}^j$ 를 $A(e_i,\,\theta^j)$ 로 정의 할 수 있다. 또한 이것을 확장하여 임의의 $k$ 차 텐서에 대해서도 텐서의 위첨자-아래첨자 표기법을 사용 할 수 있다. 즉 텐서 ${{A_i}^{jk}}_l$ 은 $V\times V^\ast \times V^\ast \times V$ 에서 정의된 텐서 4차 텐서이다.
 $$
 \begin{aligned}
 T'_{ij} &:= T(e'_i,\,e'_j) = \sum_{k,\,l}T({R_i}^k e_k,\, {R_j^l} e_l) = {R_i}^k {R_j}^l T_{kl} , \\[0.3em]
-S'^{ij} &:= S(\theta'_i,\, \theta'_j) = \sum_{k,\,l}S\left(({R_i}^k)^{-1}\theta_k, ({R_j}^l)^{-1}\theta_l\right) = ({R_i}^k)^{-1}({R_j}^l)^{-1}\theta_l S^{kl}, \\[0.3em]
+S'^{ij} &:= S(\theta'_i,\, \theta'_j) = \sum_{k,\,l}S\left(({R_i}^k)^{-1}\theta_k, ({R_j}^l)^{-1}\theta_l\right) \\[0.3em]
+&= ({R_i}^k)^{-1}({R_j}^l)^{-1}\theta_l S^{kl}, \\[0.3em]
 {{A'}_i}^j &= A(e'_i,\,\theta'^j) = {R_i}^k({R_j}^l)^{-1} {A_k}^l.
 \end{aligned}
 $$ {#eq-CFT-transform_of_rank_2_tensor}
 
 이 식을 보면 알 수 있듯이 이것은 2차 이상의 텐서에 대해서도 그대로 적용된다. 텐서의 공변 성분은 공변벡터의 변환을 따르고 반변 성분은 반번 벡터의 변환을 따른다.
+
+이것을 확장하면 $V^\ast \times V \times V^\ast \times V \times V$ 에서 정의된 $k$-차 텐서를 정의 할 수 있다. 표준적으로 
+
+$$
+{T^{i_1,\ldots,\,l_p}}_{j_1,\ldots,\,j_q} 
+$$
+
+는
+$$
+\overbrace{V^\ast \times V^\ast}^{p-\text{times}}\times \underbrace{V \times V}_{q-\text{times}}
+$$
+
+에서 정의된 텐서이며 이를 $(p,\,q)$-텐서 라고 한다. 이 개념으로 스칼라는 $(0,\,0)$-텐서, 공변벡터는 $(0,\,1)$-텐서, 반변벡터는 $(1,\,0)$-텐서로 간주 할 수 있다.
+
+
 
 </br>
 
@@ -512,12 +558,12 @@ $$
 이 길이는 로런츠 변환에 대해 불변이다. 이것은 앞서 4차원 시공간에 로런츠 계량 $g$(@eq-CFT_lorentz_metric) 을 부여했을 때의 결과와 같다. 즉 
 
 $$
-\|X\|^2=g_{ij}x^ix^j
+\|X\|^2=g_{\mu \nu}x^\mu x^\mu
 $$
 
-이다. 이렇게 로런츠 계량이 주어지고 이 계량에 의한 제곱크기가 불변인 4차원 시공간 벡터를 **4-벡터** 라고 하고 4 값으로 구성된 튜플 $A=(A^0,\,A^1,\,A^2,\,A^3)$ 혹은 $A=\begin{bmatrix} A^0 &A^1 & A^2 & A^3\end{bmatrix}^T$ 와 같이 표기한다. 여기서 $A^0$ 를 시간 성분, 그리고 $A^1,\,A^2,\,A^3$ 를 공간성분이라고 하며 $A=(A^0,\, \bf{A})$ 와 같이 표기하기도 한다. 앞으로 3차원 공간상의 벡터는 $\bf{x}$ 와 같이 표기하며 4-벡터는 튜플, 열행럴 형식으로 표기하도록 한다. 4-벡터의 제곱크기는 시공간 4-벡터와 마찬가지로 음의 값도, $0$ 도 될 수 있으며, 마찬가지로 시간꼴, 공간꼴 벡터를 말할 수 있다.
+이다.[앞으로는 현대적인 표기법에 따라 3차원 공간, 혹은 일반적인 다양체에서 기술할 때는 인덱스를 $i,\,j,\,k,\ldots$ 와 같이 소문자 알파벳으로 쓰고 4차원 시공간에서의 인덱스는 $\alpha,\,\beta,\,\mu,\,\nu,\ldots$ 와 같이 그리스어 소문자를 쓰기로 한다.]{.aside} 이렇게 로런츠 계량이 주어지고 이 계량에 의한 제곱크기가 불변인 4차원 시공간 벡터를 **4-벡터** 라고 하고 4 값으로 구성된 튜플 $A=(A^0,\,A^1,\,A^2,\,A^3)$ 혹은 $A=\begin{bmatrix} A^0 &A^1 & A^2 & A^3\end{bmatrix}^T$ 와 같이 표기한다. 여기서 $A^0$ 를 시간 성분, 그리고 $A^1,\,A^2,\,A^3$ 를 공간성분이라고 하며 $A=(A^0,\, \bf{A})$ 와 같이 표기하기도 한다. 앞으로 3차원 공간상의 벡터는 $\bf{x}$ 와 같이 표기하며 4-벡터는 튜플, 열행럴 형식으로 표기하도록 한다. 4-벡터의 제곱크기는 시공간 4-벡터와 마찬가지로 음의 값도, $0$ 도 될 수 있으며, 마찬가지로 시간꼴, 공간꼴 벡터를 말할 수 있다.
 
-앞서 @prp-CFT_invairanice_of_scalar 에서 보았듯이 4 벡터에 $X,\,Y$ 에 대해 $x_iy^i$ 로 주어진 값은 좌표변환에 대해 불변이며 이를 **4-스칼라** 라고 한다.
+앞서 @prp-CFT_invairanice_of_scalar 에서 보았듯이 4 벡터에 $X,\,Y$ 에 대해 $x_\mu y^\mu$ 로 주어진 값은 좌표변환에 대해 불변이며 이를 **4-스칼라** 라고 한다.
 
 
 </br>
@@ -559,25 +605,16 @@ $$
 
 ### 4-텐서 {#sec-CFT_4_tensor}
 
-정해진 텐서 $A^{ij}$ 에 대해 $A_{ij}$ 는 $A^{ij}x_iy_j = A_{ij}x^iy^j$ 가 되도록 정의된다. $g_{ij} = g_{ji}$ 임을 알고 있으므로
+정해진 텐서 $A^{\mu\nu}$ 에 대해 $A_{\mu\nu}$ 는 $A^{\mu \nu}x_\mu y_nu = A_{\mu\nu}x^\mu y^\nu$ 가 되도록 정의된다. $g_{\mu \nu} = g_{\nu \mu}$ 임을 알고 있으므로
 
 $$
-A^{ij}x_iy_j = A^{kl}x_kx_l = A^{kl}g_{ki}x^i g_{lj}y^j = g_{ik} A^{kl} g_{lj} x^i y^l
+A^{\mu \nu}x_\mu y_\nu = A^{\kappa \lambda}x_\kappa x_\lambda = A^{\kappa \lambda} g_{\kappa \mu}x^\mu g_{\lambda \nu}y^\nu = g_{\mu \kappa} A^{\kappa \lambda} g_{\lambda \nu} x^\mu y^\nu
 $$
 
-이다. 즉 $A_{ij} = g_{ik}A^{kl}g_{lj}$ 이다. ${A^i}_j$ 는 $A^{ij}x_iy_j = {A^i}_j x_iy^j$ 가 되도록 정의하고 마찬가지로 ${A_i}^j$ 는 $A^{ij}x_iy_j = A_i^j x^iy_j$ 가 되도록 정의한다. 
+이다. 즉 $A_{\mu\nu} = g_{\alpha \kappa}A^{\kappa\lambda}g_{\lambda \nu}$ 이다. ${A^\mu}_\nu$ 는 $A^{\mu\nu}x_\mu y_\nu = {A^\mu}_\nu x_\mu y^\nu$ 가 되도록 정의하고 마찬가지로 ${A_\mu}^\nu$ 는 $A^{\mu \nu}x_\mu y_\nu = {A_\mu}^\nu x^\mu y_\nu$ 가 되도록 정의한다. 이것은 아래와 같이 정리 할 수 있다.
 
 $$
-\begin{aligned}
-A^{ij}x_iy_j &= A^{ik}x_iy_k = A^{ik}x_i g_{kj}y^j = A^{ik}g_{kj}x_iy^j , \\[0.3em]
-A^{ij}x_iy_j &= A^{lj}x_ly_j = A^{lj} g_{li}x^i y_j = g_{il}A^{lj}x^i y_j.
-\end{aligned}
-$$
-
-이므로 아래와 같이 정리 할 수 있다.
-
-$$
-\boxed {A_{ij} = g_{ik}A^{kl}g_{lj} ,\qquad {A^i}_j = A^{ik}g_{kj},\qquad {A_i}^j = g_{il}A^{jl}}
+\boxed {A_{\mu\nu} = g_{\mu \kappa}A^{\kappa \lambda}g_{\lambda \nu} ,\qquad {A^\mu}_\nu = A^{\mu \kappa}g_{\kappa \nu},\qquad {A_\mu}^\nu = g_{\mu \lambda}A^{\nu \lambda}}
 $$ {#eq-CFT_up_and_down_using_metric}
 
 
@@ -592,56 +629,98 @@ $$
 
 이 규칙은 2차 이상의 4차원 텐서에도 그대로 적용된다. 즉 인덱스 $0$ 은 반전시키더라도 변화가 없지만 $1,\,2,\,3$ 은 하나 반전시킬 때마다 $-1$ 이 곱해진다. 
 
-텐서 $A^{ij}=A^{ji}$ 일 때 이 텐서를 **대칭 텐서(symmetric tensor)** 라고 하고 $A^{ij} = - A^{ji}$ 일 때 **반대칭 탠서 (antisymmetric tensor)** 라고 한다. 
-
 </br>
 
-<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+::: {.callout-note icon="false"}
+#### **대칭 텐서와 반대칭 텐서**
+
+::: {#def-CFT_symmetric_and_antisymmetric_tensor}
+
+텐서 $A^{\mu \nu}=A^{\nu \mu}$ 일 때 이 텐서를 **대칭 텐서(symmetric tensor)** 라고 하고 $A^{\mu \nu} = - A^{\nu \mu}$ 일 때 **반대칭 탠서 (antisymmetric tensor)** 라고 한다. 
+
+:::
+:::
+
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
 ::: {#exm-CFT_basic_properties_of_symmetric_and_antisymmetric_teensor}
 
 #### 반대칭 텐서와 대칭 텐서
 </br>
 
-&emsp;($1$) $A^{ij}$ 가 반대칭 텐서라고 하자. $A^{ii} = - A^{ii}$ 이므로 $A^{ii}=0$ 이다.
+&emsp;($1$) $A^{\mu \nu}$ 가 반대칭 텐서라고 하자. $A^{\mu \mu} = - A^{\mu \mu}$ 이므로 $A^{\mu \mu}=0$ 이다.
 
-&emsp;($2$) $B^{ij}$ 가 대칭텐서라고 하자. ${B_i}^j ={B_j}^i$ 이며 이 경우 $B^i_j$ 로 쓸 수 있다. 
+&emsp;($2$) $B^{\mu \nu}$ 가 대칭텐서라고 하자. ${B_\mu}^\nu ={B_\nu}^\mu$ 이며 이 경우 $B^\mu_\nu$ 로 쓸 수 있다. 
 :::
 
 </div>
 
 </br>
 
+::: {.callout-note icon="false"}
+
 #### **텐서의 trace** 
-텐서 $A^{ij}$ 에 대해 행렬과 같이 **trace** $\tr (A^{ij})$ 를 아래와 같이 정의한다.
+
+::: {#def-CFT_trace_of_tensor}
+
+텐서 $A^{\mu\nu}$ 에 대해 행렬과 같이 **trace** $\tr (A^{\mu\nu})$ 를 아래와 같이 정의한다.
 
 $$
-\tr (A^{ij}) = {A^i}_i = {A^0}_0 + {A^1}_1 + {A^2}_2 + {A^3}_3.
+\tr (A^{\mu\nu}) = {A^\mu}_\mu = {A^0}_0 + {A^1}_1 + {A^2}_2 + {A^3}_3.
 $$ {#eq-CFT_definition_of_trace_of_rank_2_tensor}
 
+:::
+:::
+
 </br>
+
+::: {.callout-note icon="false"}
 
 #### **단위 텐서 (unit tensor)** 
 
-$\delta^i_j$ 는 아래와 같이 정의된다.
+::: {#def-CFT_unit_tensor}
+
+
+$\delta^\mu_\nu$ 는 아래와 같이 정의된다.
 
 $$
-\delta^i_j = \left\{\begin{array}{ll} 1, \qquad&\text{if } i = j,\\ 0. &\text{if } i \ne j\end{array}\right.
+\delta^\mu_\nu = \left\{\begin{array}{ll} 1, \qquad&\text{if } \mu = \nu,\\ 0. &\text{if } i \ne j\end{array}\right.
 $$ {#eq-CFT_definition_of_unit_tensor}
 
-따라서 임의의 4-벡터 $A^i$ 에 대해 
+:::
+:::
+
+
+벡터공간 $V$ 의 기저 $(e_k)$ 와 쌍대기저 $(\theta^k)$ 에 대해 $V\times V^\ast$ 에서 정의된 2차 텐서 $\delta$ 를 아래와 같이 정의하자.
 
 $$
-\delta_i^j A^i = A^j
+\delta (e_i,\,\theta^j) = \left\{\begin{array}{ll} 1,\qquad & \text{if } i=j,\\ 0, &\text{otherwise.}\end{array}\right.
+$$ {#eq-CFT_delta_definition_in_tensor_scheme}
+
+임의의 4-벡터 $A = (A^i),\,X=(X_j)$ 에 대해 
+
+$$
+\delta(A,\,X) = \delta_\mu^\nu A^\mu X_\nu = A^\nu X_\nu
 $$
 
-이다. 
+이므로 아래와 같이 놓을 수 있다.
+
+$$
+\delta_\mu^\nu A^\mu = A^\nu
+$$
 
 </br>
 
+::: {.callout-note icon="false"}
+
 #### **완전 반대칭 4차 단위 텐서**
 
-$0\le i,j,k,l\le 3$ 에 대해 4차 텐서 $\varepsilon^{ijkl}$ 은 $i,\,j,\,k,\,l$ 이 $0,\,1,\,2,\,3$ 의 짝순열 이면 $1$, 홀순열이면 $-1$, 그렇지 않으면 $0$ 값을 갖는 텐서이다. 그리고 4-텐서의 인덱스 이동 규칙에 따라 $\varepsilon_{ijkl}= - \varepsilon^{ijkl}$ 이다.
+::: {#def-CFT_levi_civita_4tensor}
+
+$0\le \alpha ,\beta, \gamma, \delta\le 3$ 에 대해 4차 텐서 $\varepsilon^{ijkl}$ 은 $\alpha,\,\beta,\,\gamma,\,\delta$ 이 $0,\,1,\,2,\,3$ 의 짝순열 이면 $1$, 홀순열이면 $-1$, 그렇지 않으면 $0$ 값을 갖는 텐서이다. 그리고 4-텐서의 인덱스 이동 규칙에 따라 $\varepsilon_{\alpha \beta \gamma\delta}= - \varepsilon^{\alpha \beta \gamma \delta}$ 이다.
+
+:::
+:::
 
 
 </br>
@@ -652,6 +731,7 @@ $0\le i,j,k,l\le 3$ 에 대해 4차 텐서 $\varepsilon^{ijkl}$ 은 $i,\,j,\,k,\
 
 #### 완전 반대칭 4차 단위 텐서의 특징
 </br>
+
 
 $\varepsilon^{ijkl}=\sgn(ijkl),\, \varepsilon_{pqrs} = -\sgn (pqrs)$ 라고 놓을 수 있다.  
 
@@ -715,29 +795,25 @@ $${#eq-CFT_basic_properties_of_CA4UT_7}
 
 </br>
 
-### 유사스칼라와 유사벡터 {#sec-CFT_psedoscala_and_pseudo_vector}
+### 유사스칼라, 유사벡터, 유사 텐서 {#sec-CFT_pseudo_tensor}
 
-3차원 좌표계에서 원점 대칭 변환에 대해 그 부호가 일반적인 스칼라 혹은 벡터와 다를 때 이 스칼라와 벡터를 **유사스칼라 (pseudo scalar)**, **유사벡터(pseudo vector)** 라고 한다. 유사 벡터는 **축벡터 (axial vector)** 라고도 한다. 반면 읿반적인 벡터는 **극벡터 (polar vector)** 라고 한다. 3차원 공간에서 스칼라는 거울반사애 대해 부호가 바뀌지 않으며, 벡터는 부호가 바뀌지만 유사 스칼라는 부호가 바뀌며 유사벡터는 부호가 바뀌지 않는다. 대표적인 유사 스칼라는 세 벡터에 대해 $\bf{a\cdot}(\bf{b}\times \bf{c})$ 가 있으며 유사벡터는 각운동량 벡터 $\bf{L}=\bf{r}\times \bf{v}$ 가 있다. 극벡터와 축벡터의 내적으로 표현되는 스칼라는 유사스칼라이다. 
+3차원 좌표계에서 원점 대칭 변환에 대해 그 부호가 일반적인 스칼라 혹은 벡터와 다를 때 이 스칼라와 벡터를 **유사스칼라 (pseudo scalar)**, **유사벡터(pseudo vector)** 라고 한다. 유사 벡터는 **축벡터 (axial vector)** 라고도 한다. 반면 일반적인 벡터는 **극벡터 (polar vector)** 라고 한다. 3차원 공간에서 스칼라는 거울반사애 대해 부호가 바뀌지 않으며, 벡터는 부호가 바뀌지만 유사 스칼라는 부호가 바뀌며 유사벡터는 부호가 바뀌지 않는다. 대표적인 유사 스칼라는 세 벡터에 대해 $\bf{a\cdot}(\bf{b}\times \bf{c})$ 가 있으며 유사벡터는 각운동량 벡터 $\bf{L}=\bf{r}\times \bf{v}$ 가 있다. 극벡터와 축벡터의 내적으로 표현되는 스칼라는 유사스칼라이다. 
 
-스칼라는 0차 텐서, 벡터는 1차텐서이며 이것을 포괄적으로 텐서라고 하자. $k$-차 텐서는 $X\to X'$ 좌표변환 $R$ 에 대해
-
-$$
-\begin{aligned}
-(A')^{i_1,\ldots,i_k} &= \dfrac{\partial (x')^{i_1}}{\partial x^{j_1}}\cdots \dfrac{\partial (x')^{i_k}}{\partial x^{j_k}} A^{j_1,\ldots,\,j_k}, \\[0.3em]
-(A')_{i_1,\ldots,i_k} &= \dfrac{\partial x^{j_1}}{\partial (x')^{i_1}}\cdots \dfrac{\partial x^{j_k}}{\partial (x')^{i_k}} A_{j_1,\ldots,\,j_k} \\[0.3em]
-\end{aligned}
-$$ {#eq-CFT_coordinate_transform_of_rank_k_tensor}
-
-와 같이 변환되며, 혼합텐서는 위의 두 식으로부터 변환을 유추 할 수 있다. 위의 변환을 $A'=\Lambda(R) A$ 라고 표현하자. 그러나 유사텐서는 
+직교 변환은 **회전 변환(rotation transform)** 과 **부적절한 회전 변환(improper rotation transform)** 으로 나뉜다. 예를 들어 반사 (reflection) 이나 반전 (inversion) 은 회전변환이 아닌 직교변환이며 반하 혹은 반전에 부적절한 화전 변환이 결함된 변환도 부적절한 회전 변환이다. 유사스칼라와 유사벡터는 회전변환에 대해서는 각각 스칼라/벡터와 동일하게 변환되지마나 부적절한 회전 변환에 대해서는 변환의 행렬식이 곱해진 것과 같이 변환된다. 즉 변환 $R$ 에 대해 스칼라 $s$ 와 벡터 $\bf{u}$ 가 $s'=R(s),\,\bf{u}'=R(\bf{u})$ 와 같이 변할 때 유사 스칼라 $\overline{s}$ 과 유사벡터 $\overline{\bf{u}}$ 은 아래와 같이 변한다.
 
 $$
-A' = \det (R) \Lambda (R) A
+\overline{s}' = \det(R) R(\overline{s}),\qquad \overline{\bf{u}}' = \det(R) R(\overline{\bf{u}})
+$$
+
+마찬가지로 유사텐서는 텐서 $A$ 에 대해
+
+$$
+A' = \det (R) R(A)
 $$
 
 와 같이 변환된다. 
 
-
-<div class="border" style="background-color:#F2F4F4  ;padding:5px;">
+</br><div class="border" style="background-color:#F2F4F4  ;padding:5px;">
 
 ::: {#exm-CFT_antisymmetric_4th_unit_tensor_is_pseudo_tensor}
 
@@ -749,18 +825,42 @@ $$
 {\Lambda^{i}}_{p}:= \dfrac{\partial (x')^i}{\partial x^p}.
 $$ 
 
-그러
+만약 $\varepsilon^{ijkl}$ 이 텐서라면
 
+$$
+\varepsilon'^{i'j'k'l'} = {\Lambda^{i'}}_i {\Lambda^{j'}}_j {\Lambda^{k'}}_k {\Lambda^{l'}}_l \varepsilon^{ijkl}
+$$
+
+의 변환규칙을 만족한다. 
+
+$$
+(t,\,x,\,y,\,z) \to (t,\,y,\,x,\,z)
+$$
+
+변환에 대해 좌변은 $-1$ 이지만 우변은 $+1$ 이다. 반면
+$$
+(t,\,x,\,y,\,z) \to (t,\, -x,\,y,\,z\,\,w)
+$$ 
+
+변환에 대해 좌변은 $1$ 이지만 우변은 $-1$ 이다. 이 두 경우 모두 변환행렬의 행렬식은 $-1$ 이므로 $\varepsilon^{ijkl}$ 은 유사텐서임을 알 수 있다.
 
 :::
 
-</div>
+</div></br>
+
+유사텐서는 엄격한 의미에서의 텐서는 아니지만 유용하게 사용된다.
 
 </br>
 
 ### 쌍대 텐서 {#sec-CFT_dual_tensor}
 
-$A^{ij}$ 가 반대칭 텐서 일 때 $A^{ij}$ 와 $A^{\ast ij}:=\frac{1}{2} \varepsilon^{ijkl}A_{kl}$ 은 서로에 대한 **쌍대 텐서 (dual tensor)** 라고 한다. 같은 방식으로 $A^i$ 에 대해 $A^{\ast i} = \varepsilon^{ijkl}A_m$ 은 쌍대 텐서이며, 미분기하학 용어로는 호지 쌍대(Hodge dual) 이다.
+$A^{\mu\nu}$ 가 반대칭 텐서 일 때 $A^{\mu\nu}$ 와 $A^{\ast \mu \nu}:=\frac{1}{2} \varepsilon^{\mu\nu \kappa \lambda}A_{\kappa \lambda}$ 은 서로에 대한 **쌍대 텐서 (dual tensor)** 라고 한다. 같은 방식으로 $A^\mu$ 에 대해 $A^{\ast \mu} = \varepsilon^{\mu \nu \kappa \lambda}A_{\nu \kappa \lambda}$ 은 쌍대 텐서이며, 미분기하학 용어로는 호지 쌍대(Hodge dual) 이다. $A^{\mu \nu}$ 에 대해
+
+$$
+A^{\mu \nu}A^\ast_{\mu \nu} = \dfrac{1}{2}\varepsilon_{\mu \nu \kappa \lambda}A^{\mu \nu}A^ {\kappa \lambda}
+$$
+
+이며 자명하게 유사스칼라이다.
 
 
 3차원 유클리드 공간에서 $\bf{C}=\bf{A}\times \bf{B}$ 일 때 $C_{jk} = A_jB_k - A_kB_j$ 에 대해 $C_i =\dfrac{1}{2}\varepsilon_{ijk}C_{jk}$ 이다. $C_{jk}$ 는 정의에 의해 반대칭 2차 텐서이며 3차원 유클리드 공간에서 $C_{jk}$ 와 $C_i$ 는 쌍대관계이다. 
@@ -769,21 +869,363 @@ $A^{ij}$ 가 반대칭 텐서 일 때 $A^{ij}$ 와 $A^{\ast ij}:=\frac{1}{2} \va
 반대칭 4-텐서 $A^{ij}$ 는 아래의 형태를 갖는다.
 
 $$
-\left[A^{ij}\right] = \left[\,\begin{array}{rrrr} 0 & p_x & p_y & p_z \\ -p_x & 0 & -a_z & a_y \\ -p_y & a_z & 0 & -a_x \\ -p_z & -a_y & a_x & 0\end{array} \,\right].
+\left[A^{\mu \nu}\right] = \left[\,\begin{array}{rrrr} 0 & p_x & p_y & p_z \\ -p_x & 0 & -a_z & a_y \\ -p_y & a_z & 0 & -a_x \\ -p_z & -a_y & a_x & 0\end{array} \,\right].
 $$ {#eq-CFT_matrix_representation_of_antisymmetric_tensor}
 
-위의 4-텐서 에서 $p_x,\,p_y,\,p_z$ 는 시간성분으로 공간의 변화에 대해 스칼라와 같이 변하는 
+위의 4-텐서 에서 $\bf{p}=(p_x,\,p_y,\,p_z)$ 는 시간성분으로 공간의 변화에 대해 스칼라와 같이 변하는 유사 벡터이고 $\bf{a}=(a_x,\,a_y,\,a_z)$ 는 극벡터 이다. 이제부터 $A^{ij}$ 를 아래와 같이 표기하기로 한다.
+
+$$
+A^{\mu \nu} = (\bf{p},\, \bf{a}).
+$$ {#eq-CFT_vector_representation_of_rank_2_antisymmetric_contravariant_tensor}
 
 
 이에 대해 텐서의 인덱스 규칙을 사용하면 공변텐서는 아래와 같다.
 
 $$
-\left[A_{ij}\right] = \left[\,\begin{array}{rrrr} 0 & -p_x & -p_y & -p_z \\ p_x & 0 & -a_z & a_y \\ p_y & a_z & 0 & -a_x \\ p_z & -a_y & a_x & 0\end{array} \,\right].
+\left[A_{\mu \nu}\right] = \left[\,\begin{array}{rrrr} 0 & -p_x & -p_y & -p_z \\ p_x & 0 & -a_z & a_y \\ p_y & a_z & 0 & -a_x \\ p_z & -a_y & a_x & 0\end{array} \,\right].
 $$ {#eq-CFT_matrix_representation_of_antisymmetric_tensor}
 
-그렇다면,
+그렇다면, @eq-CFT_vector_representation_of_rank_2_antisymmetric_contravariant_tensor 를 생각하면 공변 텐서를 아래와 같이 쓸 수 있다.
 
 $$
-\left[A^{\ast ij}\right] = \left[\,\begin{array}{rrrr} 0 & -a_x & -a_y & -a_z \\ a_x & 0 & -p_z & p_y \\ a_y & p_z & 0 & -p_x \\ a_z & -p_y & p_x & 0\end{array} \,\right].
-$$ {#eq-CFT_matrix_representation_of_antisymmetric_tensor}
+A_{\mu\nu} = (-\bf{p},\,\bf{a}).
+$$ {#eq-CFT_vector_representation_of_rank_2_antisymmetric_covariant_tensor}
 
+참고로 반변 텐서 $A^{ij}$ 에 대한 쌍대 텐서는 아래와 같다.
+
+$$
+\left[A^{\ast \mu \nu}\right] = \left[\,\begin{array}{rrrr} 0 & -a_x & -a_y & -a_z \\ a_x & 0 & -p_z & p_y \\ a_y & p_z & 0 & -p_x \\ a_z & -p_y & p_x & 0\end{array} \,\right].
+$$ {#eq-CFT_matrix_representation_of_dual_of_antisymmetric_rank_2_tensor}
+
+</br>
+
+### 4-gradient {#sec-CFT_4_gradient}
+
+스칼라 $\phi$ 의 4-gradient 는 다음과 같이 정의된다.
+
+$$
+\boxed{
+\partial_\mu \phi = \dfrac{\partial \phi}{\partial x^\mu}= \left(\dfrac{1}{c}\dfrac{\partial \phi}{\partial t},\, \nabla \phi\right).}
+$$ {#eq-CFT_definition_of_4_gradient}
+
+즉 4-gradient 는 공변벡터로 간주된다. 또한 스칼라 $\phi$ 에 대한 전미분
+
+$$
+d\phi = \dfrac{\partial \phi}{\partial x^\mu}dx^\mu
+$$
+
+역시 스칼라이다. 4-벡터 $A$ 에 대한 divergence 는 아인슈타인 표기법을 사용하여
+
+$$
+\boxed{
+\operatorname{div} A = \dfrac{\partial A^\mu}{\partial x^\mu}}
+$$ {#eq-CFT_divergence_of_4_vector_notation}
+
+로 표기한다. 당연히 $\operatorname{div}A$ 는 스칼라이다. 
+
+</br>
+
+### 4차원 공간에서의 적분 {#sec-CFT_integration_in_4dim_space}
+
+#### **선적분**
+
+trivial
+
+</br>
+
+#### **2차원 면적분**
+
+3 차원에서 $d\bf{r},\, d\bf{r}'$ 에 결정되는 면적성분의 $x^ix^j$ 평면상의 projection 은 $dx^idx'^j - dx^jdx^i$ 임을 안다. 이와 유사하게 4 차원에서의 미소 면적 성분의 $x^\mu x^\nu$ 평면상의 projection 은 2차 반대칭 텐서 $df^{\mu\nu}=dx^\mu dx'^\nu - dx^\nu dx'^\mu$ 로 주어진다. 3차원에서 면적성분에 수직이며 그 크기가 면적성분의 면적값인 벡터가 $\dfrac{1}{2}\varepsilon_{ijk}df_{ij}$ 로 주어지며 이 벡터가 면적성분의 쌍대이듯이 $df^{\mu \nu}$ 에 대한 쌍대텐서
+
+$$
+df^{\ast\,\mu\nu} = \dfrac{1}{2} \varepsilon^{\mu\nu\kappa \lambda}df_{\kappa \lambda}
+$$
+
+는 $df^{\mu\nu}$ 에 수직이며 $df^{\mu\nu}$ 의 면적을 그 크기로 갖는 2차 텐서이다. 또한 $df^{\mu \nu}df^\ast_{\mu \nu}=0$ 이다. (@exr-CFT_dual_tensor)
+
+</br>
+
+#### **3차원 초평면 적분**
+
+$dX,\,dX',\,dX''$ 벡터의 $x^\nu x^\kappa x^\lambda$ 평면 상의로의 projection $dS^{\nu \kappa \lambda}$ 는 다음과 같다. 
+
+$$
+dS^{\nu \kappa \lambda} = \det \left(\begin{bmatrix} dx^\nu & d{x'}^\nu & d{x''}^\nu \\ dx^\kappa & d{x'}^\kappa & d{x''}^\kappa \\ dx^\lambda & d{x'}^\lambda & d{x''}^\lambda\end{bmatrix}\right)
+$$
+
+$dS^{\nu \kappa \lambda}$ 에 대한 쌍대벡터를 $dS^\mu$ 로 정의하자. 즉 아래의 관계가 성립한다.
+
+$$
+dS^\mu = - \dfrac{1}{6}\varepsilon^{\mu \nu \kappa \lambda} S_{\nu \kappa\lambda},\qquad dS_{\nu \kappa \lambda}= \varepsilon_{\mu \nu \kappa \lambda}dS^\mu
+$$
+
+</br>
+
+#### **4차원 부피 적분**
+
+4차원 부피 적분 성분 $d\Omega$ 는 스칼라로
+
+$$
+d\Omega = c\,dt\,dx\,dy,\,dz = cdtdV
+$$
+
+
+</br>
+
+#### **가우스 정리와 스토크스 정리**
+
+3차원 공간에서의 가우스 정리는 부피 $V$ 와 그 경계면 $S$ 에 대해 아래가 성립한다는 것이다.
+
+$$
+\int_V \nabla \bf{\cdot A}\,dV = \oint_S \bf{A\cdot}d\bf{S}
+$$
+
+4차원 공간에서의 부피 $\Omega$ 와 그 경계면 $S$ 을 생각하자 $S$ 는 3차원 초평면이며 4차원 공간에서의 가우스 정리는 아래와 같다.
+
+$$
+\oint A^\mu\,dS_\mu = \int \dfrac{\partial A^\mu}{\partial x^\mu}\,d\Omega .
+$$ {#eq-CFT_gauss_theorem_for_4vector}
+
+3차원 공간에서의 스토크스 정리는 반시계 방향성을 갖는 닫힌 경로 $C$ 와 $C$ 에 의해 정해지는 면 $S$ 에 대해 아래가 성립한다는 것이다.
+
+$$
+\int_S (\nabla \times \bf{A}) \bf{\cdot}d\bf{S} = \oint_C \bf{A\cdot }d\bf{l}.
+$$
+
+4차원 공간에서는 2차원 평면과 이 평면의 경계인 1차원 경로에 대한 적분관계로 바뀌며 
+
+$$
+\oint_C A_\mu dx^\mu = \dfrac{1}{2} \int df^{\mu \nu} \left(\dfrac{\partial A_\nu}{\partial x^\mu} - \dfrac{\partial A_\mu}{\partial x^\nu}\right)
+$$
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CFT_dual_tensor}
+
+$F^{\mu \nu}$ 가 $F^{\mu \nu} = u^\mu v^\nu - u^\nu v^\mu$ 꼴인 반대칭 4차 텐서일 때
+
+$$
+F^{\mu \nu}F^\ast_{\mu \nu}=0
+$$
+
+임을 보여라.
+:::
+
+</div>
+
+::: {.solution}
+
+$F^\ast_{\mu} = \dfrac{1}{2}\varepsilon_{\mu \nu \kappa \lambda}F^{\kappa \lambda}$ 이므로
+
+$$
+\begin{aligned}
+F^{\mu \nu}F^\ast_{\mu \nu} &= \dfrac{1}{2}\varepsilon_{\mu \nu \kappa \lambda}F^{\mu \nu}F^{\kappa \lambda} = \dfrac{1}{2}\varepsilon_{\mu \nu \kappa \lambda}(u^\mu v^\nu - u^\nu v^\mu)(u^\kappa v^\lambda - u^\lambda v^\kappa) \\[0.3em]
+&=\dfrac{1}{2}\varepsilon_{\nu\nu\kappa \lambda}(u^\mu v^\nu u^\kappa v^\lambda- u^\mu v^nu u^\lambda v^\kappa - u^\nu v^\mu u^\kappa v^\lambda+ u^\nu v^\mu u^\lambda v^\kappa)
+\end{aligned}
+$$
+
+여기서 $U=(u^0,\,u^1,\,u^2,\,u^3),\,V=(v^0,\,v^1,\,v^2,\,v^3)$ 라고 하면
+
+$$
+\varepsilon_{\mu \nu \kappa \lambda} u^\mu v^\nu u^\kappa v^\lambda  = \det(U,\,V,\,U,\,V)=0
+$$
+
+이며 나머지 역시 $0$ 이므로 $F^{\mu \nu}F^\ast_{\mu \nu}=0$ 이다.
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CFT_landau2_exr_1_6_1}
+
+#### Laudau CFT 1.6.1
+
+로렌츠 변환 @eq-CFT-lorentz_transform_of_contravariant_vector 에 대해 대칭 텐서 $A^{\mu\nu}$ 의 변환 규칙을 찾아라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+@eq-CFT-lorentz_transform_of_contravariant_vector 는 4-벡터 $X,\,X'$ 에 대해
+
+$$
+x^\mu = {\Lambda^\mu}_\nu x'^\nu,\qquad {\Lambda^\mu}_\nu = \begin{bmatrix} \gamma & \gamma \beta & 0 & 0 \\ \gamma \beta & \gamma & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1\end{bmatrix} = \dfrac{\partial x^\mu}{\partial x'^\nu}
+$$
+
+이므로
+
+$$
+A^{ij}= \dfrac{\partial x^i}{\partial x'^k}\dfrac{\partial x^j}{\partial x'^l}A'^{kl} = {\Lambda^i}_k {\Lambda^j}_l A'^{kl}
+$$ {#eq-exr-CFT_landau2_exr_1_6_1_1}
+
+이다. 이를 이용하여 $A^{ij}$ 를 아래와 같이 구할 수 있다 (대칭 조건은 아직 부여되지 않았다.).
+
+$$
+\begin{aligned}
+A^{00} &= \gamma^2 A'^{00} + \gamma^2\beta A'^{10} + \gamma^2 \beta A'^{01} + \gamma^2\beta^2 A'^{11},\\[0.3em]
+A^{11} &= \gamma^2\beta^2 A'^{00} + \gamma^2\beta A'^{10} + \gamma^2 \beta A'^{01} + \gamma^2 A'^{11} \\[0.3em]
+A^{22} & = A'^{22}, \\[0.3em]
+A^{33} &= A'^{33}, \\[0.3em]
+A^{01} &= \gamma^2 \beta A'^{00} + \gamma^2 \beta^2 A'^{10} + \gamma^2 A'^{01} + \gamma^2\beta A'^{11} \\[0.3em]
+A^{02} &= \gamma A'^{02} + \gamma \beta A'^{12}, \\[0.3em]
+A^{03} &= \gamma A'^{03} + \gamma \beta A'^{13}, \\[0.3em]
+A^{10} &=\gamma^2\beta A'^{00} + \gamma^2\beta^2A'^{01} + \beta^2 A'^{10} + \gamma^2\beta A'^{10},\\[0.3em]
+A^{12} &=\gamma\beta A'^{02} + \gamma A'^{12}, \\[0.3em]
+A^{13} &= \gamma\beta A'^{03} + \gamma A'^{13}, \\[0.3em]
+A^{20} &= \gamma A'^{20} + \gamma\beta A'^{21}, \\[0.3em]
+A^{21} &= \gamma \beta A'^{20} + \gamma A'^{21}, \\[0.3em]
+A^{23} &= A'^{23}, \\[0.3em]
+A^{30} &= \gamma A'^{30} + \gamma \beta A'^{31}, \\[0.3em]
+A^{31} &= \gamma \beta A'^{30} + \gamma A'^{31}, \\[0.3em]
+A^{32} &= A'^{32}, \\[0.3em]
+A^{33} &= A'^{33}, \\[0.3em]
+\end{aligned}
+$${#eq-exr-CFT_landau2_exr_1_6_1_2}
+
+$A'^{\mu\nu}= A'^{\nu \mu} \iff A^{\mu \nu} = A^{\nu \mu}$ 임은 @eq-exr-CFT_landau2_exr_1_6_1_1 로 부터 쉽게 알 수 있다. 따라서 
+
+$$
+\begin{aligned}
+A^{00} &= \gamma^2 (A'^{00} + 2\beta A'^{01} + \beta^2 A'^{11}),\\[0.3em]
+A^{11} &= \gamma^2 (\beta^2 A'^{00} + 2\beta A'^{01} + A'^{11}), \\[0.3em]
+A^{22} &= A'^{22},\qquad A^{33}= A'^{33}, \\[0.3em]
+A^{01} &= \gamma^2 (\beta A'^{00} + (\beta^2+1)A'^{01} + \beta A'^{11}), \\[0.3em]
+A^{02} &= \gamma (A'^{02} + \beta A'^{12}), \\[0.3em]
+A^{03} &=  \gamma (A'^{03} + \beta A'^{13}), \\[0.3em]
+A^{12} &= \gamma (\beta A'^{02} + A'^{12}), \\[0.3em]
+A^{13} &= \gamma (\beta A'^{03} + A'^{13}), \\[0.3em]
+A^{23} &= A'^{23}.
+\end{aligned}
+$${#eq-exr-CFT_landau2_exr_1_6_1_3}
+
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CFT_landau2_exr_1_6_2}
+
+#### Laudau CFT 1.6.2
+
+로렌츠 변환 @eq-CFT-lorentz_transform_of_contravariant_vector 에 대해 반대칭 텐서 $A^{ij}$ 의 변환 규칙을 찾아라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+@eq-exr-CFT_landau2_exr_1_6_1_2 에서 $A'^{\mu\nu} = - A'^{\nu \mu}$ 임을 이용한다. 우리는 @eq-exr-CFT_landau2_exr_1_6_1_1 로부터 $A'^{\mu \nu} = - A'^{\nu\mu} \iff A^{\mu \nu} = - A^{\nu \mu}$ 임을 안다. 또한 반대칭 텐서일 때 대각성분은 항상 $0$ 이다.
+
+$$
+\begin{aligned}
+A^{00} &= A^{11} = A^{22}= A^{33} = 0,\\[0.3em]
+A^{01} &= \gamma^2 (1-\beta^2)A'^{01}, \\[0.3em]
+A^{02} &= \gamma A'^{02} + \gamma \beta A'^{12}, \\[0.3em]
+A^{03} &=  \gamma A'^{03} + \gamma \beta A'^{13}, \\[0.3em]
+A^{12} &=\gamma\beta A'^{02} + \gamma A'^{12}, \\[0.3em]
+A^{13} &= \gamma\beta A'^{03} + \gamma A'^{13}, \\[0.3em]
+A^{23} &=A'^{23},\\[0.3em]
+\end{aligned}
+$$
+
+:::
+
+<br>
+
+## 4-차원 속도
+
+### 4-차원 속도 {#sec-CFT_4_dimensional_velocity}
+
+4차원에서의 입자의 속도를 4벡터 $U=(u^0,\,u^1,\,u^2,\,u^3)$ 로 다음과 같이 정의한다.
+
+$$
+u^\mu := \dfrac{dx^\mu}{ds} = \dfrac{1}{c}\dfrac{dx^\mu}{d\tau}.
+$$ {#eq-CFT_defintion_of_4_velocity}
+
+이 때 $\bf{v}$ 는 입자의 3차원 속력이며 이 $U$ 를 $4$-속도 벡터라고 한다. 정의상 $u^\mu$ 는 모두 무차원의 양이다$^\ast$.[$^\ast$ 문헌에 따라 $u^\mu = \dfrac{dx^\mu}{d\tau}$ 로 정의하기도 한다. 이 경우에는 $u^\mu$ 는 속도와 같은 차원을 갖는 양이다.]{.aside} 따라서
+
+$$
+U= \left(\dfrac{1}{\sqrt{1-v^2/c^2}},\, \dfrac{\bf{v}}{c\sqrt{1-v^2/c^2}}\right)
+$$ {#eq-CFT_defintion_of_4_velocity_2}
+
+이다. 이로부터
+ 
+$$
+u^\mu u_\mu = 1
+$$ {#eq-CFT_4_velocity_vector_is_an_unit_vector}
+
+을 얻는다. 기하학적으로 $U$ 는 입자의 세계선의 단위 접벡터이다.
+
+유사하게 $4$-가속도 벡터를 $W = (w^0,\,w^1,\,w^2,\,w^3)$ 를 아래와 같이 정의 할 수 있다.
+
+$$
+w^i := \dfrac{d^2 x^i}{ds^2} = \dfrac{du^i}{ds}.
+$${#eq-CFT_defintion_of_4_acceleration}
+
+@eq-CFT_4_velocity_vector_is_an_unit_vector 로부터
+
+$$
+u_\mu w^\mu = 0
+$$
+
+임을 안다.
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CFT_landau2_exr_1_7_1}
+
+#### Laudau CFT 1.7.1
+
+상대론적인 등가속도 운동을 정하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$W=(0,\,w/c^2,\,0,\,0)$ 이라고 하자. 
+
+$$
+\begin{aligned}
+\dfrac{du^1}{ds} &=\dfrac{1}{c}\dfrac{d}{dt}\left(\dfrac{v^1}{c\sqrt{1-\|\bf{v}\|^2/c^2}}\right) =\dfrac{w}{c^2},\\[0.3em] 
+\dfrac{du^i}{ds}&= \dfrac{1}{c}\dfrac{d}{dt}\left(\dfrac{v^i}{c\sqrt{1-\|\bf{v}\|^2/c^2}}\right) =0\;(i=2,\,3)
+\end{aligned}
+$$
+
+이므로
+
+$$
+\dfrac{d}{dt}\left(\dfrac{v^1}{\sqrt{1-\|\bf{v}\|^2/c^2}}\right)= w,\, \dfrac{v^2}{\sqrt{1-\|\bf{v}\|^2/c^2}}=\text{const.}\,  \dfrac{v^3}{\sqrt{1-\|\bf{v}\|^2/c^2}}=\text{const.}
+$$
+
+이다. $\bf{v}(t=0)=\bf{0}$ 이라는 초기조건을 부여하면 $v^2=v^3=0$ 이므로 
+
+$$
+v^1 = \dfrac{wt}{\sqrt{1+w^2t^2/c^2}}
+$$
+
+이며 $\bf{x}(t=0)=0$ 의 조건을 부여하면
+
+$$
+x^1 = \dfrac{c^2}{w} \left[\sqrt{1+ \dfrac{w^2t^2}{c^2}}-1\right]
+$$
+
+이다. $wt \ll c$ 조건에서 $v^1 = wt,\, x=wt^2/2$ 의 고전역학적 근사가 성립하며 $wt \to \infty$ 이면 $v^1 \to c$ 이다. 여기서의 고유시간 $\tau$ 는
+
+$$
+\tau = \int_0^t \sqrt{1-\dfrac{v^2}{c^2}}\,dt' = \int_0^t \dfrac{c}{\sqrt{c^2+w^2t'^2}}\,dt' =\dfrac{c}{w} \sinh^{-1}\left(\dfrac{wt}{c}\right)
+$$
+
+
+:::

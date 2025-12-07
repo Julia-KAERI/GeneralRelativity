@@ -1,0 +1,444 @@
+---
+title: "전자기장의 전하"
+number-sections: true
+number-depth: 3
+crossref:
+  chapters: true
+---
+
+{{< include ../../latexmacros.qmd >}}
+
+## 상대성 이론에서의 기본 입자들
+
+### 상대론에서의 장 {#sec-CFT_CHG_field_concept}
+
+입자들의 상호작용은 **장(field)** 개념으로 기술된다. 입자가 다른 입자에 작용한다기 보다는 입자가 장을 만들고 이 장의 영향에 의해 다른 입자가 힘을 받는다고 한다. 고전역학에서의 장 개념은 물리적 현상을 기술하는 하나의 방식 이다. 그러나 상대성 이론에서는 상호작용의 전달속도가 유한하기 때문에 장의 개념은 근본적이 된다. 상호작용은 장을 통해 이루어진다.
+
+우선 전자기장에 대해 살펴볼 것이다. 우선 그 전에 상대성 이론에서의 입자에 대해 몇가지 짚고 넘어가기로 하자.
+
+... 대충 상대성 이론에서는 강체 (rigid body) 가 존재할 수 없으며, 비 양자적, 상대론적 기본입자는 부피가 없는 점입자 일 수 밖에 없다는 말 ...
+
+</br>
+
+## 4-포텐셜
+
+### 4-포텐셜 {#sec-CFT_CHG_4_potential_of_a_field}
+전저기장 속의 입자의 운동을 기술하는 액션은 두 부분-자유 입자 부분과 전자기장과 입자의 상호작용 부분-으로 구성된다. 그리고 아래의 실험적으로 확인된 사실을 확인하자.
+
+1. 전자기장의 입자의 상호작용은 입자의 특성중 전하 하나에만 의존한다.
+2. 장의 특성은 4-포텐셜이라고 불리는 4-벡터 $A$ 에 의해 결정되며 $A$ 는 시간과 좌표의 함수이다.
+
+이제 전자기장의 입자를 기술하는 액선 적분은 다음과 같다.
+
+$$
+S = \int_a^b \left(-mc\,ds - qA_\mu dx^\mu\right)
+$$
+
+전자기학에서의 서술로서 $A^\mu = \left(\dfrac{1}{c}\Phi,\, \bf{A}\right)$ 이며, 따라서 위 식은
+
+$$
+\begin{aligned}
+S &= \int_a^b \left(-mc\,ds + q\bf{A\cdot}d\bf{r} - q \Phi\,dt\right) \\[0.3em]
+&= \int_a^b \left( mc^2 \sqrt{1-\dfrac{v^2}{c^2}} + q\bf{A \cdot v} - q\Phi\right) \,dt
+\end{aligned}
+$$
+
+이며 이로부터 라그랑지안을 얻는다.
+
+$$
+L = -mc^2 \sqrt{1-\dfrac{v^2}{c^2}} + q\bf{A \cdot v} -q\Phi
+$$ {#eq-CFT_lagrangian_of_particle_in_electromagnetic_fields}
+
+이로부터 일반화된 운동량 $\bf{P} = \dfrac{\partial L}{\partial \bf{v}}$ 은
+
+$$
+\bf{P}= \dfrac{m\bf{v}}{\sqrt{1-v^2/c^2}} + q\bf{A} = \bf{p}+q\bf{A}
+$$ {#eq-CFT_CHG_generalized_potential_of_particle_in_electromagnetic_field}
+
+임을 안다. 해밀토니안을 운동량 $\bf{P}$ 에 대해 표현하면 (@exr-CFT_CHG_hamiltonial_of_particle_in_electromagnetic_field)
+
+$$
+ \left(\dfrac{\mathcal{H}-q\Phi}{c}\right) ^2 = m^2c^2 +\|\bf{P}- q\bf{A}\|^2
+$$ {#eq-CFT_CHG_hamiltonial_of_particle_in_electromagnetic_field_1}
+
+혹은
+
+$$
+\mathcal{H} = \sqrt{m^2c^4 + c^2 \|\bf{P}- q\bf{A}\|^2} + q\Phi
+$${#eq-CFT_CHG_hamiltonial_of_particle_in_electromagnetic_field_2}
+
+이다. $v\ll c$ 일 때
+
+$$
+L = \dfrac{mv^2}{2} + q\bf{A\cdot v} - q\Phi,\qquad \bf{p}= \bf{P}- q\bf{A}
+$$
+
+이며 해밀토니안은 
+
+$$
+\mathcal{H} = \dfrac{\|\bf{P}-q\bf{A}\|^2}{2m} + q\Phi
+$$
+
+이다. 마지막으로 전자기장에서의 해밀턴-야코비 방정식은
+
+$$
+\|\nabla S - q\bf{A}\|^2 - \dfrac{1}{c^2}\left(\dfrac{\partial S}{\partial t} + q\Phi\right)^2 + m^2c^2 = 0
+$$ {#eq-CFT_CHG_hamilton_jacobi_equation_for_particle_in_electromagnetic_field}
+
+
+### 연습문제 {.unnumbered}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CFT_CHG_hamiltonial_of_particle_in_electromagnetic_field}
+
+
+$\mathcal{H}= \bf{v \cdot} \dfrac{\partial L}{\partial \bf{v}} - L$ 과 @eq-CFT_CHG_generalized_potential_of_particle_in_electromagnetic_field 을 이용하여 @eq-CFT_CHG_hamiltonial_of_particle_in_electromagnetic_field_1 을 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+@eq-CFT_CHG_generalized_potential_of_particle_in_electromagnetic_field 로부터
+
+$$
+\begin{aligned}
+\mathcal{H} &= \bf{v\cdot P} + mc^2\sqrt{1-v^2/c^2} - q\bf{A\cdot v} +q\Phi \\[0.3em]
+&=\dfrac{mv^2}{\sqrt{1-v^2/c^2}} + mc^2\sqrt{1-v^2/c^2} + q\Phi \\[0.3em]
+&= \dfrac{mc^2}{\sqrt{1-v^2/c^2}} +q\Phi.
+\end{aligned}
+$$
+
+얻는다. 해밀토니안은 $\bf{P}=\partial L/\partial \bf{v}$ 로 표현되어야 한다. 역시 @eq-CFT_CHG_generalized_potential_of_particle_in_electromagnetic_field 로부터
+
+$$
+\begin{aligned}
+\|\bf{P}-q\bf{A}\|^2 &= \dfrac{m^2v^2}{1-v^2/c^2} =  \dfrac{m^2v^2}{1-v^2/c^2} + mc^2 - mc^2 \\[0.3em]
+&= \dfrac{m^2 c^2}{1-v^2/c^2} - m^2c^2 = \left(\dfrac{\mathcal{H}-q\Phi}{c}\right) ^2 - m^2c^2
+\end{aligned}
+$$
+
+임을 안다. 
+
+:::
+
+</br>
+
+## 전자기장 속의 전하의 운동방정식 
+
+### 운동방정식 {#sec-CFT_CHG_equation_of_motion}
+
+장 속의 입자는 장에 의해 힘을 받을 뿐 아니라 장을 변화시킨다. 그러나 전하 $q$ 가 충분히 크지 않다면 장에 주는 효과는 무시할 수 있다. 이런 근사에서 장은 입자의 위치와 속도에 독립적이라고 가정 할 수 있다. (이 근사가 성립하지 않는 조건은 뒤에 다루기로 한다.) 이 조건에서의 운동방정식은 라그랑쥬 방정식을 통해 얻는다.
+
+$$
+\dfrac{\partial L}{\partial \bf{r}} = q\nabla (\bf{A\cdot v}) - q \nabla \Phi
+$$
+
+을 아래의 벡터 항등식
+
+$$
+\nabla (\bf{a\cdot b}) = (\bf{ a \cdot }\nabla )\bf{b} + (\bf{b \cdot} \nabla)\bf{a} + \bf{b}\times (\curl \bf{a}) + \bf{a} \times (\nabla \times \bf{b}).
+$$
+
+을 통해 계산해 보자. 그렇다면
+
+$$
+\dfrac{\partial L}{\partial \bf{r}} = q(\bf{v\cdot}\nabla)\bf{A} + \bf{v} \times (\curl \bf{A})  - q\nabla \Phi
+$$
+
+이다. 이로부터
+
+$$
+\dfrac{d}{dt}\left(\bf{p}+q\bf{A}\right) = q(\bf{v\cdot}\nabla)\bf{A} + q\bf{v} \times (\curl \bf{A})  - q\nabla \Phi
+$$
+
+를 얻닌다. 여기서
+
+$$
+\dfrac{d\bf{A}}{dt} = \dfrac{\partial \bf{A}}{\partial t} + \sum_{i=1}^3 \dfrac{\partial \bf{A}}{\partial x_i} \dfrac{dx_i}{dt} = \dfrac{\partial \bf{A}}{\partial t} + (\bf{v \cdot }\nabla )\bf{A}
+$$
+
+이므로 아래와 같이 정리 할 수 있다.
+
+$$
+\dfrac{d\bf{p}}{dt} = -q\dfrac{\partial \bf{A}}{\partial t} - q\nabla\Phi + q\bf{v}\times (\curl \bf{A}) .
+$$ {#eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_1}
+
+</br>
+
+### 전기장과 자기장 {#sec-CFT_CHG_electric_and_magnetic_field}
+
+전기장 $\bf{E}$ 와 자기장 $\bf{B}$ 를 아래와 같이 정의한다.
+
+$$
+\bf{E}:= - \dfrac{\partial \bf{A}}{\partial t} - \nabla \Phi,
+$$ {#eq-CFT_CHG_definition_of_electric_field}
+
+$$
+\bf{B} := \curl \bf{A}.
+$$ {#eq-CFT_CHG_definition_of_magnetic_field}
+
+여기서 $\bf{E}$ 는 극벡터이고 $\bf{B}$ 는 축벡터, 즉 유사벡터 임을 알 수 잇다. 이를 이용하면 운동방정식 @eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_1 을 아래와 같이 쓸 수 있다.
+
+$$
+\dfrac{d\bf{p}}{dt} = q\left(\bf{E} + \bf{v}\times \bf{B}\right).
+$${#eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2}
+
+이렇게 표현된 오른쪽 항을 **로런츠 힘 (Lorentz force)** 라고 한다. 
+
+</br>
+
+### 전자기장 속의 입자의 운동에너지 {#sec-CFT_CHG_kinetic_energy_of_particle_in_electromagnetic_field}
+
+이제 @eq-CFT_relativistic_energy 의 $\mathcal{E}$ 를 입자의 (상대론적) 운동에너지 라고 하고 $\mathcal{E}_\text{kin}$ 이라고 표기하자. @eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2 를 생각하면 아래의 결과를 얻는다.
+
+$$
+\dfrac{d\mathcal{E}_\text{kin}}{ dt} = \dfrac{d}{dt}\left(\dfrac{mc^2}{\sqrt{1-v^2/c^2}}\right) = \bf{v\cdot}\dfrac{d\bf{p}}{dt} = q\bf{E\cdot v}
+$$ {#eq-CFT_CHG_the_rate_of_change_of_the_kinetic_energy_of_particl_in_electromagnetic_field}
+
+운동에너지의 시간에 대한 변화량은 단위시간당 장이 입자에 해준 일이며 위 식에서 알 수 있듯이 전기장에만 의존하고 자기장에 독립적이다. 이것은 자기장에 의한 힘이 항상 속도의 방향에 수직이기 때문이다. 
+
+역학적 운동방정식은 시간에 대해 대칭이어야 한다. 즉 운동방정식은 $t\to -t$ 변환에 대해 불변이어야 한다. 즉 어떤 경로가 가능하다면 그 반대 경로도 가능해야 한다는 의미이다. @eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_1 와 @eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2 로 부터 우리는 시간 역전에 대해 다음이 성립해야 한다는 것을 안다.
+
+$$
+t \to -t,\qquad \Phi \to \Phi,\qquad \bf{A} \to -\bf{A},\qquad \bf{E}\to \bf{E} ,\qquad \bf{B} \to -\bf{B}.
+$$ {#eq-CFT_CHG_change_by_time_reverse}
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-Landau_CFT_17.1}
+
+#### Landau CTF 17.1
+
+입자의 가속도를 속도와 전기장, 자기장으로 표현하라.
+
+:::
+
+</div>
+
+::: {.solution}
+@eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2, @eq-CFT_relation_of_free_particls_between_momentum_velocity_and_energy, @eq-CFT_CHG_the_rate_of_change_of_the_kinetic_energy_of_particl_in_electromagnetic_field 를 이용한다. 우선 @eq-CFT_relation_of_free_particls_between_momentum_velocity_and_energy 로부터
+$$
+\dfrac{d\bf{p}}{dt} = \dfrac{d\bf{v}}{dt} \dfrac{\mathcal{E}_\text{kin}}{c^2} + \dfrac{\bf{v}}{c^2}\dfrac{\mathcal{E}_\text{kin}}{dt} 
+$$
+
+이므로
+
+$$
+\begin{aligned}
+\dfrac{d\bf{v}}{dt} &= \dfrac{c^2}{\mathcal{E}_\text{kin}}\left(q(\bf{E}+\bf{v}\times \bf{B}) + \dfrac{q\bf{v}(\bf{E\cdot v})}{c^2} \right) \\[0.3em]
+&= \dfrac{q}{m}\sqrt{1-\dfrac{v^2}{c^2}} \left[\bf{E}+\bf{v}\times \bf{B} + \dfrac{(\bf{E\cdot v})\bf{v}}{c^2}\right]
+\end{aligned}
+$$
+:::
+
+</br>
+
+## 게이지 변환 {#sec-CFT_CHG_gauge_transformation}
+
+서로 다른 두 포텐셜이 같은 전기장과 자기장을 표현한다면 정해진 전기장과 자기장에 대한 포텐셜은 유일하게 정해지지 않는다. 또한 이 경우 @eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2 에 따라 같은 운동을 기술한다. 이것은 항상 가능한데 어떤 스칼라장 $f$ 와 4-포텐셜 $A_\mu=(\Phi/c,\,-\bf{A})$ 에 대해
+
+$$
+A'_\mu = A_\mu - \dfrac{\partial f}{\partial x^\mu}
+$$
+
+로 정의된 4-벡터 $A'_\mu = (\Phi'/c, -\bf{A}')$ 는 같은 장을 생성함을 보이자. 위의 변환은
+
+$$
+\Phi' = \Phi -\dfrac{df}{dt},\qquad \bf{A}' =  \bf{A} + \nabla f
+$$
+
+이므로
+
+$$
+\begin{aligned}
+\bf{E}' &= - \dfrac{\partial \bf{A}'}{\partial t} - \nabla \Phi' = - \dfrac{\partial \bf{A}}{\partial t}- \nabla \Phi = \bf{E}, \\[0.3em]
+\bf{B}' &= \curl \bf{A}' = \curl \bf{A} + \curl (\nabla f)= \curl \bf{A} = \bf{B}.
+\end{aligned}
+$$
+
+이다. 또한 당연하게도 4-포텐셜에 상수를 더한다고 해도 장은 변하지 않는다.
+
+이렇게 어떤 전기장&자기장에 대해 4-포텐셜은 유일하게 정해지지 않으며 특정한 함수를 더해도 동일한 장이 기술되는데 이 때 사용되는 함수를 **게이지 (gauge)** 라고 하고 게이지를 통해 동일한 장을 만드는 다른 4-포텐셜로 변환시키는 것을 **게이지 변환 (gauge transformatnion)** 이라고 한다. 게이지 변환에 대해 장이 변화하지 않는 것을 **게이지 불변 (gauge invariance)** 라고 하고 한다$^\dagger$. [$^\dagger$ (From CTF by L&L) 게이지 불변과 전하량 보존은 밀접한 관련이 있다.]{.aside} 특히 스칼라 포텐셜이 $0$ 인 게이지 변환은 항상 존재하지만 벡터 포텐셜이 $0$ 이 아닐 때 벡터포텐셜을 $0$ 으로 하는 게이지 변환은 일반적으로 존재하지 않는다. 
+
+</br>
+
+## 일정한 전자기장
+
+앞으로 어떤 특성이 시간의 변화와 무관할 때 **일정하다(be constant)** 라고 하고 위치의 변화에 대해 불변일 때 **균일하다(be uniform)** 이라고 표현한다.
+
+### 일정한 전자기장에서의 게이지 변환 {#sec-CFT_gauge_transform_in_constant_electromagnetic_field}
+
+시간에 대해 변화하지 않는 전자기장을 생각하자. 이 경우 $\bf{E}=-\nabla \Phi,\ \bf{B}=\curl \bf{A}$ 이다. 게이지 불변을 생각하면 우선 시간에 대해 일정한 4-포텐셜을 정한 뒤 스칼라 포텐셜에 상수를 더했을 때만 게이지 변환이 된다. 일반적으로 스칼라 포텐셜 $\Phi$ 는 특정 지점에서 정해진 값을 가지며 $\lim_{\|\bf{r}\|\to \infty}\Phi = 0$ 이 되도록 정하는데 그렇다면 스칼라 포텐셜은 유일하게 정해진다. 반면 벡터 포텐셜은 시간에 대해 일정한 전자기장에 대해서도 유일하게 정해지지 않는다. 예를 들어 임의의 상수 벡터 $\bf{a}$ 에 대해 $f=\bf{a\cdot r}$ 는 게이지 함수이다. 
+
+### 일정한 전자기장에서의 에너지
+
+이제 일정한 전자기장 속의 입자의 에너지를 정해보자. 시간에 대해 일정한 전자기장에서는 라그랑지안 역시 시간에 명시적으로 의존하지 않으며 따라서 에너지는 해밀토니안과 동일해진다. @exr-CFT_CHG_hamiltonial_of_particle_in_electromagnetic_field 로 부터 에너지 $\mathcal{E}$ 는 다음과 같다는 것을 안다.
+
+$$
+\mathcal{E} = \dfrac{mc^2}{\sqrt{1-v^2/c^2}} + q\Phi.
+$$ {#eq-CFT_CHG_energy_of_particle_in_constant_electromagnetic_field}
+
+장이 공간상의 모든 점에서 동일할 때 균일하다고 한다. 그렇다면 스칼라 포텐셜을 아래와 같이 쓸 수 있다.
+
+$$
+\Phi = - \bf{E \cdot r}.
+$$ {#eq-CFT_CHG_scala_potential_representation_for_uniform_and_constant_electromagnetic_field}
+
+또한 벡터 포텐셜은 아래와같이 쓸 수 있다.
+
+$$
+\bf{A} = \dfrac{1}{2} \bf{B} \times \bf{r}.
+$${#eq-CFT_CHG_vector_potential_representation_for_uniform_and_constant_electromagnetic_field}
+
+</br>
+
+## 일정하고 균일한 전기장에서의 운동
+
+일정하고 균일한 전기장 $\bf{E}=E\hat{\bf{x}}$ 를 생각하자. @eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2 에 의해
+
+$$
+\dot{p}_x = qE,\qquad \dot{p}_y = \dot{p}_z=0
+$$
+
+이다. 초기조건으로 $p_x(0) = 0,\, p_y(0)=p_0,\, p_z(0)=0$ 라고 정하면
+
+$$
+p_x = qEt,\qquad p_y = p_0
+$$
+
+이며 운동에너지 $\mathcal{E}_\text{kin}$ 은
+
+$$
+\mathcal{E}_\text{kin} = c\sqrt{m^2c^2+p^2} = \sqrt{m^2c^4+c^2p_0^2+ (cqEt)^2}
+$$ {#eq-CFT_CHG_kinetic_energy_of_charge_q_in_uniform_electric_field}
+
+이다. @eq-CFT_relation_of_free_particls_between_momentum_velocity_and_energy 로부터 $\bf{v} = \bf{p}c^2/\mathcal{E}_\text{kin}$ 임을 안다. $\mathcal{E}_0 = m^2c^4+c^2p_0^2$ 라고 하면 
+
+$$
+\dfrac{dx}{dt} = \dfrac{p_xc^2}{\mathcal{E}_\text{kin}} = \dfrac{c^2qEt}{\sqrt{{\mathcal{E}_0}^2 + (cqEt)^2}}
+$$
+
+이며 이를 적분하면 다음을 얻는다.
+
+$$
+x(t)=x_0 + \dfrac{1}{qE}\sqrt{{\mathcal{E}_0}^2 + (cqEt)^2} - \dfrac{\mathcal{E}_0}{qE}
+$$ {#eq-CFT_CHG_x_in_constant_uniform_electric_field}
+
+같은 방법으로 $y$ 를 구하면 아래와 같다.
+
+$$
+y(t) = y_0 + \dfrac{p_0 c}{qE}\,\sinh^{-1}\left(\dfrac{cqEt}{\mathcal{E}_0}\right) 
+$${#eq-CFT_CHG_y_in_constant_uniform_electric_field}
+
+초기조건 $x_0=y_0=0$ 에 대해 운동의 경로를 구하면 아래와 같다.(@exr-CFT_CHG_trajectory_of_particle_in_constant_and_uniform_field)
+
+$$
+x=\dfrac{\mathcal{E}_0}{qE}\left[\cosh \left(\dfrac{qEy}{p_0c} \right)-1\right].
+$$ {#eq-CFT_CHG_trajectory_of_particle_in_constant_and_uniform_field}
+
+비상대론적 근사, 즉 $v\ll c$ 일 경우 $\mathcal{E}_0=mc^2$, $p_0 = mv_0$ 이며 $|z|\ll 1$ 에 대해 $\cosh (z) \approx 1 + \dfrac{x^2}{2}$ 이므로 
+
+$$
+x= \dfrac{qE}{mv_0^2}y^2
+$$
+
+이다.
+
+### 연습문제 {.unnumbered}
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CFT_CHG_trajectory_of_particle_in_constant_and_uniform_field}
+
+@eq-CFT_CHG_trajectory_of_particle_in_constant_and_uniform_field 를 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+초기조건 $x_0=y_0=0$ 으로부터
+
+$$
+x(t) + \dfrac{\mathcal{E}_0}{qE}=\dfrac{1}{qE}\sqrt{{\mathcal{E}_0}^2 + (cqEt)^2},\quad y(t) = \dfrac{p_0 c}{qE}\,\sinh^{-1}\left(\dfrac{cqEt}{\mathcal{E}_0}\right) 
+$$
+
+이다. $\overline{x} = x(t) + \dfrac{\mathcal{E}_0}{qE}$ 라고 하면 
+$$
+\dfrac{qE\overline{x}}{\mathcal{E}_0} = \sqrt{1+ (cqEt/\mathcal{E}_0)^2},\quad \sinh \left(\dfrac{qEy}{p_0 c}\right) = \dfrac{cqEt}{\mathcal{E}_0}
+$$
+
+이므로
+
+$$
+\overline{x} = x + \dfrac{\mathcal{E}_0}{qE}= \dfrac{\mathcal{E}_0}{qE} \cosh \left(\dfrac{qEy}{p_0 c}\right)
+$$
+
+을 얻는다. 
+
+:::
+
+</br>
+
+### 일정하고 균일한 자기장에서의 운동
+
+$\bf{B}= B\hat{\bf{z}}$ 라고 하자. 그렇다면
+
+$$
+\dfrac{d\bf{p}}{dt} = q\bf{v}\times \bf{B}
+$$
+
+이다. 자기장은 에너지에 영향을 주지 않으므로 $\mathcal{E}_\text{kin}= \mathcal{E}$ 이다. @eq-CFT_relation_of_free_particls_between_momentum_velocity_and_energy 로 부터
+
+$$
+\dfrac{d\bf{v}}{dt} = \dfrac{qc^2}{\mathcal{E}}\bf{v}\times \bf{B} =\dfrac{qc^2B}{\mathcal{E}}(v_y\hat{\bf{x}}- v_x\hat{\bf{y}})
+$$
+
+이다. 우리는 위 식이 $z$ 축 방향으로의 나선운동임을 안다. 초기 속도 $\bf{v}_0 = (v_{x0},\,v_{y0},\,v_{z0})$ 에 대해 $v_{t0}= \sqrt{{v_{x0}}^2 +{v_{y0}}^2 }$ 라고 하면,
+$$
+\omega = \dfrac{qc^2B}{\mathcal{E}},\quad r = \dfrac{v_{0t}}{\omega} = \dfrac{v_{0t}\mathcal{E}}{qc^2B} = \dfrac{p_t}{qB}
+$$ 
+
+에 대해 (여기서 $p_t=\sqrt{{p_x}^2+{p_y}^2}$ 이댜)
+
+$$
+x=x_0 + r\cos (\omega t + \theta_0),\quad y = y_0 + r \sin (\omega t + \theta_0),\quad z = z_0 + v_{z0}t
+$$
+
+...adiabatic invariance... 관련 내용....
+
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CFT_landau_21.1}
+#### Landau CTF 21.1
+
+단순조화진동을 하는 하전 입자가 일정하고 균일한 자기장에 있을 때 진동수를 구하라. 자기장이 없을 때의 진동수는 $\omega_0$ 이다.
+
+:::
+
+</div>
+
+::: {.solution}
+
+
+
+:::
+
+</br>
+
+## 일정하고 균일한 전기장과 자기장 속의 하전 입자의 운동
+

@@ -15,6 +15,9 @@ book:
     - part: src/ClassicalFieldTheory/00_index.qmd
       chapters:
       - src/ClassicalFieldTheory/01_principle_of_relativity.qmd
+      - src/ClassicalFieldTheory/02_relativistic_mechanics.qmd
+      - src/ClassicalFieldTheory/03_charges_in_electromagnetic_fields.qmd
+
 
     - references.qmd
 
