@@ -440,5 +440,68 @@ $$
 
 </br>
 
-## 일정하고 균일한 전기장과 자기장 속의 하전 입자의 운동
+## 일정하고 균일한 전자기장 속의 하전 입자의 운동
 
+일정하고 균일한 전기장과 자기장에서 $v\ll c$ 의 조건에서 움직이는 전하를 생각하자. $v \ll c$ 조건에서 $\bf{p}=m\bf{v}$ 인데 이 조건을 위해서는 전기장이 자기장에 빛의 속도를 곱한 것에 비해 매우 작아야 한다. 우선 $\bf{B}=B\hat{\bf{z}}$ 이며 $\bf{B}$ 와 $\bf{E}$ 에 의해 결정되는 평면은 $yz$ 평면이라고 하자. 운동방정식
+
+$$
+m\dot{\bf{v}} = q\bf{E} + q\bf{v}\times \bf{B}
+$$
+
+는 다음과 같이 쓸 수 있다.
+
+$$
+m\ddot{x} = q\dot{y}B,\qquad m\ddot{y} = qE_y - q\dot{x}B,\qquad m\ddot{z} = qE_z. 
+$$ {#eq-CFT_CHG_eom_in_constant_and_uniform_electric_and_magnetic_field}
+
+우선 
+
+$$
+z = v_{0z}t + \dfrac{qE_z}{2m}t^2
+$$
+
+이며 @eq-CFT_CHG_eom_in_constant_and_uniform_electric_and_magnetic_field 의 두번째 식에 허수 $i$ 를 곱하고 정리하면
+
+$$
+m(\ddot{x}+i\ddot{y}) = -iqB(\dot{x}+i\dot{y}) + iqE_y
+$$
+
+이다. $\xi = \dot{x} +i \dot{y}$, $\omega_0 = qB/m$ 으로 놓으면 위의 방정식은
+
+$$
+\dot{\xi} +i\omega_0 \xi = i\dfrac{qE_y}{m}
+$$
+
+이며 이 미분방정식의 해는
+
+$$
+\xi = \xi_0 e^{-i\omega_0 t} + \dfrac{q E_y}{m\omega_0} = \xi_0e^{-i\omega_0 t} + \dfrac{E_y}{B}
+$$
+
+이며 여기서 $\xi_0 \in \C$ 이다. $\xi_0 = |\xi_0|e^{i\alpha}$ 형태인데 편의상 $\alpha = 0$ 으로 놓으면 $\xi_0=a$ 에 대해
+
+$$
+\dot{x} = a \cos \omega_0 t + \dfrac{E_y}{B},\qquad \dot{y} = -a \sin \omega_0 t
+$$ {#eq-CFT_CHG_motion_in_constant_and_uniform_electric_and_magnetic_field}
+
+이다. 즉 $\xi_0$ 의 위상 선택에 의해 $t=0$ 일 때 속도는 $x$ 방향이다. $\dot{x},\, \dot{y}$ 모두 주기함수이며 따라서 각 주기 마다의 평균 속도 $\overline{\bf{v}}$ 는 다음과 같다.
+
+$$
+\overline{\bf{v}}= \dfrac{\bf{E}\times\bf{B}}{B^2}
+$$
+
+즉
+
+$$
+\dfrac{\overline{v}}{c} \approx \dfrac{E}{cB}
+$$
+
+이므로 $E \ll cB$ 이면 $\overline{v}\ll c$ 이다. 
+
+@eq-CFT_CHG_motion_in_constant_and_uniform_electric_and_magnetic_field 을 적분하면 그리고 $x(0)=y(0)=0$ 의 초기조건을 부여하면 
+
+$$
+x = \dfrac{a}{\omega_0} \sin \omega_0 t + \dfrac{E_y}{B}t,\qquad y = \dfrac{a}{\omega_0}(\cos \omega_0 t -1)
+$$
+
+이다. 

@@ -75,7 +75,7 @@ $$
 
 ### 광속 불변의 수학적 형식 {#sec-CFT_mathematical_form_of_constant_c}
 
-좌표계를 확장하여 4차원 시공간에서 기술한다. 두 좌표계 $\Sigma (t,\,x,\,y,\,z,),\, \Sigma' (t',\,x',\,y',\,z')$ 을 생각하자. 이 때 $y$ 와 $y'$, 그리고 $z,\, z'$ 은 서로 평행하다고 하자. 그리고 각각의 좌표를 $(t,\,x,\,y,\,z),\, (t',\,x',\,y',\,z')$ 혹은 $(t,\,\bf{x}),\, (t',\,\bf{x}')$ 로 표기하자. $\Sigma$ 좌표계에서 두 사건에 대해 **시공간 간격**(*spacetime interval*) $\Delta s$ 은 아래와 같이 정의된다.
+좌표계를 확장하여 4차원 시공간 $(t,\,\bf{x})=(t,\,x,\,y,\,z)$ 에서 기술한다. 두 좌표계 $\Sigma (t,\,\bf{x}),\, \Sigma' (t',\,\bf{x}')$ 을 생각하자. 이 때 $y$ 와 $y'$, 그리고 $z,\, z'$ 은 서로 평행하다고 하자. $\Sigma$ 좌표계에서 두 사건에 대해 **시공간 간격**(*spacetime interval*) $\Delta s$ 은 아래와 같이 정의된다.
 
 $$
 (\Delta s) := \sqrt{c^2(\Delta t)^2-(\Delta x)^2 - (\Delta y)^2 - (\Delta z)^2}.
@@ -90,13 +90,13 @@ $$
 ds^2 = c^2dt^2 -dx^2-dy^2 - dz^2
 $${#eq-CFT_interval_between_infinitesimal_difference_in_spacetime}
 
-@eq-CFT_definition_of_interval 와 @eq-CFT_interval_between_infinitesimal_difference_in_spacetime 는 간격이 4차원 시공간상의 일종의 거리라고 볼 수 있다는 것을 말한다. 그 축은 $x,\,y,\,z,\,ct$ 이다. 우리는 한 관성좌표계에서 간격이 $0$ 이면 다른 관성좌표계에서도 간격이 $0$ 임을 안다. 또한 $ds$ 와 $ds'$ 은 같은 차수의 미소변량이므로 서로 비례해야만 한다. 즉
+@eq-CFT_definition_of_interval 와 @eq-CFT_interval_between_infinitesimal_difference_in_spacetime 는 간격이 4차원 시공간상의 일종의 거리라고 볼 수 있다는 것을 말한다. 그 축은 $ct,\,x,\,y,\,z$ 이다. 우리는 한 관성좌표계에서 간격이 $0$ 이면 다른 관성좌표계에서도 간격이 $0$ 임을 안다. 또한 $ds$ 와 $ds'$ 은 같은 차수의 미소변량이므로 서로 비례해야만 한다. 즉
 
 $$
 ds^2 = a \cdot ds'^2
 $$
 
-이다. 여기서 $a$ 는 4차원 시공간의 특정 좌표에 무관해야 하며, 두 좌표계 사이의 상대속도의 방향에 무관해야 한다. 이것은 시간과 공간의 homogeneity 와 공간의 isotropy 로부터의 결론이다. 이 성질은 고전역학 뿐만 아니라 상대성 이론에서도 역시 일하게 가정된다. 그렇다면 $a$ 는 두 좌표계의 상대 속도의 크기에만 의존해야 한다.
+이다. 여기서 $a$ 는 4차원 시공간의 특정 좌표에 무관해야 하며, 두 좌표계 사이의 상대속도의 방향에 무관해야 한다. 이것은 시간과 공간의 homogeneity 와 공간의 isotropy 로부터의 결론이다. 이 성질은 고전역학 뿐만 아니라 상대성 이론에서도 역시 동일하게 가정된다. 그렇다면 $a$ 는 두 좌표계의 상대 속도의 크기에만 의존해야 한다.
 
 세 좌표계 $\Sigma,\, \Sigma_1,\, \Sigma_2$ 를 생각하자. 그리고 $\Sigma_1$ 과 $\Sigma_2$ 는 $\Sigma$ 에 대해 각각 $\bf{V}_1,\,\bf{V}_2$ 의 속도로 움직인다고 하자. 그리고 $\Sigma_1,\,\Sigma_2$ 사이의 상대속의 크기가 $\bf{V}_{12}$ 라고 하자. 그렇다면
 
@@ -140,7 +140,7 @@ $$
 어떤 사건이 한 기준틀의 원점 $\mathcal{O}$ 에서 발생했다고 하자. 그리고 이 기준틀에서 다른 이벤트와의 관계를 알아보기 위해 아래 @fig-CFT_spacetime0 와 같이 도식화 해 보자. 여기서는 공간을 $x$ 축에서만 생각한다. 원점을 지나는 등속운동은 아래 그림에서 원점을 지나는 직선으로 표현된다. 가능한 최대 속도가 $c$ 로 제한되어 있으므로 이 직선이 $t$ 축과 이루는 각의 최대값은 정해져 있다. 아래 그림에서는 빛의 세계선을 각각 $\rm{a},\,\rm{b},\,\rm{c},\,\rm{d}$ 로 표기하였다. 
 
 
-![$\mathcal{O}$ 에서 발생한 사건의 시공간적 분리](figures/spacetime0.png){#fig-CFT_spacetime0 width=300}
+![$\mathcal{O}$ 에서 발생한 사건의 시공간적 분리](figures/spacetime/spacetime0.png){#fig-CFT_spacetime0 width=300}
 
 $a\mathcal{O}c$ 영역에서의 사건 $(t,\,\bf{x})$ 를 생각하자. 여기서는 $c^2t^2-x^2>0$ 이므로 시간꼴 간격이며, $t>0$ 이므로 여기서의 사건은 항상 원점에서의 사건 이후에 발생한 사건이다. 이 영역에서 발생한 두 사건은 다른 기준틀에서 동시에 발생 할 수 없으며 모든 기준틀에서 원점에서의 사건 이후에 발생한다. 따라서 이 영역은 원점에서의 사건에 대해 절대적인 미래(absolute future) 이다. 같은 방법으로 $b\mathcal{O}d$ 영역의 사건은 원점에서의 사건에 대해 절대적인 과거(absolute past) 이다.
 
@@ -207,10 +207,6 @@ $$
 $$
 \int_a^b ds.
 $$
-
-
-
-
 
 </br>
 
@@ -355,28 +351,28 @@ $$
 $$ {#eq-CFT_natural_pariaing}
 
 
-@eq-CFT_natural_pariaing 에서와 같이 $\sum_i \omega_iv^i$ 를 $\omega_iv^i$ 와 같이 표기하는 것을 **아인슈타인 표기법 (Einsteine notation)** 이라고 한다. 
+ **아인슈타인 표기법 (Einsteine notation)** 은 @eq-CFT_natural_pariaing 에서와 같이 위첨자와 아래첨자로 된 같은 인덱스가 있을 경우 그 인덱스에 대한 합을 의미하는 표기법이다. 벡터 뿐만 아니라 텐서에서도 사용한다.
 
 </br>
 
 ### 변환의 규칙 {#sec-CFT_rule_of_transformation}
 
-$V$ 의 기저를 $(e_1,\ldots,\,e_n)$ 에서 $(e'_1,\ldots,\,e'_n)$ 으로 변경한다고 하자. 이 때
+$V$ 의 기저를 $(e_1,\ldots,\,e_n)$ 에서 $(e'_1,\ldots,\,e'_n)$ 으로 변경하는 변환행렬 ${R_i}^j$ 를 생각하자. 즉
 
 $$
 e'_i = {R_i}^j e_j
 $$
 
-라고 하면
+라고 하자. $v=v^je_j$ 에 대해
 
 $$
-v=v^ie_i = v'^ie'_i=v'^i {R_i}^j e_j = {R_i}^jv'^i e_j
+v=v^j e_j = v'^ie'_i=v'^i {R_i}^j e_j = {R_i}^jv'^i e_j
 $$
 
 이므로
 
 $$
-v'^i = ({R_i}^j)^{-1}v^j
+v'^i = ({R_i}^j)^{-1}v^j = {(R^{-1})^i}_j v^j
 $$ {#eq-CFT_transform_of_contavariant_vector_component}
 
 이어야 한다. 즉 $v\in V$ 의 성분은 기저의 변환에 대해 반대로(contra-) 변하므로(정확히는 역행렬에 따라 변하므로) 반변벡터라는 이름이 붙었다. 또한 이로부터
@@ -385,7 +381,7 @@ $$
 \left({R_i}^j\right)^{-1} =  {\left(R^{-1}\right)^i}_j = \dfrac{\partial (x')^i}{\partial x^j},\qquad {R_i}^j = \dfrac{\partial x^j}{\partial (x')^i}
 $$
 
-임을 안다. 이에 반해 쌍대 공간에 대해서느느 다음이 성립한다.
+임을 안다. 이에 반해 쌍대 공간에 대해서는 다음이 성립한다.
 
 $$
 \omega'_i = \omega(e'_i)= {R_i}^j \omega(e_j)= {R_i}^j \omega_j.
@@ -456,7 +452,7 @@ $$
 A(v,\,\omega) = \sum_{i,j} v^i\omega_j A(e_i,\,\theta^j) = {A_i}^j v^i\omega_j
 $$
 
-이다. 우리는 ${A_i}^j$ 를 $A(e_i,\,\theta^j)$ 로 정의 할 수 있다. 또한 이것을 확장하여 임의의 $k$ 차 텐서에 대해서도 텐서의 위첨자-아래첨자 표기법을 사용 할 수 있다. 즉 텐서 ${{A_i}^{jk}}_l$ 은 $V\times V^\ast \times V^\ast \times V$ 에서 정의된 텐서 4차 텐서이다.
+이다. 우리는 ${A_i}^j$ 를 $A(e_i,\,\theta^j)$ 로 정의 할 수 있다. 또한 이것을 확장하여 임의의 $k$ 차 텐서에 대해서도 텐서의 위첨자-아래첨자 표기법을 사용 할 수 있다. 즉 텐서 ${{A_i}^{jk}}_l$ 은 $V\times V^\ast \times V^\ast \times V$ 에서 정의된 텐서 4차 텐서이다. 또한 기저 변환 $e'_i = {R_i}^k e_k$ 에 대해 텐서는 다음과 같이 변화한다.
 $$
 \begin{aligned}
 T'_{ij} &:= T(e'_i,\,e'_j) = \sum_{k,\,l}T({R_i}^k e_k,\, {R_j^l} e_l) = {R_i}^k {R_j}^l T_{kl} , \\[0.3em]
@@ -466,7 +462,7 @@ S'^{ij} &:= S(\theta'_i,\, \theta'_j) = \sum_{k,\,l}S\left(({R_i}^k)^{-1}\theta_
 \end{aligned}
 $$ {#eq-CFT-transform_of_rank_2_tensor}
 
-이 식을 보면 알 수 있듯이 이것은 2차 이상의 텐서에 대해서도 그대로 적용된다. 텐서의 공변 성분은 공변벡터의 변환을 따르고 반변 성분은 반번 벡터의 변환을 따른다.
+또한 이것은 2차 이상의 텐서에 대해서도 그대로 적용된다. 텐서의 공변 성분은 공변벡터의 변환을 따르고 반변 성분은 반번 벡터의 변환을 따른다.
 
 이것을 확장하면 $V^\ast \times V \times V^\ast \times V \times V$ 에서 정의된 $k$-차 텐서를 정의 할 수 있다. 표준적으로 
 
@@ -561,7 +557,7 @@ $$
 \|X\|^2=g_{\mu \nu}x^\mu x^\mu
 $$
 
-이다.[앞으로는 현대적인 표기법에 따라 3차원 공간, 혹은 일반적인 다양체에서 기술할 때는 인덱스를 $i,\,j,\,k,\ldots$ 와 같이 소문자 알파벳으로 쓰고 4차원 시공간에서의 인덱스는 $\alpha,\,\beta,\,\mu,\,\nu,\ldots$ 와 같이 그리스어 소문자를 쓰기로 한다.]{.aside} 이렇게 로런츠 계량이 주어지고 이 계량에 의한 제곱크기가 불변인 4차원 시공간 벡터를 **4-벡터** 라고 하고 4 값으로 구성된 튜플 $A=(A^0,\,A^1,\,A^2,\,A^3)$ 혹은 $A=\begin{bmatrix} A^0 &A^1 & A^2 & A^3\end{bmatrix}^T$ 와 같이 표기한다. 여기서 $A^0$ 를 시간 성분, 그리고 $A^1,\,A^2,\,A^3$ 를 공간성분이라고 하며 $A=(A^0,\, \bf{A})$ 와 같이 표기하기도 한다. 앞으로 3차원 공간상의 벡터는 $\bf{x}$ 와 같이 표기하며 4-벡터는 튜플, 열행럴 형식으로 표기하도록 한다. 4-벡터의 제곱크기는 시공간 4-벡터와 마찬가지로 음의 값도, $0$ 도 될 수 있으며, 마찬가지로 시간꼴, 공간꼴 벡터를 말할 수 있다.
+이다.[앞으로는 현대적인 표기법에 따라 3차원 공간, 혹은 일반적인 다양체에서 기술할 때는 인덱스를 $i,\,j,\,k,\ldots$ 와 같이 소문자 알파벳으로 쓰고 4차원 시공간에서의 인덱스는 $\alpha,\,\beta,\,\mu,\,\nu,\ldots$ 와 같이 그리스어 소문자를 쓰기로 한다.]{.aside} 이렇게 로런츠 계량이 주어지고 이 계량에 의한 제곱크기가 불변인 4차원 시공간 벡터를 **4-벡터** 라고 하고 4 값으로 구성된 튜플 $A=(A^0,\,A^1,\,A^2,\,A^3)$, 혹은 열벡터 $A=\begin{bmatrix} A^0 &A^1 & A^2 & A^3\end{bmatrix}^T$ 와 같이 표기한다. 여기서 $A^0$ 를 시간 성분, 그리고 $A^1,\,A^2,\,A^3$ 를 공간성분이라고 하며 $A=(A^0,\, \bf{A})$ 와 같이 표기하기도 한다. 앞으로 3차원 공간상의 벡터는 $\bf{x}$ 와 같이 표기하며 4-벡터는 튜플, 열행럴 형식으로 표기하도록 한다. 4-벡터의 제곱크기는 시공간 4-벡터와 마찬가지로 음의 값도, $0$ 도 될 수 있으며, 마찬가지로 시간꼴, 공간꼴 벡터를 말할 수 있다.
 
 앞서 @prp-CFT_invairanice_of_scalar 에서 보았듯이 4 벡터에 $X,\,Y$ 에 대해 $x_\mu y^\mu$ 로 주어진 값은 좌표변환에 대해 불변이며 이를 **4-스칼라** 라고 한다.
 
@@ -570,7 +566,7 @@ $$
 
 ### 4-벡터와 로런츠 변환 {#sec-CFT-4_vector_and_lorentz_transform}
 
-$\Sigma$ 기준틀에 대해 $\Sigma$ 기준틀이 $V$ 의 속력으로 움직일 때 $\beta,\,\gamma$ 값을 아래와 같이 정하자.
+$\Sigma$ 기준틀에 대해 $\Sigma'$ 기준틀이 $V$ 의 속력으로 움직일 때 $\beta,\,\gamma$ 값을 아래와 같이 정하자.
 
 $$
 \beta := \dfrac{V}{c},\qquad \gamma := \dfrac{1}{\sqrt{1-V^2/c^2}} = \dfrac{1}{\sqrt{1-\beta^2}}
@@ -605,7 +601,7 @@ $$
 
 ### 4-텐서 {#sec-CFT_4_tensor}
 
-정해진 텐서 $A^{\mu\nu}$ 에 대해 $A_{\mu\nu}$ 는 $A^{\mu \nu}x_\mu y_nu = A_{\mu\nu}x^\mu y^\nu$ 가 되도록 정의된다. $g_{\mu \nu} = g_{\nu \mu}$ 임을 알고 있으므로
+정해진 텐서 $A^{\mu\nu}$ 에 대해 $A_{\mu\nu}$ 는 $A^{\mu \nu}x_\mu y_\nu = A_{\mu\nu}x^\mu y^\nu$ 가 되도록 정의된다. $g_{\mu \nu} = g_{\nu \mu}$ 임을 알고 있으므로
 
 $$
 A^{\mu \nu}x_\mu y_\nu = A^{\kappa \lambda}x_\kappa x_\lambda = A^{\kappa \lambda} g_{\kappa \mu}x^\mu g_{\lambda \nu}y^\nu = g_{\mu \kappa} A^{\kappa \lambda} g_{\lambda \nu} x^\mu y^\nu
@@ -854,7 +850,7 @@ $$
 
 ### 쌍대 텐서 {#sec-CFT_dual_tensor}
 
-$A^{\mu\nu}$ 가 반대칭 텐서 일 때 $A^{\mu\nu}$ 와 $A^{\ast \mu \nu}:=\frac{1}{2} \varepsilon^{\mu\nu \kappa \lambda}A_{\kappa \lambda}$ 은 서로에 대한 **쌍대 텐서 (dual tensor)** 라고 한다. 같은 방식으로 $A^\mu$ 에 대해 $A^{\ast \mu} = \varepsilon^{\mu \nu \kappa \lambda}A_{\nu \kappa \lambda}$ 은 쌍대 텐서이며, 미분기하학 용어로는 호지 쌍대(Hodge dual) 이다. $A^{\mu \nu}$ 에 대해
+$A^{\mu\nu}$ 가 반대칭 텐서 일 때 $A^{\mu\nu}$ 와 $A^{\ast \mu \nu}:=\frac{1}{2} \varepsilon^{\mu\nu \kappa \lambda}A_{\kappa \lambda}$ 은 서로에 대한 **쌍대 텐서 (dual tensor)** 라고 한다. 같은 방식으로 $A^\mu$ 에 대해 $A^{\ast \mu} = \varepsilon^{\mu \nu \kappa \lambda}A_{\nu \kappa \lambda}$ 은 쌍대 텐서이다. $A^{\mu \nu}$ 에 대해
 
 $$
 A^{\mu \nu}A^\ast_{\mu \nu} = \dfrac{1}{2}\varepsilon_{\mu \nu \kappa \lambda}A^{\mu \nu}A^ {\kappa \lambda}
@@ -905,20 +901,20 @@ $$ {#eq-CFT_matrix_representation_of_dual_of_antisymmetric_rank_2_tensor}
 
 $$
 \boxed{
-\partial_\mu \phi = \dfrac{\partial \phi}{\partial x^\mu}= \left(\dfrac{1}{c}\dfrac{\partial \phi}{\partial t},\, \nabla \phi\right).}
+\partial_\mu \phi = \dfrac{\partial \phi}{\partial x^\mu} = \dfrac{\partial \phi}{\partial X}:= \left(\dfrac{1}{c}\dfrac{\partial \phi}{\partial t},\, \nabla \phi\right).}
 $$ {#eq-CFT_definition_of_4_gradient}
 
 즉 4-gradient 는 공변벡터로 간주된다. 또한 스칼라 $\phi$ 에 대한 전미분
 
 $$
-d\phi = \dfrac{\partial \phi}{\partial x^\mu}dx^\mu
+d\phi := \dfrac{\partial \phi}{\partial x^\mu}dx^\mu
 $$
 
 역시 스칼라이다. 4-벡터 $A$ 에 대한 divergence 는 아인슈타인 표기법을 사용하여
 
 $$
 \boxed{
-\operatorname{div} A = \dfrac{\partial A^\mu}{\partial x^\mu}}
+\operatorname{div} A := \dfrac{\partial A^\mu}{\partial x^\mu}}
 $$ {#eq-CFT_divergence_of_4_vector_notation}
 
 로 표기한다. 당연히 $\operatorname{div}A$ 는 스칼라이다. 
@@ -1142,7 +1138,7 @@ $$
 
 ### 4-차원 속도 {#sec-CFT_4_dimensional_velocity}
 
-4차원에서의 입자의 속도를 4벡터 $U=(u^0,\,u^1,\,u^2,\,u^3)$ 로 다음과 같이 정의한다.
+4차원에서의 입자의 속도를 4벡터 $U = (u^0,\,u^1,\,u^2,\,u^3)$ 로 다음과 같이 정의한다.
 
 $$
 u^\mu := \dfrac{dx^\mu}{ds} = \dfrac{1}{c}\dfrac{dx^\mu}{d\tau}.

@@ -1,0 +1,75 @@
+\documentclass[border=3pt,tikz]{standalone}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{patterns, snakes}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary {decorations.markings}
+\usetikzlibrary{math}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    % axis line style={<->,color=blue}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+            }}
+
+\begin{document}
+\tikzmath{\w1 = 0.3; \w2 =1.0; \w3=0.5 ;\r1=0.2; \r2=2.5;\r3=1.0; } 
+\pgfplotsset{
+    compat=1.3, 
+    every axis/.append style={scale only axis, axis on top,
+    height=4.25cm, width=8.5cm, xmin=-1, xmax=240,
+    }
+}
+\begin{tikzpicture}
+    \definecolor{fogr}{rgb}{0.13, 0.55, 0.13}
+    \begin{axis}[
+        name = plot1,
+        xmin=-1,xmax=6,
+        ymin=-0.3,ymax=3,
+        xmajorticks=false,
+        ymajorticks=false,
+        ]
+        \addplot [domain=-10:30,
+        samples=150,
+        smooth, 
+        thick,] 
+        ({\r1*x - sin(180*\w1 * x/pi)},{(1-cos(\w1*180/pi*x))}); 
+    \end{axis}
+\begin{axis}[
+        name = plot2,
+        at=(plot1.below south east),
+        anchor=above north east,
+        xmin=-22/6, xmax=22,
+        ymin=-0.2,ymax=3,
+        xmajorticks=false,
+        ymajorticks=false,
+        ]
+        \addplot [domain=-20:50,
+        samples=1500,
+        thick,
+        % smooth,
+        ]
+        ({\r2*x - sin(180*\w2 * x/pi)},{(1-cos(\w2*180/pi*x))}); 
+    \end{axis}
+    \begin{axis}[
+        name = plot3,
+        at=(plot2.below south east),
+        anchor=above north east,
+        xmin=-9/6,xmax=9,
+        ymin=-0.2,ymax=3,
+        xmajorticks=false,
+        ymajorticks=false,
+        ]
+        \addplot [domain=-5:20,
+        samples=1500,
+        thick,
+        % smooth,
+        ]
+        ({\r3*\w3*x - sin(180*\w3 * x/pi)},{(1-cos(\w3*180/pi*x))}); 
+    \end{axis}
+\end{tikzpicture}
+\end{document}
+Share
+Improve this answer
