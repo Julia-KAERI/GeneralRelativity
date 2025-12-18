@@ -215,6 +215,17 @@ window.Quarto = {
   <li><a href="#sec-CFT_4_momentum" id="toc-sec-CFT_4_momentum" class="nav-link" data-scroll-target="#sec-CFT_4_momentum"><span class="header-section-number">2.2.3</span> 4-운동량</a></li>
   <li><a href="#연습문제" id="toc-연습문제" class="nav-link" data-scroll-target="#연습문제">연습문제</a></li>
   </ul></li>
+  <li><a href="#분포-함수의-변환" id="toc-분포-함수의-변환" class="nav-link" data-scroll-target="#분포-함수의-변환"><span class="header-section-number">2.3</span> 분포 함수의 변환</a>
+  <ul class="collapse">
+  <li><a href="#sec-CFT_distribution_in_3d_momentum_space" id="toc-sec-CFT_distribution_in_3d_momentum_space" class="nav-link" data-scroll-target="#sec-CFT_distribution_in_3d_momentum_space"><span class="header-section-number">2.3.1</span> 운동량 공간에서의 분포</a></li>
+  <li><a href="#sec-CFT_distribution_in_phase_sppace" id="toc-sec-CFT_distribution_in_phase_sppace" class="nav-link" data-scroll-target="#sec-CFT_distribution_in_phase_sppace"><span class="header-section-number">2.3.2</span> 위상 공간에서의 분포</a></li>
+  </ul></li>
+  <li><a href="#입자의-붕괴" id="toc-입자의-붕괴" class="nav-link" data-scroll-target="#입자의-붕괴"><span class="header-section-number">2.4</span> 입자의 붕괴</a>
+  <ul class="collapse">
+  <li><a href="#sec-CFT_spontaneous_decay_in_C_system" id="toc-sec-CFT_spontaneous_decay_in_C_system" class="nav-link" data-scroll-target="#sec-CFT_spontaneous_decay_in_C_system"><span class="header-section-number">2.4.1</span> <span class="math inline">\(C\)</span>-기준틀에서의 입자의 자발적 붕괴</a></li>
+  <li><a href="#sec-CFT_scattering_in_L_system" id="toc-sec-CFT_scattering_in_L_system" class="nav-link" data-scroll-target="#sec-CFT_scattering_in_L_system"><span class="header-section-number">2.4.2</span> <span class="math inline">\(L\)</span>-기준틀에서의 충돌</a></li>
+  <li><a href="#연습문제-1" id="toc-연습문제-1" class="nav-link" data-scroll-target="#연습문제-1">연습문제</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -237,9 +248,9 @@ window.Quarto = {
 <h2 data-number="2.1" class="anchored" data-anchor-id="최소작용의-원리"><span class="header-section-number">2.1</span> 최소작용의 원리</h2>
 <section id="sec-CFT_least_action_on_free_particle" class="level3" data-number="2.1.1">
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="sec-CFT_least_action_on_free_particle"><span class="header-section-number">2.1.1</span> 자유입자의 최소작용</h3>
-<p>자유 입자의 액션 적분 <span class="math inline">\(S\)</span> 를 결정하기 위해 반드시 만족해야 하는 조건은 적분값이 기준틀이 로런츠 변환에 대해 불변이어야 한다는 것이다. 즉 <span class="math inline">\(S\)</span> 는 <span class="math inline">\(4\)</span>-스칼라 이어야 한다. 또한 적분되는 양은 1차 미분형식 이어야 한다. 그런데 자유 입자에 대해 우리가 얻을 수 있는 스칼라는 <span class="math inline">\(ds\)</span> (혹은 상수배인 <span class="math inline">\(d\tau\)</span>) 뿐이며 따라서 자유입자에 대해 다음이 성립한다.</p>
+<p>자유 입자의 액션 적분 <span class="math inline">\(S\)</span> 를 결정하기 위해 반드시 만족해야 하는 조건은 외부에서 작용하는 힘이 없을 경우 적분값이 기준틀 선택에 대해 불변이어야 한다는 것이다. 즉 액션적분은 로런츠 변환에 대해 불변이어야 한다. 따라서 <span class="math inline">\(S\)</span> 는 <span class="math inline">\(4\)</span>-스칼라 이어야 하며 적분되는 양은 1-미분형식 이어야 한다. 그런데 자유 입자에 대해 우리가 얻을 수 있는 스칼라는 <span class="math inline">\(ds\)</span> (혹은 상수배인 <span class="math inline">\(d\tau\)</span>) 뿐이며 따라서 자유입자에 대해 다음이 성립한다.</p>
 <p><span class="math display">\[
-S = - \alpha \int_a^b ds
+S = - \alpha \int_a^b ds.
 \]</span></p>
 <p>우리는 <a href="01_principle_of_relativity.html#sec-CFT_proper_time_and_world_line" class="quarto-xref"><span> 1.3.2</span></a> 에서 <span class="math inline">\(\int_a^b ds\)</span> 의 최대값이 두 세계점 <span class="math inline">\(a,\,b\)</span> 를 잇는 4차원 직선임을 보았다. 따라서 일반적인 최소 작용의 원리의 이름에 부응하기 위해서는 <span class="math inline">\(\alpha &gt;0\)</span> 이어야 한다. 일반적으로 작용(action) 은</p>
 <p><span class="math display">\[
@@ -287,7 +298,7 @@ L = -mc^2\sqrt{1-\dfrac{v^2}{c^2}}.
 </section>
 <section id="정지한-입자계의-경우" class="level4">
 <h4 class="anchored" data-anchor-id="정지한-입자계의-경우"><strong>정지한 입자계의 경우</strong></h4>
-<p>여러 입자로 이루어진 정지한 물체의 에너지는 각각의 개별 입자의 정지 에너지와 입자들 사이에 작용하는 상호작용 에너지의 합이다. 즉 <span class="math inline">\(Mc^2 \ne \sum_a m_a c^2\)</span> 이며 따라서 <span class="math inline">\(M \ne \sum_a m_a\)</span> 이다. 다시말하면 상대론에서는 질량 보존의 법칙의 성립하지 않으며 전체 질량은 부분 질량의 합과 다르다.</p>
+<p>여러 입자로 이루어진 (전체적으로) 정지한 물체의 에너지는 각각의 개별 입자의 정지 에너지와 개별 입자의 운동에너지 및 입자들 사이에 작용하는 상호작용 에너지의 합이다. 즉 <span class="math inline">\(Mc^2 \ne \sum_a m_a c^2\)</span> 이며 따라서 <span class="math inline">\(M \ne \sum_a m_a\)</span> 이다. 다시말하면 상대론에서는 질량 보존의 법칙의 성립하지 않으며 전체 질량은 부분 질량의 합과 다르다.</p>
 <p><br></p>
 </section>
 </section>
@@ -297,7 +308,7 @@ L = -mc^2\sqrt{1-\dfrac{v^2}{c^2}}.
 <p><span id="eq-CFT_energy_and_momentum_relation_for_free_particle"><span class="math display">\[
 \mathcal{E}= p^2c^2  + m^2c^4.
 \tag{2.5}\]</span></span></p>
-<p>운동량의 함수로 표현된 에너지를 해밀토니안 함수라고한다. 즉 자유 입자의 해밀토니안 <span class="math inline">\(\mathscr{H}\)</span> 는 아래와 같다.</p>
+<p>운동량의 함수로 표현된 에너지를 해밀토니안 함수라고한다. 즉 자유 입자의 해밀토니안 <span class="math inline">\(\mathcal{H}\)</span> 는 아래와 같다.</p>
 <p><span id="eq-CFT_energy_and_momentum_relation_for_free_particle"><span class="math display">\[
 \mathcal{H}= c\sqrt{p^2+m^2c^2}.
 \tag{2.6}\]</span></span></p>
@@ -313,7 +324,7 @@ L = -mc^2\sqrt{1-\dfrac{v^2}{c^2}}.
 <p><span id="eq-CFT_relation_of_energy_and_momentum_of_massless_particle"><span class="math display">\[
 P = \dfrac{\mathcal{E}}{c}
 \tag{2.8}\]</span></span></p>
-<p>로 쓸 수 있다. 이것은 질량이 있으며 입자의 에너지 <span class="math inline">\(\mathcal{E}\)</span> 가 정지 질량에 비해 매우 클때 근사적으로 사용 할 수 있다.</p>
+<p>로 쓸 수 있다. 이것은 질량이 있으며 입자의 에너지 <span class="math inline">\(\mathcal{E}\)</span> 가 정지 질량에 비해 매우 클 때 근사적으로 사용 할 수 있다.</p>
 <p><br></p>
 </section>
 <section id="sec-CFT_4_momentum" class="level3" data-number="2.2.3">
@@ -322,7 +333,7 @@ P = \dfrac{\mathcal{E}}{c}
 <p><span class="math display">\[
 \delta S = -mc \, \delta \left(\int_a^b \,ds\right) = 0.
 \]</span></p>
-<p><span class="math inline">\(ds=\sqrt{dx_\mu dx^\mu}\)</span> 이므로 4-속도 <a href="01_principle_of_relativity.html#eq-CFT_defintion_of_4_velocity" class="quarto-xref">식&nbsp;<span>1.44</span></a> 를 이용하면</p>
+<p><span class="math inline">\(ds=\sqrt{dx_\mu dx^\mu}\)</span> 이므로 4-속도 <a href="01_principle_of_relativity.html#eq-CFT_defintion_of_4_velocity" class="quarto-xref">식&nbsp;<span>1.45</span></a> 를 이용하면</p>
 <p><span class="math display">\[
 \delta S = -mc \int_a^b \dfrac{dx_\mu \delta dx^\mu}{ds} = -mc \int_a^b u_\mu d\delta x^\mu
 \]</span></p>
@@ -386,6 +397,147 @@ F^0 &amp;= \dfrac{m}{\sqrt{1-v^2/c^2}} \dfrac{d}{dt}\left(\dfrac{1}{\sqrt{1-v^2/
 F^i &amp;=\dfrac{m}{\sqrt{1-v^2/c^2}} \dfrac{d}{dt}\left(\dfrac{v^i}{\sqrt{1-v^2/c^2}}\right) = \dfrac{f^i}{c \sqrt{1-v^2/c^2}}.
 \end{aligned}
 \]</span></p>
+</div>
+<p><br></p>
+</section>
+</section>
+<section id="분포-함수의-변환" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="분포-함수의-변환"><span class="header-section-number">2.3</span> 분포 함수의 변환</h2>
+<section id="sec-CFT_distribution_in_3d_momentum_space" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="sec-CFT_distribution_in_3d_momentum_space"><span class="header-section-number">2.3.1</span> 운동량 공간에서의 분포</h3>
+<p>많은 고전역학적인 상황에서 우리는 입자들의 운동량 분포 <span class="math inline">\(f(\boldsymbol{p})\,dp_x dp_y dp_z\)</span> 를 사용하며 운동량 공간에서의 밀도 함수 <span class="math inline">\(f(\boldsymbol{p})\)</span> 의 변환을 다룬다. 이것을 4차원 시공간에서 다루려면 로렌츠 변환에 대해 <span class="math inline">\(dp_xdp_ydp_z\)</span> 를 어떻게 다룰지를 확인해야 한다. 우리는 <span class="math inline">\(p^\mu p_\mu = m^2c^2\)</span> 임을 알며 이는 4-운동량 공간에서의 초평면을 정의하고 <span class="math inline">\(dp_x dp_y dp_z\)</span> 는 이 초평면상의 각 점에대한 접평면의 <span class="math inline">\(0\)</span> 번째 성분이라는 것을 안다.</p>
+<p><span class="math display">\[
+\dfrac{dp_x dp_y dp_z}{\mathcal{E}}
+\]</span></p>
+<p>에 대한 적분이 불변량이다.(<em>to be explained</em>. L&amp;L CTF pp.31) 우선 초평면에 대한 적분은</p>
+<p><span class="math display">\[
+\int [\cdots] \delta(p^\mu p_\mu - m^2c^2) \,dp^0 dp^1 dp^2 dp^3
+\]</span></p>
+<p>이며 디렉 델타함수의 성질로부터</p>
+<p><span class="math display">\[
+\delta (p^\mu p_\mu - m^2c^2) = \delta \left((p_0)^2 - \dfrac{\mathcal{E}^2}{c^2}\right) = \dfrac{c}{2\mathcal{E}}\left[\delta \left(p_0 + \dfrac{\mathcal{E}}{c}\right) + \delta \left(p_0 - \dfrac{\mathcal{E}}{c}\right)\right]
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int [\cdots] \delta(p^\mu p_\mu - m^2c^2) \,dp^0 dp^1 dp^2 dp^3 =\dfrac{c}{2}\int [\cdots]\,\dfrac{dp^1dp^2dp^3}{\mathcal{E}}
+\end{aligned}
+\]</span></p>
+<p>이다. 또한 총 입자의 개수인 <span class="math inline">\(\int f(\boldsymbol{p})\,dp_xdp_ydp_z\)</span> 가 불변임을 안다. 따라서</p>
+<p><span class="math display">\[
+\int f(\boldsymbol{p})\mathcal{E}\dfrac{dp_xdp_ydp_z}{\mathcal{E}} = \int f'(\boldsymbol{p}')\mathcal{E'}\dfrac{dp'_xdp'_ydp'_z}{\mathcal{E}'}
+\]</span></p>
+<p>이다. 여기서 <span class="math inline">\(dp_x dp_y dp_z/\mathcal{E}\)</span> 가 불변량이므로 <span class="math inline">\(f(\boldsymbol{p})\mathcal{E}\)</span> 역시 불변량이다. 즉 두 관성기준틀에 대해</p>
+<p><span class="math display">\[
+f(\boldsymbol{p}')= f(\boldsymbol{p})\dfrac{\mathcal{E}}{\mathcal{E}'}
+\]</span></p>
+<p>이 성립한다.</p>
+<p>이제 <span class="math inline">\(p_x,\,p_y,\,p_z\)</span> 에 대한 구면좌표계를 생각하자. 그렇다면 적분은 <span class="math inline">\(p^2dp d\Omega_p\)</span> 에 대한 적분으로 바뀌고 <a href="#eq-CFT_energy_and_momentum_relation_for_free_particle" class="quarto-xref">식&nbsp;<span>2.6</span></a> 로 부터 <span class="math inline">\(pdp = \mathcal{E}d\mathcal{E}/c^2\)</span> 이므로</p>
+<p><span class="math display">\[
+\dfrac{p^2\,dp\,d\Omega_p}{\mathcal{E}} = \dfrac{p\,d\mathcal{E}d\Omega_p}{c^2}
+\]</span></p>
+<p>임을 안되 좌변으 불변량이므로 우변 역시 불변량이며, <span class="math inline">\(c\)</span>^2 역시 불변량이므로</p>
+<p><span class="math display">\[
+p\,d\mathcal{E}d\Omega_p
+\]</span></p>
+<p>역시 불변량임을 알 수 있다.</p>
+<p><br></p>
+</section>
+<section id="sec-CFT_distribution_in_phase_sppace" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="sec-CFT_distribution_in_phase_sppace"><span class="header-section-number">2.3.2</span> 위상 공간에서의 분포</h3>
+<p>위상공간(phase space) 에서의 분포 <span class="math inline">\(f(\boldsymbol{r},\,\boldsymbol{p})\)</span> 를 생각하자. 여기서는 <span class="math inline">\(\int f(\boldsymbol{r},\boldsymbol{p})\,d^3\boldsymbol{p}d^3\boldsymbol{r}\)</span> 이 입자의 개수이다. 앞서 우리는 <span class="math inline">\(d^3\boldsymbol{p}/\mathcal{E}\)</span> 가 로런츠 변환에 대해 불변임을 보얐다. 이제 <span class="math inline">\(d^3\boldsymbol{r}\)</span> 에 대해 알아보자. 이를 위해 두 관성좌표계 <span class="math inline">\(\Sigma,\, \Sigma'\)</span> 과 별도로 운동량 <span class="math inline">\(\boldsymbol{p}\)</span> 를 가진 입자가 정지한 관성기준틀 <span class="math inline">\(\Sigma_0\)</span> 를 생각하자. 여기서의 부피를 요소를 <span class="math inline">\(dV_0\)</span> 라고 하면 <a href="01_principle_of_relativity.html#eq-CFT_lorent_transform_of_volumn" class="quarto-xref">식&nbsp;<span>1.7</span></a> 에 따라</p>
+<p><span class="math display">\[
+dV = dV_0 \sqrt{1-\dfrac{v^2}{c^2}},\qquad dV' = dV_0 \sqrt{1-\dfrac{v'^2}{c^2}}
+\]</span></p>
+<p>이며 이로부타</p>
+<p><span class="math display">\[
+\mathcal{E}\,d^3\boldsymbol{r} = \mathcal{E}'\,d^3\boldsymbol{r}'
+\]</span></p>
+<p>임을 안다. 즉</p>
+<p><span class="math display">\[
+d^3\boldsymbol{r}d^3\boldsymbol{p} = \dfrac{\mathcal{E}'}{\mathcal{E}}\dfrac{\mathcal{E}}{\mathcal{E}'}d^3\boldsymbol{r}'d^3\boldsymbol{p}= d^3\boldsymbol{r}'d^3\boldsymbol{p}
+\]</span></p>
+<p>이다. 따라서 위상공간에서의 로런츠 변환에 대해서 분포함수는 불변이다.</p>
+<p><span class="math display">\[
+f(\boldsymbol{r}',\,\boldsymbol{p}') = f(\boldsymbol{r},\boldsymbol{p})
+\]</span></p>
+<p><br></p>
+</section>
+</section>
+<section id="입자의-붕괴" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="입자의-붕괴"><span class="header-section-number">2.4</span> 입자의 붕괴</h2>
+<section id="sec-CFT_spontaneous_decay_in_C_system" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="sec-CFT_spontaneous_decay_in_C_system"><span class="header-section-number">2.4.1</span> <span class="math inline">\(C\)</span>-기준틀에서의 입자의 자발적 붕괴</h3>
+<p>질량 <span class="math inline">\(M\)</span> 인 정지한 입자가 질량이 각각 <span class="math inline">\(m_1,\,m_2\)</span> 인 입자로 자발적으로 붕괴한다고 하자. 에너지 보존 법칙에 의해</p>
+<p><span id="eq-CFT_spontaneous_decay_energy_conservation"><span class="math display">\[
+Mc^2 = \mathcal{E}_{10} + \mathcal{E}_{2 0}= \sqrt{m_1^2c^4 + p_{10}^2c^2} + \sqrt{m_2^2c^4 + p_{20}^2c^2}
+\tag{2.15}\]</span></span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+M &gt; m_1+m_2
+\]</span></p>
+<p>이어야 한다. 이 때 <span class="math inline">\((M-m_1-m_2)c^2\)</span> 을 원래 입자의 binding energy 로 간주 할 수 있다. 그리고 운동량 보존을 생각해보자 <span class="math inline">\(p_{10}=p_{20}\)</span> 이어야 하므로</p>
+<p><span id="eq-CFT_spontaneous_decay_momentum_conservation"><span class="math display">\[
+\mathcal{E}_{10}^2- m_1^2c^2 = \mathcal{E}_{20}^2 - m_2^2c^2
+\tag{2.16}\]</span></span></p>
+<p>이며 <a href="#eq-CFT_spontaneous_decay_energy_conservation" class="quarto-xref">식&nbsp;<span>2.15</span></a> 와 함께 계산하면 붕괴된 입자의 에너지는 아래와 같다.</p>
+<p><span id="eq-CFT_spontaneous_decay_energy_of_decayed_particles"><span class="math display">\[
+\mathcal{E}_{10}  = \dfrac{c^2\left(M^2+m_1^2-m_2^2\right)}{2M},\qquad \mathcal{E}_{20}  = \dfrac{c^2\left(M^2-m_1^2+m_2^2\right)}{2M}.
+\tag{2.17}\]</span></span></p>
+<p>이 과정을 반대로 하면 두 입자가 충돌후 합쳐져 정지한 질량 <span class="math inline">\(M\)</span> 인 입자를 생성하는 과정이다. 두 경우 모두 총 운동량이 <span class="math inline">\(0\)</span> 며 이 기준틀을 <strong>관성중심 기준틀</strong> 혹은 <strong><span class="math inline">\(C\)</span>-기준틀</strong> 이라고 부른다.</p>
+<p><br></p>
+</section>
+<section id="sec-CFT_scattering_in_L_system" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="sec-CFT_scattering_in_L_system"><span class="header-section-number">2.4.2</span> <span class="math inline">\(L\)</span>-기준틀에서의 충돌</h3>
+<p>이제 질량 <span class="math inline">\(m_1\)</span> 인 입자가 에너지 <span class="math inline">\(\mathcal{E}_1\)</span> 으로 정지한 질량 <span class="math inline">\(m_2\)</span> 와 충돌하여 질량 <span class="math inline">\(M\)</span> 인 입자를 생성하는 경우를 살펴보자. 이 기준틀을 <strong><span class="math inline">\(L\)</span>-기준틀</strong> 이라고 한다. 생성된 입자의 질량, 운동량과 에너지를 각각 <span class="math inline">\(M\)</span>, <span class="math inline">\(\boldsymbol{p}\)</span>, <span class="math inline">\(\mathcal{E}\)</span> 라고 하자. 에너지 보존에 의해</p>
+<p><span class="math display">\[
+\mathcal{E}= \mathcal{E}_1 + m_2c^2
+\]</span></p>
+<p>이며 운동량 보존에 의해</p>
+<p><span class="math display">\[
+\boldsymbol{p}= \boldsymbol{p}_1
+\]</span></p>
+<p>이며, <a href="#eq-CFT_relation_of_free_particls_between_momentum_velocity_and_energy" class="quarto-xref">식&nbsp;<span>2.7</span></a> 로 부터 <span class="math inline">\(C\)</span>-기준틀과 <span class="math inline">\(L\)</span>-기준틀의 상대속도 <span class="math inline">\(\boldsymbol{V}\)</span> 를 계산 할 수 있다.</p>
+<p><span class="math display">\[
+\boldsymbol{V}= \dfrac{c^2}{\mathcal{E}}\boldsymbol{p}.
+\]</span></p>
+<p>이제 생성된 입자의 질량 <span class="math inline">\(M\)</span> 을 계산하면 아래와 같다.</p>
+<p><span class="math display">\[
+\begin{aligned}
+M^2 &amp;= \dfrac{\mathcal{E}^2-p^2c^2}{c^4} = \dfrac{(\mathcal{E}_1+m_2c^2)^2 - (\mathcal{E}_1^2 - m_1^2c^4)}{c^4} \\[0.3em]
+&amp;=m_1^2+m_2^2 + \dfrac{2\mathcal{E}_1m_2}{c^2}
+\end{aligned}
+\]</span></p>
+<p><br></p>
+</section>
+<section id="연습문제-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제-1">연습문제</h3>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CFT_Landau_CFT_11_1" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 2.2 (L&amp;L CTF 11.1)</strong></span> 속도 <span class="math inline">\(V\)</span> 로 움직이는 입자가 비행중에 두 입자로 분리되었다. 두 입자가 나타나는 각도외 에너지의 관계를 밝혀라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(C\)</span> 기준틀에서 붕괴 전 입자의 에너지 <span class="math inline">\(\mathcal{E}_0\)</span> 와 <span class="math inline">\(L\)</span> 시스템에서의 붕괴 전 입자의 에너지 <span class="math inline">\(\mathcal{E}\)</span> 를 생각하자. <span class="math inline">\(L\)</span> 시스템에서의 한 입자의 운동량 <span class="math inline">\(p\)</span> 에 대해 <span class="math inline">\(p_x = p \cos \theta\)</span> 이며, 4-운동량의 로렌츠 변환에 의해 (<span class="math inline">\(\beta=V/c\)</span>, <span class="math inline">\(\gamma = 1/\sqrt{1-\beta^2}\)</span>)</p>
+<p><span class="math display">\[
+\dfrac{\mathcal{E}_0}{c} = \gamma \left(\dfrac{\mathcal{E}}{c} - \beta p_x \right) = \gamma \left(\dfrac{\mathcal{E}}{c}- \beta p \cos \theta\right)
+\]</span></p>
+<p>이므로 <span class="math inline">\(pc = \sqrt{\mathcal{E}^2-m^2c^4}\)</span> 을 이용하면</p>
+<p><span class="math display">\[
+\cos \theta = \dfrac{\mathcal{E} - \mathcal{E}_0/\gamma}{\beta p c} = \dfrac{\mathcal{E}-\mathcal{E}_0/\gamma}{\beta \sqrt{\mathcal{E}^2-m^2c^4}}
+\]</span></p>
+<p>이다. 이로부터 <span class="math inline">\(\mathcal{E}\)</span> 에 대한 2차방정식을 얻는다.</p>
+<p><span class="math display">\[
+(1-\beta^2\cos^2\theta)\mathcal{E}^2 - \left(2\mathcal{E}_0 /\gamma\right) \mathcal{E} + \mathcal{E}_0^2/\gamma^2 + \beta^2 m^2 c^2 \cos^2\theta = 0
+\]</span></p>
+<p>이 방정식의 해는</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mathcal{E} &amp;= \mathcal{E}_0 /\gamma \pm \sqrt{\beta^2m^2c^2\cos^2\theta - \beta^2 \mathcal{E}_0^2 \cos^2 \theta/\gamma ^2 - \beta^4m^2c^2\cos^4\theta} \\[0.3em]
+&amp;=\dfrac{\mathcal{E}_0}{\sqrt{1-\beta^2}} \pm \beta |\cos\theta| \sqrt{m^2c^2-(1-\beta^2)\mathcal{E}_0^2 -\beta^2m^2c^2\cos^2\theta}
+\end{aligned}
+\]</span></p>
+<p><a href="https://julia-kaeri.github.io/ClassicalPhysics/src/ClassicalMechanics/12_two_or_three_bodies_problems.html#sec-CM_spontaneous_disintegration_in_lab_frame">고전역학에서의 자발적 붕괴</a> 를 보면 실험실 좌표계에서 붕괴된 입자의 속력 <span class="math inline">\(v_0\)</span> 가 <span class="math inline">\(V\)</span> 보다 크면 <span class="math inline">\(\theta\)</span> 에 제한이 존재한다.</p>
 </div>
 
 

@@ -252,6 +252,16 @@ $$ {#eq-CFT_lorent_transform_in_1d}
 
 $c\to \infty$ 극한에서 우리는 갈릴레이 변환을 얻는다는 것을 확인 할 수 있다. $V>c$ 에서 $x,\,t$ 가 허수가 되는데 이는 물리적으로 무의미하며 따라서 속도 $V\le c$ 인 조건을 확인 할 수 있다.
 
+속도 $V$ 의 방향과 평행한 방향으로는 길이의 변화가 없으므로 부피 $V$ 는 로런츠 변환에 의해
+
+$$
+V=V_0\sqrt{1-\dfrac{V^2}{C^2}}
+$$ {#eq-CFT_lorent_transform_of_volumn}
+
+임을 알 수 있다.
+
+
+
 </br>
 
 ### 고유길이와 로런츠 수축 {#sec-CFT_proper_length_and_lorentz_contraction}
