@@ -26,27 +26,27 @@ crossref:
 전저기장 속의 입자의 운동을 기술하는 액션은 두 부분-자유 입자 부분과 전자기장과 입자의 상호작용 부분-으로 구성된다. 그리고 아래의 실험적으로 확인된 사실을 확인하자.
 
 1. 전자기장의 입자의 상호작용은 입자의 특성중 전하 하나에만 의존한다.
-2. 장의 특성은 4-포텐셜이라고 불리는 4-벡터 $A$ 에 의해 결정되며 $A$ 는 시간과 좌표의 함수이다.
+2. 전자기장의 특성은 4-포텐셜이라고 불리는 4-벡터 $A$ 에 의해 결정되며 $A$ 는 시간과 좌표의 함수이다.
 
 이제 전자기장의 입자를 기술하는 액선 적분은 다음과 같다.
 
 $$
 S = \int_a^b \left(-mc\,ds - qA_\mu dx^\mu\right)
-$$
+$$ {#eq-CFT_action_of_particle_in_electromagnetic_field}
 
-전자기학에서의 서술로서 $A^\mu = \left(\dfrac{1}{c}\Phi,\, \bf{A}\right)$ 이며, 따라서 위 식은
+$A^\mu = \left(\dfrac{1}{c}\Phi,\, \bf{A}\right)$ 이며 $\Phi$ 를 스칼라 포텐셜, $\bf{A}$ 를 벡터포텐셜이라고 한다. 따라서 위 식은
 
 $$
 \begin{aligned}
 S &= \int_a^b \left(-mc\,ds + q\bf{A\cdot}d\bf{r} - q \Phi\,dt\right) \\[0.3em]
 &= \int_a^b \left( mc^2 \sqrt{1-\dfrac{v^2}{c^2}} + q\bf{A \cdot v} - q\Phi\right) \,dt
 \end{aligned}
-$$
+$${#eq-CFT_action_of_particle_in_electromagnetic_field_2}
 
 이며 이로부터 라그랑지안을 얻는다.
 
 $$
-L = -mc^2 \sqrt{1-\dfrac{v^2}{c^2}} + q\bf{A \cdot v} -q\Phi
+L = -mc^2 \sqrt{1-\dfrac{v^2}{c^2}} + q\bf{A \cdot v} -q\Phi.
 $$ {#eq-CFT_lagrangian_of_particle_in_electromagnetic_fields}
 
 이로부터 일반화된 운동량 $\bf{P} = \dfrac{\partial L}{\partial \bf{v}}$ 은
@@ -130,7 +130,7 @@ $$
 
 ### 운동방정식 {#sec-CFT_CHG_equation_of_motion}
 
-장 속의 입자는 장에 의해 힘을 받을 뿐 아니라 장을 변화시킨다. 그러나 전하 $q$ 가 충분히 크지 않다면 장에 주는 효과는 무시할 수 있다. 이런 근사에서 장은 입자의 위치와 속도에 독립적이라고 가정 할 수 있다. (이 근사가 성립하지 않는 조건은 뒤에 다루기로 한다.) 이 조건에서의 운동방정식은 라그랑쥬 방정식을 통해 얻는다.
+장 속의 입자는 장에 의해 힘을 받을 뿐 아니라 장을 변화시킨다. 그러나 전하 $q$ 가 충분히 크지 않다면 장에 주는 효과는 무시할 수 있다. 이 조건에서 장은 입자의 위치와 속도에 독립적이라고 가정 할 수 있다. (이 조건이 성립하지 않는 조건은 뒤에 다루기로 한다.) 이 조건에서의 운동방정식은 라그랑쥬 방정식을 통해 얻는다.
 
 $$
 \dfrac{\partial L}{\partial \bf{r}} = q\nabla (\bf{A\cdot v}) - q \nabla \Phi
@@ -180,7 +180,7 @@ $$
 \bf{B} := \curl \bf{A}.
 $$ {#eq-CFT_CHG_definition_of_magnetic_field}
 
-여기서 $\bf{E}$ 는 극벡터이고 $\bf{B}$ 는 축벡터, 즉 유사벡터 임을 알 수 잇다. 이를 이용하면 운동방정식 @eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_1 을 아래와 같이 쓸 수 있다.
+여기서 $\bf{E}$ 는 극벡터이고 $\bf{B}$ 는 축벡터, 즉 유사벡터 임을 알 수 있다. 이를 이용하면 운동방정식 @eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_1 을 아래와 같이 쓸 수 있다.
 
 $$
 \dfrac{d\bf{p}}{dt} = q\left(\bf{E} + \bf{v}\times \bf{B}\right).
@@ -246,13 +246,14 @@ $$
 
 $$
 A'_\mu = A_\mu - \dfrac{\partial f}{\partial x^\mu}
-$$
+$$ {#eq-CFT_gauge_transform_in_4_momentum_form}
 
 로 정의된 4-벡터 $A'_\mu = (\Phi'/c, -\bf{A}')$ 는 같은 장을 생성함을 보이자. 위의 변환은
 
 $$
-\Phi' = \Phi -\dfrac{df}{dt},\qquad \bf{A}' =  \bf{A} + \nabla f
-$$
+\Phi' = \Phi -\dfrac{\partial f}{\partial t},\qquad \bf{A}' =  \bf{A} + \nabla f
+$${#eq-CFT_gauge_transform}
+
 
 이므로
 
@@ -263,9 +264,9 @@ $$
 \end{aligned}
 $$
 
-이다. 또한 당연하게도 4-포텐셜에 상수를 더한다고 해도 장은 변하지 않는다.
+이다. 또한 당연하게도 4-포텐셜에 상수 4-벡터를 더한다고 해도 장은 변하지 않는다.
 
-이렇게 어떤 전기장&자기장에 대해 4-포텐셜은 유일하게 정해지지 않으며 특정한 함수를 더해도 동일한 장이 기술되는데 이 때 사용되는 함수를 **게이지 (gauge)** 라고 하고 게이지를 통해 동일한 장을 만드는 다른 4-포텐셜로 변환시키는 것을 **게이지 변환 (gauge transformatnion)** 이라고 한다. 게이지 변환에 대해 장이 변화하지 않는 것을 **게이지 불변 (gauge invariance)** 라고 하고 한다$^\dagger$. [$^\dagger$ (From CTF by L&L) 게이지 불변과 전하량 보존은 밀접한 관련이 있다.]{.aside} 특히 스칼라 포텐셜이 $0$ 인 게이지 변환은 항상 존재하지만 벡터 포텐셜이 $0$ 이 아닐 때 벡터포텐셜을 $0$ 으로 하는 게이지 변환은 일반적으로 존재하지 않는다. 
+이렇게 어떤 전기장&자기장에 대해 4-포텐셜은 유일하게 정해지지 않으며 특정한 함수를 더해도 동일한 장이 기술되는데 이 때 사용되는 함수를 **게이지 (gauge)** 라고 하고 게이지를 통해 동일한 장을 만드는 다른 4-포텐셜로 변환시키는 것을 **게이지 변환 (gauge transformatnion)** 이라고 한다. 게이지 변환에 대해 장이 변화하지 않는 것을 **게이지 불변 (gauge invariance)** 라고 하고 한다$^\dagger$. [$^\dagger$ (From CTF by L&L) 게이지 불변과 전하량 보존은 밀접한 관련이 있다.]{.aside} 특별히 스칼라 포텐셜이 $0$ 인 게이지 변환은 항상 존재하지만 벡터 포텐셜이 $0$ 이 아닐 때 벡터포텐셜을 $0$ 으로 하는 게이지 변환은 일반적으로 존재하지 않는다. 
 
 </br>
 
@@ -273,9 +274,15 @@ $$
 
 앞으로 어떤 특성이 시간의 변화와 무관할 때 **일정하다(be constant)** 라고 하고 위치의 변화에 대해 불변일 때 **균일하다(be uniform)** 이라고 표현한다.
 
+</br>
+
 ### 일정한 전자기장에서의 게이지 변환 {#sec-CFT_gauge_transform_in_constant_electromagnetic_field}
 
-시간에 대해 변화하지 않는 전자기장을 생각하자. 이 경우 $\bf{E}=-\nabla \Phi,\ \bf{B}=\curl \bf{A}$ 이다. 게이지 불변을 생각하면 우선 시간에 대해 일정한 4-포텐셜을 정한 뒤 스칼라 포텐셜에 상수를 더했을 때만 게이지 변환이 된다. 일반적으로 스칼라 포텐셜 $\Phi$ 는 특정 지점에서 정해진 값을 가지며 $\lim_{\|\bf{r}\|\to \infty}\Phi = 0$ 이 되도록 정하는데 그렇다면 스칼라 포텐셜은 유일하게 정해진다. 반면 벡터 포텐셜은 시간에 대해 일정한 전자기장에 대해서도 유일하게 정해지지 않는다. 예를 들어 임의의 상수 벡터 $\bf{a}$ 에 대해 $f=\bf{a\cdot r}$ 는 게이지 함수이다. 
+시간에 대해 변화하지 않는 전자기장을 생각하자. 이 경우 시간에 명시적으로 의존하지 않는, 즉 공간 좌표에 대한 함수인 포텐셜이 항상 존재하며 이 경우 $\bf{E}=-\nabla \Phi,\ \bf{B}=\curl \bf{A}$ 이다. 게이지 불변을 생각하면 우선 시간에 대해 일정한 4-포텐셜을 정한 뒤 스칼라 포텐셜에 상수를 더했을 때만 게이지 변환이 된다. 
+
+앞서 말했듯이 포텐셜은 유일하게 정해지지 않는다. 우리가 일정한 전자기장에 대한 일정한 4-포텐셜을 얻었다면 스칼라 포텐셜에 더해질 수 있는 것은 상수(즉 시간과 공간에 대해 일정한) 뿐이다(@exr-CFT_gauge_in_constant_fields).
+
+일반적으로 스칼라 포텐셜 $\Phi$ 는 특정 지점에서 정해진 값을 가지며 $\lim_{\|\bf{r}\|\to \infty}\Phi = 0$ 이 되도록 정하는데 그렇다면 스칼라 포텐셜은 유일하게 정해진다. 반면 벡터 포텐셜은 시간에 대해 일정한 전자기장에 대해서도 유일하게 정해지지 않는다. 예를 들어 임의의 상수 벡터 $\bf{a}$ 에 대해 $f=\bf{a\cdot r}$ 는 게이지 함수이다. 
 
 ### 일정한 전자기장에서의 에너지
 
@@ -296,6 +303,33 @@ $$ {#eq-CFT_CHG_scala_potential_representation_for_uniform_and_constant_electrom
 $$
 \bf{A} = \dfrac{1}{2} \bf{B} \times \bf{r}.
 $${#eq-CFT_CHG_vector_potential_representation_for_uniform_and_constant_electromagnetic_field}
+
+</br>
+
+### 연습문제 {.unnumbered}
+
+
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CFT_gauge_in_constant_fields}
+
+일정한 전자기장 $\bf{E},\,\bf{B}$ 에 대해 일정한 4-포텐셜 $(\Phi/c,\,\bf{A})$ 이 존재한다고 하자. 게이지 변환에 대해서도 4-포텐셜이 시간에 대해 독립적이려면 스칼라 포텐셜에 더해지는 함수는 상수함수이어야 함을 보여라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+시간에 의존하지 않는 4-운동량 $(\Phi/c,\,\bf{A})$ 에 대해 $\Phi' = \Phi + \alpha, \bf{A}'= \bf{A}+\bf{\beta}$ 가 시간에 무관하려면 $\alpha = \alpha (\bf{r}),\bf{\beta}=\bf{\beta}(\bf{r})$ 이어야 한다. 
+
+$$
+\bf{E}'=-\dfrac{\partial \bf{A}'}{\partial t} - \nabla \Phi' = \bf{E}+\nabla \alpha
+$$
+
+이어야 하므로 $\nabla \alpha =0$ 이다. 즉 $\alpha$ 시간과 공간에 대해 무관한 상수함수이다.
+
+:::
 
 </br>
 
@@ -343,7 +377,7 @@ $$
 x=\dfrac{\mathcal{E}_0}{qE}\left[\cosh \left(\dfrac{qEy}{p_0c} \right)-1\right].
 $$ {#eq-CFT_CHG_trajectory_of_particle_in_constant_and_uniform_field}
 
-비상대론적 근사, 즉 $v\ll c$ 일 경우 $\mathcal{E}_0=mc^2$, $p_0 = mv_0$ 이며 $|z|\ll 1$ 에 대해 $\cosh (z) \approx 1 + \dfrac{x^2}{2}$ 이므로 
+비상대론적 근사, 즉 $v\ll c$ 일 경우 $\mathcal{E}_0=mc^2$, $p_0 = mv_0$ 이며 $|z|\ll 1$ 에 대해 $\cosh (z) \approx 1 + \dfrac{z^2}{2}$ 이므로 
 
 $$
 x= \dfrac{qE}{mv_0^2}y^2
@@ -505,3 +539,82 @@ x = \dfrac{a}{\omega_0} \sin \omega_0 t + \dfrac{E_y}{B}t,\qquad y = \dfrac{a}{\
 $$
 
 이다. 
+
+*... to be fiiled ..*
+
+</br>
+
+## 전자기장 텐서
+
+앞서 우리는 라그랑지안 @eq-CFT_lagrangian_of_particle_in_electromagnetic_fields 로부터 운동방정식 @eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2 을 유도하였다. 이제 우리는 작용 @eq-CFT_action_of_particle_in_electromagnetic_field 을 이용하여 운동방정식을 구해보자. 최소작용의 원리로부터
+
+$$
+\delta S = \delta \int_a^b \left(-mc \,ds - qA_\mu \,dx^\mu\right) = 0
+$$
+
+을 만족해야 한다는 것을 안다. $ds = \sqrt{dx_\mu dx^\mu}$ 임을 이용하면
+
+$$
+\delta S = -\int_a^b\left(mc \dfrac{dx_\mu d(\delta x^\mu)}{ds} + qA_\mu d(\delta x^\mu) + q \delta A_\mu dx^\mu\right) = 0
+$$
+
+이다. 여기서 $dx_\mu/ds = u_\mu$ 임과 $d(\delta x^\mu) = \delta (dx^\mu)$ 임을 이용한다. 우선
+
+$$
+\begin{aligned}
+\int_a^b \dfrac{dx_\mu d(\delta x^\mu)}{ds} &= \int_a^b u_\mu d(\delta x^\mu) = \left[u_\mu \delta x^\mu\right]_{a}^b - \int_a^b \delta x^\mu du_\mu = - \int \delta x^\mu du_\mu \\[0.3em]
+\int_a^b A_\mu d(\delta x^\mu) &= \left[A_\mu \delta x^\mu\right]_a^b - \int_a^b \delta x^\mu dA_\mu = -\int_a^b \delta x^\mu dA_\mu
+\end{aligned}
+$$
+
+이므로
+
+$$
+0 = \delta S = \int_a^b mc\delta x^\mu du_\mu + q\delta x^\mu dA_\mu - q\delta A_\mu dx^\mu
+$$
+
+이다. 또한
+
+$$
+\delta A_\mu = \dfrac{\partial A_\mu}{\partial x^\nu}\delta x^\nu,\qquad dA_\mu = \dfrac{\partial A_\mu}{\partial x^\nu} dx^\nu
+$$
+
+이므로
+
+$$
+0 = \int \left(mc \, du_\mu \delta x^\mu + q\dfrac{\partial A_\mu}{\partial x^\nu}dx^\nu \delta x^\mu - q \dfrac{\partial A_\mu}{\partial x^\nu} \delta x^\nu dx^\mu\right) 
+$$
+
+이다. 여기서 $du_\mu = (du_\mu/ds)ds$ 이고 $dx^\mu = u^\mu ds$ 이므로
+
+$$
+0 = \int \left[m c \dfrac{du_\mu}{ds} - q\left(\dfrac{\partial A_\nu}{\partial x^\mu} - \dfrac{\partial A_\mu}{\partial x^\nu}\right)u^\nu\right]\delta x^\mu ds
+$$
+
+이다. $\delta x^\mu$ 에 므관하게 성립해야 하므로 우리는 다음 식을 얻는다.
+
+$$
+mc \dfrac{du_\mu}{ds} = q\left(\dfrac{\partial A_\nu}{\partial x^\mu} - \dfrac{\partial A_\mu}{\partial x^\nu}\right)u^\nu
+$$
+
+여기서 우리는 전자기장 텐서 $F_{\mu \nu}$ 를 다음과 같이 정의하자.
+
+$$
+\boxed{
+  F_{\mu\nu} :=  \dfrac{\partial A_\nu}{\partial x^\mu} - \dfrac{\partial A_\mu}{\partial x^\nu}.
+}
+$$ {#eq-CFT_definition_of_electromagnetic_field_tensor}
+
+그렇다면 운동방정식은 다음과 같다.
+
+$$
+\boxed{
+  mc \dfrac{du^\mu}{ds} = qF^{\mu \nu} u_\nu.
+}
+$${#eq-CFT_equation_of_motion_of_particle_using_field_tensor}
+
+$A=(\Phi/c,\,\bf{A})$ 에 대해 전자기장 텐서는 아래와 같다.
+
+$$
+F_{\mu\nu} = \left[\begin{array}{rrrr} 0 & E_x & E_y & E_z \\ -E_x & 0 & -B_z & B_y \\ -E_y & B_z & 0 & - B_x \\ -E_z & -B_y & B_x & 0\end{array}\,\right], \;F^{\mu\nu} = \left[\begin{array}{rrrr} 0 & -E_x & -E_y & -E_z \\ E_x & 0 & -B_z & B_y \\ E_y & B_z & 0 & - B_x \\ E_z & -B_y & B_x & 0\end{array}\,\right]
+$${#eq-CFT_elements_of_electromagnetic_field_tensor}

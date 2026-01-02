@@ -395,7 +395,7 @@ $$
 
 ::: {.solution}
 
-$C$ 기준틀에서 붕괴 전 입자의 에너지 $\mathcal{E}_0$ 와 $L$ 시스템에서의 붕괴 전 입자의 에너지 $\mathcal{E}$ 를 생각하자. $L$ 시스템에서의 한 입자의 운동량 $p$ 에 대해 $p_x = p \cos \theta$ 이며, 4-운동량의 로렌츠 변환에 의해 ($\beta=V/c$, $\gamma = 1/\sqrt{1-\beta^2}$)
+이 입자의 붕괴는 $xy$ 평면상에서 이루어지며 $\bf{V}=V\hat{\bf{x}}$ 라고 하자. 붕괴된 두 입자 가운데 하나만을 생각하여 $C$-기준틀에서의 운동량 $\bf{p}_0 = (p_{0x}, p_{0y})$ 와 에너지 $\mathcal{E}_0$, 그리고 그 입자의 $L$ 시스템에서의 운동량 $\bf{p}=(p_x,\,p_y)$ 와 에너지 $\mathcal{E}$ 를 생각하자. 그렇다면 $p_x = p \cos \theta$ 이며, 4-운동량의 로렌츠 변환에 의해 ($\beta=V/c$, $\gamma = 1/\sqrt{1-\beta^2}$)
 
 $$
 \dfrac{\mathcal{E}_0}{c} = \gamma \left(\dfrac{\mathcal{E}}{c} - \beta p_x \right) = \gamma \left(\dfrac{\mathcal{E}}{c}- \beta p \cos \theta\right)
@@ -405,23 +405,88 @@ $$
 
 $$
 \cos \theta = \dfrac{\mathcal{E} - \mathcal{E}_0/\gamma}{\beta p c} = \dfrac{\mathcal{E}-\mathcal{E}_0/\gamma}{\beta \sqrt{\mathcal{E}^2-m^2c^4}}
-$$
+$${#eq-exr_CFT_Landau_CFT_11_1_1}
 
 이다. 이로부터 $\mathcal{E}$ 에 대한 2차방정식을 얻는다.
 
 $$
-(1-\beta^2\cos^2\theta)\mathcal{E}^2 - \left(2\mathcal{E}_0 /\gamma\right) \mathcal{E} + \mathcal{E}_0^2/\gamma^2 + \beta^2 m^2 c^2 \cos^2\theta = 0
-$$
+(1-\beta^2\cos^2\theta)\mathcal{E}^2 - \left(2\mathcal{E}_0 /\gamma\right) \mathcal{E} + \mathcal{E}_0^2/\gamma^2 + \beta^2 m^2 c^4 \cos^2\theta = 0
+$${#eq-exr_CFT_Landau_CFT_11_1_2}
 
 이 방정식의 해는
 
 $$
 \begin{aligned}
-\mathcal{E} &= \mathcal{E}_0 /\gamma \pm \sqrt{\beta^2m^2c^2\cos^2\theta - \beta^2 \mathcal{E}_0^2 \cos^2 \theta/\gamma ^2 - \beta^4m^2c^2\cos^4\theta} \\[0.3em]
-&=\dfrac{\mathcal{E}_0}{\sqrt{1-\beta^2}} \pm \beta |\cos\theta| \sqrt{m^2c^2-(1-\beta^2)\mathcal{E}_0^2 -\beta^2m^2c^2\cos^2\theta}
+\mathcal{E} &= \mathcal{E}_0 /\gamma \pm \sqrt{\beta^2m^2c^4\cos^2\theta - \beta^2 \mathcal{E}_0^2 \cos^2 \theta/\gamma ^2 - \beta^4m^2c^4\cos^4\theta} \\[0.3em]
+&=\dfrac{\mathcal{E}_0}{\sqrt{1-\beta^2}} \pm \beta |\cos\theta| \sqrt{m^2c^4-(1-\beta^2)\mathcal{E}_0^2 -\beta^2m^2c^4\cos^2\theta}
 \end{aligned}
+$${#eq-exr_CFT_Landau_CFT_11_1_3}
+
+[고전역학에서의 자발적 붕괴](https://julia-kaeri.github.io/ClassicalPhysics/src/ClassicalMechanics/12_two_or_three_bodies_problems.html#sec-CM_spontaneous_disintegration_in_lab_frame) 를 보면 실험실 좌표계에서 붕괴된 입자의 속력 $v_0$ 가 $V$ 보다 작으면 $\theta$ 에 제한이 존재한다. 
+
+4-운동량의 로렌츠 변환에 의해
+
+$$
+p_x = \gamma (p_0 \cos\theta_0 + \beta \mathcal{E}_0/c),\qquad p_y = p_0 \sin \theta_0
+$${#eq-exr_CFT_Landau_CFT_11_1_4}
+
+이며 $\theta_0$ 를 제거하면 아래와 같이 $p_x,\,p_y$ 에 대한 타원의 방정식을 얻는다.
+
+$$
+\left(p_x/\gamma-\beta \mathcal{E}_0/c\right)^2 + p_y^2= p_0^2.
+$${#eq-exr_CFT_Landau_CFT_11_1_5}
+
+참고로 고전역학적 극한 $v/c=0$ 에서는 앞서의 고전역학의 경우와 같이 원이 된다. 
+
+![실험실 좌표계에서의 자발적 붕괴](figures/spontaneous_decay_in_L_system/spontaneous_decay2.png){#fig-CFT_spontaneous_decay_in_L_system width=500}
+
+
+$|A\mathcal{O}|=\gamma \beta \mathcal{E}_0/c$ 이며 $|A\mathcal{O}|>\gamma p_0$ 이면 점 $A$ 는 타원의 밖에 존재한다. 즉 $V> p_0 c^2/\mathcal{E}_0 = v_0$ 이면 점 $A$ 는 타원 밖에 위치하므로 근을 두개 갖게 된다. 또한 $\theta$ 는 정해진 $\theta_\textrm{max}$ 보다 클 수 없다. 중근을 가질 조건은 @eq-exr_CFT_Landau_CFT_11_1_3 의 $\sqrt{\cdots}=0$ 일 때이며 $\mathcal{E}_0^2 = m^2c^4+p_0^2c^2$ 임을 이용하면 다음을 얻는다.
+
+$$
+\theta_\textrm{max} = \dfrac{ p_0}{\beta \gamma mc} = \dfrac{p_0\sqrt{1-V^2/c^2}}{mV}
 $$
 
-[고전역학에서의 자발적 붕괴](https://julia-kaeri.github.io/ClassicalPhysics/src/ClassicalMechanics/12_two_or_three_bodies_problems.html#sec-CM_spontaneous_disintegration_in_lab_frame) 를 보면 실험실 좌표계에서 붕괴된 입자의 속력 $v_0$ 가 $V$ 보다 크면 $\theta$ 에 제한이 존재한다. 
+:::
+
+</br><div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+
+::: {#exr-CFT_Landau_CFT_11_2}
+
+#### L&L CTF 11.2
+
+많은 입자로 붕괴할때 $L$-기준틀에서의 에너지 분포를 구하라.
+
+:::
+
+</div>
+
+::: {.solution}
+
+$C$-기준틀에서는 모든 방향으로 등방적으로 발생하므로
+
+$$
+dN = \dfrac{d\Omega_0}{4\pi }= \dfrac{\sin \theta_0 d\theta_0}{2} = \dfrac{|d\cos\theta_0|}{2}
+$$
+
+이다. 4-운동량의 로렌츠 변환에 의해
+
+$$
+\mathcal{E}=\gamma (\mathcal{E}_0 + V p_0 \cos \theta_0)
+$$
+
+이므로
+
+$$
+d(\cos \theta_0) = -\sin \theta_0 d\theta_0 = -\dfrac{d\mathcal{E}}{\gamma Vp_0}
+$$
+
+이며, 따라서 다음을 얻는다.
+
+$$
+dN = \dfrac{\sqrt{1-V^2/c^2}}{Vp_0}d\mathcal{E}
+$$
+
+
 
 :::

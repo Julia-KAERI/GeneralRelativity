@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,14 +34,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/ClassicalFieldTheory/02_relativistic_mechanics.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6a6044446bafb874b35005e6d630eb70.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-3e2728906df7980cb53b491a61d13d7e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -84,7 +85,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -224,14 +225,16 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#sec-CFT_gauge_transform_in_constant_electromagnetic_field" id="toc-sec-CFT_gauge_transform_in_constant_electromagnetic_field" class="nav-link" data-scroll-target="#sec-CFT_gauge_transform_in_constant_electromagnetic_field"><span class="header-section-number">3.5.1</span> 일정한 전자기장에서의 게이지 변환</a></li>
   <li><a href="#일정한-전자기장에서의-에너지" id="toc-일정한-전자기장에서의-에너지" class="nav-link" data-scroll-target="#일정한-전자기장에서의-에너지"><span class="header-section-number">3.5.2</span> 일정한 전자기장에서의 에너지</a></li>
+  <li><a href="#연습문제-2" id="toc-연습문제-2" class="nav-link" data-scroll-target="#연습문제-2">연습문제</a></li>
   </ul></li>
   <li><a href="#일정하고-균일한-전기장에서의-운동" id="toc-일정하고-균일한-전기장에서의-운동" class="nav-link" data-scroll-target="#일정하고-균일한-전기장에서의-운동"><span class="header-section-number">3.6</span> 일정하고 균일한 전기장에서의 운동</a>
   <ul class="collapse">
-  <li><a href="#연습문제-2" id="toc-연습문제-2" class="nav-link" data-scroll-target="#연습문제-2">연습문제</a></li>
-  <li><a href="#일정하고-균일한-자기장에서의-운동" id="toc-일정하고-균일한-자기장에서의-운동" class="nav-link" data-scroll-target="#일정하고-균일한-자기장에서의-운동"><span class="header-section-number">3.6.1</span> 일정하고 균일한 자기장에서의 운동</a></li>
   <li><a href="#연습문제-3" id="toc-연습문제-3" class="nav-link" data-scroll-target="#연습문제-3">연습문제</a></li>
+  <li><a href="#일정하고-균일한-자기장에서의-운동" id="toc-일정하고-균일한-자기장에서의-운동" class="nav-link" data-scroll-target="#일정하고-균일한-자기장에서의-운동"><span class="header-section-number">3.6.1</span> 일정하고 균일한 자기장에서의 운동</a></li>
+  <li><a href="#연습문제-4" id="toc-연습문제-4" class="nav-link" data-scroll-target="#연습문제-4">연습문제</a></li>
   </ul></li>
   <li><a href="#일정하고-균일한-전자기장-속의-하전-입자의-운동" id="toc-일정하고-균일한-전자기장-속의-하전-입자의-운동" class="nav-link" data-scroll-target="#일정하고-균일한-전자기장-속의-하전-입자의-운동"><span class="header-section-number">3.7</span> 일정하고 균일한 전자기장 속의 하전 입자의 운동</a></li>
+  <li><a href="#전자기장-텐서" id="toc-전자기장-텐서" class="nav-link" data-scroll-target="#전자기장-텐서"><span class="header-section-number">3.8</span> 전자기장 텐서</a></li>
   </ul>
 </nav>
     </div>
@@ -267,35 +270,35 @@ window.Quarto = {
 <p>전저기장 속의 입자의 운동을 기술하는 액션은 두 부분-자유 입자 부분과 전자기장과 입자의 상호작용 부분-으로 구성된다. 그리고 아래의 실험적으로 확인된 사실을 확인하자.</p>
 <ol type="1">
 <li>전자기장의 입자의 상호작용은 입자의 특성중 전하 하나에만 의존한다.</li>
-<li>장의 특성은 4-포텐셜이라고 불리는 4-벡터 <span class="math inline">\(A\)</span> 에 의해 결정되며 <span class="math inline">\(A\)</span> 는 시간과 좌표의 함수이다.</li>
+<li>전자기장의 특성은 4-포텐셜이라고 불리는 4-벡터 <span class="math inline">\(A\)</span> 에 의해 결정되며 <span class="math inline">\(A\)</span> 는 시간과 좌표의 함수이다.</li>
 </ol>
 <p>이제 전자기장의 입자를 기술하는 액선 적분은 다음과 같다.</p>
-<p><span class="math display">\[
+<p><span id="eq-CFT_action_of_particle_in_electromagnetic_field"><span class="math display">\[
 S = \int_a^b \left(-mc\,ds - qA_\mu dx^\mu\right)
-\]</span></p>
-<p>전자기학에서의 서술로서 <span class="math inline">\(A^\mu = \left(\dfrac{1}{c}\Phi,\, \boldsymbol{A}\right)\)</span> 이며, 따라서 위 식은</p>
-<p><span class="math display">\[
+\tag{3.1}\]</span></span></p>
+<p><span class="math inline">\(A^\mu = \left(\dfrac{1}{c}\Phi,\, \boldsymbol{A}\right)\)</span> 이며 <span class="math inline">\(\Phi\)</span> 를 스칼라 포텐셜, <span class="math inline">\(\boldsymbol{A}\)</span> 를 벡터포텐셜이라고 한다. 따라서 위 식은</p>
+<p><span id="eq-CFT_action_of_particle_in_electromagnetic_field_2"><span class="math display">\[
 \begin{aligned}
 S &amp;= \int_a^b \left(-mc\,ds + q\boldsymbol{A\cdot}d\boldsymbol{r} - q \Phi\,dt\right) \\[0.3em]
 &amp;= \int_a^b \left( mc^2 \sqrt{1-\dfrac{v^2}{c^2}} + q\boldsymbol{A \cdot v} - q\Phi\right) \,dt
 \end{aligned}
-\]</span></p>
+\tag{3.2}\]</span></span></p>
 <p>이며 이로부터 라그랑지안을 얻는다.</p>
 <p><span id="eq-CFT_lagrangian_of_particle_in_electromagnetic_fields"><span class="math display">\[
-L = -mc^2 \sqrt{1-\dfrac{v^2}{c^2}} + q\boldsymbol{A \cdot v} -q\Phi
-\tag{3.1}\]</span></span></p>
+L = -mc^2 \sqrt{1-\dfrac{v^2}{c^2}} + q\boldsymbol{A \cdot v} -q\Phi.
+\tag{3.3}\]</span></span></p>
 <p>이로부터 일반화된 운동량 <span class="math inline">\(\boldsymbol{P} = \dfrac{\partial L}{\partial \boldsymbol{v}}\)</span> 은</p>
 <p><span id="eq-CFT_CHG_generalized_potential_of_particle_in_electromagnetic_field"><span class="math display">\[
 \boldsymbol{P}= \dfrac{m\boldsymbol{v}}{\sqrt{1-v^2/c^2}} + q\boldsymbol{A} = \boldsymbol{p}+q\boldsymbol{A}
-\tag{3.2}\]</span></span></p>
+\tag{3.4}\]</span></span></p>
 <p>임을 안다. 해밀토니안을 운동량 <span class="math inline">\(\boldsymbol{P}\)</span> 에 대해 표현하면 (<a href="#exr-CFT_CHG_hamiltonial_of_particle_in_electromagnetic_field" class="quarto-xref">연습문제&nbsp;<span>3.1</span></a>)</p>
 <p><span id="eq-CFT_CHG_hamiltonial_of_particle_in_electromagnetic_field_1"><span class="math display">\[
 \left(\dfrac{\mathcal{H}-q\Phi}{c}\right) ^2 = m^2c^2 +\|\boldsymbol{P}- q\boldsymbol{A}\|^2
-\tag{3.3}\]</span></span></p>
+\tag{3.5}\]</span></span></p>
 <p>혹은</p>
 <p><span id="eq-CFT_CHG_hamiltonial_of_particle_in_electromagnetic_field_2"><span class="math display">\[
 \mathcal{H} = \sqrt{m^2c^4 + c^2 \|\boldsymbol{P}- q\boldsymbol{A}\|^2} + q\Phi
-\tag{3.4}\]</span></span></p>
+\tag{3.6}\]</span></span></p>
 <p>이다. <span class="math inline">\(v\ll c\)</span> 일 때</p>
 <p><span class="math display">\[
 L = \dfrac{mv^2}{2} + q\boldsymbol{A\cdot v} - q\Phi,\qquad \boldsymbol{p}= \boldsymbol{P}- q\boldsymbol{A}
@@ -307,17 +310,17 @@ L = \dfrac{mv^2}{2} + q\boldsymbol{A\cdot v} - q\Phi,\qquad \boldsymbol{p}= \bol
 <p>이다. 마지막으로 전자기장에서의 해밀턴-야코비 방정식은</p>
 <p><span id="eq-CFT_CHG_hamilton_jacobi_equation_for_particle_in_electromagnetic_field"><span class="math display">\[
 \|\nabla S - q\boldsymbol{A}\|^2 - \dfrac{1}{c^2}\left(\dfrac{\partial S}{\partial t} + q\Phi\right)^2 + m^2c^2 = 0
-\tag{3.5}\]</span></span></p>
+\tag{3.7}\]</span></span></p>
 </section>
 <section id="연습문제" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="연습문제">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CFT_CHG_hamiltonial_of_particle_in_electromagnetic_field" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 3.1</strong></span> <span class="math inline">\(\mathcal{H}= \boldsymbol{v \cdot} \dfrac{\partial L}{\partial \boldsymbol{v}} - L\)</span> 과 <a href="#eq-CFT_CHG_generalized_potential_of_particle_in_electromagnetic_field" class="quarto-xref">식&nbsp;<span>3.2</span></a> 을 이용하여 <a href="#eq-CFT_CHG_hamiltonial_of_particle_in_electromagnetic_field_1" class="quarto-xref">식&nbsp;<span>3.3</span></a> 을 구하라.</p>
+<p><span class="theorem-title"><strong>연습문제 3.1</strong></span> <span class="math inline">\(\mathcal{H}= \boldsymbol{v \cdot} \dfrac{\partial L}{\partial \boldsymbol{v}} - L\)</span> 과 <a href="#eq-CFT_CHG_generalized_potential_of_particle_in_electromagnetic_field" class="quarto-xref">식&nbsp;<span>3.4</span></a> 을 이용하여 <a href="#eq-CFT_CHG_hamiltonial_of_particle_in_electromagnetic_field_1" class="quarto-xref">식&nbsp;<span>3.5</span></a> 을 구하라.</p>
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="#eq-CFT_CHG_generalized_potential_of_particle_in_electromagnetic_field" class="quarto-xref">식&nbsp;<span>3.2</span></a> 로부터</p>
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#eq-CFT_CHG_generalized_potential_of_particle_in_electromagnetic_field" class="quarto-xref">식&nbsp;<span>3.4</span></a> 로부터</p>
 <p><span class="math display">\[
 \begin{aligned}
 \mathcal{H} &amp;= \boldsymbol{v\cdot P} + mc^2\sqrt{1-v^2/c^2} - q\boldsymbol{A\cdot v} +q\Phi \\[0.3em]
@@ -325,7 +328,7 @@ L = \dfrac{mv^2}{2} + q\boldsymbol{A\cdot v} - q\Phi,\qquad \boldsymbol{p}= \bol
 &amp;= \dfrac{mc^2}{\sqrt{1-v^2/c^2}} +q\Phi.
 \end{aligned}
 \]</span></p>
-<p>얻는다. 해밀토니안은 <span class="math inline">\(\boldsymbol{P}=\partial L/\partial \boldsymbol{v}\)</span> 로 표현되어야 한다. 역시 <a href="#eq-CFT_CHG_generalized_potential_of_particle_in_electromagnetic_field" class="quarto-xref">식&nbsp;<span>3.2</span></a> 로부터</p>
+<p>얻는다. 해밀토니안은 <span class="math inline">\(\boldsymbol{P}=\partial L/\partial \boldsymbol{v}\)</span> 로 표현되어야 한다. 역시 <a href="#eq-CFT_CHG_generalized_potential_of_particle_in_electromagnetic_field" class="quarto-xref">식&nbsp;<span>3.4</span></a> 로부터</p>
 <p><span class="math display">\[
 \begin{aligned}
 \|\boldsymbol{P}-q\boldsymbol{A}\|^2 &amp;= \dfrac{m^2v^2}{1-v^2/c^2} =  \dfrac{m^2v^2}{1-v^2/c^2} + mc^2 - mc^2 \\[0.3em]
@@ -341,7 +344,7 @@ L = \dfrac{mv^2}{2} + q\boldsymbol{A\cdot v} - q\Phi,\qquad \boldsymbol{p}= \bol
 <h2 data-number="3.3" class="anchored" data-anchor-id="전자기장-속의-전하의-운동방정식"><span class="header-section-number">3.3</span> 전자기장 속의 전하의 운동방정식</h2>
 <section id="sec-CFT_CHG_equation_of_motion" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="sec-CFT_CHG_equation_of_motion"><span class="header-section-number">3.3.1</span> 운동방정식</h3>
-<p>장 속의 입자는 장에 의해 힘을 받을 뿐 아니라 장을 변화시킨다. 그러나 전하 <span class="math inline">\(q\)</span> 가 충분히 크지 않다면 장에 주는 효과는 무시할 수 있다. 이런 근사에서 장은 입자의 위치와 속도에 독립적이라고 가정 할 수 있다. (이 근사가 성립하지 않는 조건은 뒤에 다루기로 한다.) 이 조건에서의 운동방정식은 라그랑쥬 방정식을 통해 얻는다.</p>
+<p>장 속의 입자는 장에 의해 힘을 받을 뿐 아니라 장을 변화시킨다. 그러나 전하 <span class="math inline">\(q\)</span> 가 충분히 크지 않다면 장에 주는 효과는 무시할 수 있다. 이 조건에서 장은 입자의 위치와 속도에 독립적이라고 가정 할 수 있다. (이 조건이 성립하지 않는 조건은 뒤에 다루기로 한다.) 이 조건에서의 운동방정식은 라그랑쥬 방정식을 통해 얻는다.</p>
 <p><span class="math display">\[
 \dfrac{\partial L}{\partial \boldsymbol{r}} = q\nabla (\boldsymbol{A\cdot v}) - q \nabla \Phi
 \]</span></p>
@@ -364,7 +367,7 @@ L = \dfrac{mv^2}{2} + q\boldsymbol{A\cdot v} - q\Phi,\qquad \boldsymbol{p}= \bol
 <p>이므로 아래와 같이 정리 할 수 있다.</p>
 <p><span id="eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_1"><span class="math display">\[
 \dfrac{d\boldsymbol{p}}{dt} = -q\dfrac{\partial \boldsymbol{A}}{\partial t} - q\nabla\Phi + q\boldsymbol{v}\times (\nabla \times\boldsymbol{A}) .
-\tag{3.6}\]</span></span></p>
+\tag{3.8}\]</span></span></p>
 <p><br></p>
 </section>
 <section id="sec-CFT_CHG_electric_and_magnetic_field" class="level3" data-number="3.3.2">
@@ -372,28 +375,28 @@ L = \dfrac{mv^2}{2} + q\boldsymbol{A\cdot v} - q\Phi,\qquad \boldsymbol{p}= \bol
 <p>전기장 <span class="math inline">\(\boldsymbol{E}\)</span> 와 자기장 <span class="math inline">\(\boldsymbol{B}\)</span> 를 아래와 같이 정의한다.</p>
 <p><span id="eq-CFT_CHG_definition_of_electric_field"><span class="math display">\[
 \boldsymbol{E}:= - \dfrac{\partial \boldsymbol{A}}{\partial t} - \nabla \Phi,
-\tag{3.7}\]</span></span></p>
+\tag{3.9}\]</span></span></p>
 <p><span id="eq-CFT_CHG_definition_of_magnetic_field"><span class="math display">\[
 \boldsymbol{B} := \nabla \times\boldsymbol{A}.
-\tag{3.8}\]</span></span></p>
-<p>여기서 <span class="math inline">\(\boldsymbol{E}\)</span> 는 극벡터이고 <span class="math inline">\(\boldsymbol{B}\)</span> 는 축벡터, 즉 유사벡터 임을 알 수 잇다. 이를 이용하면 운동방정식 <a href="#eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_1" class="quarto-xref">식&nbsp;<span>3.6</span></a> 을 아래와 같이 쓸 수 있다.</p>
+\tag{3.10}\]</span></span></p>
+<p>여기서 <span class="math inline">\(\boldsymbol{E}\)</span> 는 극벡터이고 <span class="math inline">\(\boldsymbol{B}\)</span> 는 축벡터, 즉 유사벡터 임을 알 수 있다. 이를 이용하면 운동방정식 <a href="#eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_1" class="quarto-xref">식&nbsp;<span>3.8</span></a> 을 아래와 같이 쓸 수 있다.</p>
 <p><span id="eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2"><span class="math display">\[
 \dfrac{d\boldsymbol{p}}{dt} = q\left(\boldsymbol{E} + \boldsymbol{v}\times \boldsymbol{B}\right).
-\tag{3.9}\]</span></span></p>
+\tag{3.11}\]</span></span></p>
 <p>이렇게 표현된 오른쪽 항을 <strong>로런츠 힘 (Lorentz force)</strong> 라고 한다.</p>
 <p><br></p>
 </section>
 <section id="sec-CFT_CHG_kinetic_energy_of_particle_in_electromagnetic_field" class="level3" data-number="3.3.3">
 <h3 data-number="3.3.3" class="anchored" data-anchor-id="sec-CFT_CHG_kinetic_energy_of_particle_in_electromagnetic_field"><span class="header-section-number">3.3.3</span> 전자기장 속의 입자의 운동에너지</h3>
-<p>이제 <a href="02_relativistic_mechanics.html#eq-CFT_relativistic_energy" class="quarto-xref">식&nbsp;<span>2.4</span></a> 의 <span class="math inline">\(\mathcal{E}\)</span> 를 입자의 (상대론적) 운동에너지 라고 하고 <span class="math inline">\(\mathcal{E}_\text{kin}\)</span> 이라고 표기하자. <a href="#eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2" class="quarto-xref">식&nbsp;<span>3.9</span></a> 를 생각하면 아래의 결과를 얻는다.</p>
+<p>이제 <a href="02_relativistic_mechanics.html#eq-CFT_relativistic_energy" class="quarto-xref">식&nbsp;<span>2.4</span></a> 의 <span class="math inline">\(\mathcal{E}\)</span> 를 입자의 (상대론적) 운동에너지 라고 하고 <span class="math inline">\(\mathcal{E}_\text{kin}\)</span> 이라고 표기하자. <a href="#eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2" class="quarto-xref">식&nbsp;<span>3.11</span></a> 를 생각하면 아래의 결과를 얻는다.</p>
 <p><span id="eq-CFT_CHG_the_rate_of_change_of_the_kinetic_energy_of_particl_in_electromagnetic_field"><span class="math display">\[
 \dfrac{d\mathcal{E}_\text{kin}}{ dt} = \dfrac{d}{dt}\left(\dfrac{mc^2}{\sqrt{1-v^2/c^2}}\right) = \boldsymbol{v\cdot}\dfrac{d\boldsymbol{p}}{dt} = q\boldsymbol{E\cdot v}
-\tag{3.10}\]</span></span></p>
+\tag{3.12}\]</span></span></p>
 <p>운동에너지의 시간에 대한 변화량은 단위시간당 장이 입자에 해준 일이며 위 식에서 알 수 있듯이 전기장에만 의존하고 자기장에 독립적이다. 이것은 자기장에 의한 힘이 항상 속도의 방향에 수직이기 때문이다.</p>
-<p>역학적 운동방정식은 시간에 대해 대칭이어야 한다. 즉 운동방정식은 <span class="math inline">\(t\to -t\)</span> 변환에 대해 불변이어야 한다. 즉 어떤 경로가 가능하다면 그 반대 경로도 가능해야 한다는 의미이다. <a href="#eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_1" class="quarto-xref">식&nbsp;<span>3.6</span></a> 와 <a href="#eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2" class="quarto-xref">식&nbsp;<span>3.9</span></a> 로 부터 우리는 시간 역전에 대해 다음이 성립해야 한다는 것을 안다.</p>
+<p>역학적 운동방정식은 시간에 대해 대칭이어야 한다. 즉 운동방정식은 <span class="math inline">\(t\to -t\)</span> 변환에 대해 불변이어야 한다. 즉 어떤 경로가 가능하다면 그 반대 경로도 가능해야 한다는 의미이다. <a href="#eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_1" class="quarto-xref">식&nbsp;<span>3.8</span></a> 와 <a href="#eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2" class="quarto-xref">식&nbsp;<span>3.11</span></a> 로 부터 우리는 시간 역전에 대해 다음이 성립해야 한다는 것을 안다.</p>
 <p><span id="eq-CFT_CHG_change_by_time_reverse"><span class="math display">\[
 t \to -t,\qquad \Phi \to \Phi,\qquad \boldsymbol{A} \to -\boldsymbol{A},\qquad \boldsymbol{E}\to \boldsymbol{E} ,\qquad \boldsymbol{B} \to -\boldsymbol{B}.
-\tag{3.11}\]</span></span></p>
+\tag{3.13}\]</span></span></p>
 <p><br></p>
 </section>
 <section id="연습문제-1" class="level3 unnumbered">
@@ -404,7 +407,7 @@ t \to -t,\qquad \Phi \to \Phi,\qquad \boldsymbol{A} \to -\boldsymbol{A},\qquad \
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><a href="#eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2" class="quarto-xref">식&nbsp;<span>3.9</span></a>, <a href="02_relativistic_mechanics.html#eq-CFT_relation_of_free_particls_between_momentum_velocity_and_energy" class="quarto-xref">식&nbsp;<span>2.7</span></a>, <a href="#eq-CFT_CHG_the_rate_of_change_of_the_kinetic_energy_of_particl_in_electromagnetic_field" class="quarto-xref">식&nbsp;<span>3.10</span></a> 를 이용한다. 우선 <a href="02_relativistic_mechanics.html#eq-CFT_relation_of_free_particls_between_momentum_velocity_and_energy" class="quarto-xref">식&nbsp;<span>2.7</span></a> 로부터 <span class="math display">\[
+<p><span class="proof-title"><em>(해답)</em>. </span><a href="#eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2" class="quarto-xref">식&nbsp;<span>3.11</span></a>, <a href="02_relativistic_mechanics.html#eq-CFT_relation_of_free_particls_between_momentum_velocity_and_energy" class="quarto-xref">식&nbsp;<span>2.7</span></a>, <a href="#eq-CFT_CHG_the_rate_of_change_of_the_kinetic_energy_of_particl_in_electromagnetic_field" class="quarto-xref">식&nbsp;<span>3.12</span></a> 를 이용한다. 우선 <a href="02_relativistic_mechanics.html#eq-CFT_relation_of_free_particls_between_momentum_velocity_and_energy" class="quarto-xref">식&nbsp;<span>2.7</span></a> 로부터 <span class="math display">\[
 \dfrac{d\boldsymbol{p}}{dt} = \dfrac{d\boldsymbol{v}}{dt} \dfrac{\mathcal{E}_\text{kin}}{c^2} + \dfrac{\boldsymbol{v}}{c^2}\dfrac{\mathcal{E}_\text{kin}}{dt}
 \]</span></p>
 <p>이므로</p>
@@ -420,14 +423,14 @@ t \to -t,\qquad \Phi \to \Phi,\qquad \boldsymbol{A} \to -\boldsymbol{A},\qquad \
 </section>
 <section id="sec-CFT_CHG_gauge_transformation" class="level2 page-columns page-full" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="sec-CFT_CHG_gauge_transformation"><span class="header-section-number">3.4</span> 게이지 변환</h2>
-<p>서로 다른 두 포텐셜이 같은 전기장과 자기장을 표현한다면 정해진 전기장과 자기장에 대한 포텐셜은 유일하게 정해지지 않는다. 또한 이 경우 <a href="#eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2" class="quarto-xref">식&nbsp;<span>3.9</span></a> 에 따라 같은 운동을 기술한다. 이것은 항상 가능한데 어떤 스칼라장 <span class="math inline">\(f\)</span> 와 4-포텐셜 <span class="math inline">\(A_\mu=(\Phi/c,\,-\boldsymbol{A})\)</span> 에 대해</p>
-<p><span class="math display">\[
+<p>서로 다른 두 포텐셜이 같은 전기장과 자기장을 표현한다면 정해진 전기장과 자기장에 대한 포텐셜은 유일하게 정해지지 않는다. 또한 이 경우 <a href="#eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2" class="quarto-xref">식&nbsp;<span>3.11</span></a> 에 따라 같은 운동을 기술한다. 이것은 항상 가능한데 어떤 스칼라장 <span class="math inline">\(f\)</span> 와 4-포텐셜 <span class="math inline">\(A_\mu=(\Phi/c,\,-\boldsymbol{A})\)</span> 에 대해</p>
+<p><span id="eq-CFT_gauge_transform_in_4_momentum_form"><span class="math display">\[
 A'_\mu = A_\mu - \dfrac{\partial f}{\partial x^\mu}
-\]</span></p>
+\tag{3.14}\]</span></span></p>
 <p>로 정의된 4-벡터 <span class="math inline">\(A'_\mu = (\Phi'/c, -\boldsymbol{A}')\)</span> 는 같은 장을 생성함을 보이자. 위의 변환은</p>
-<p><span class="math display">\[
-\Phi' = \Phi -\dfrac{df}{dt},\qquad \boldsymbol{A}' =  \boldsymbol{A} + \nabla f
-\]</span></p>
+<p><span id="eq-CFT_gauge_transform"><span class="math display">\[
+\Phi' = \Phi -\dfrac{\partial f}{\partial t},\qquad \boldsymbol{A}' =  \boldsymbol{A} + \nabla f
+\tag{3.15}\]</span></span></p>
 <p>이므로</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -435,37 +438,56 @@ A'_\mu = A_\mu - \dfrac{\partial f}{\partial x^\mu}
 \boldsymbol{B}' &amp;= \nabla \times\boldsymbol{A}' = \nabla \times\boldsymbol{A} + \nabla \times(\nabla f)= \nabla \times\boldsymbol{A} = \boldsymbol{B}.
 \end{aligned}
 \]</span></p>
-<p>이다. 또한 당연하게도 4-포텐셜에 상수를 더한다고 해도 장은 변하지 않는다.</p>
-<div class="page-columns page-full"><p>이렇게 어떤 전기장&amp;자기장에 대해 4-포텐셜은 유일하게 정해지지 않으며 특정한 함수를 더해도 동일한 장이 기술되는데 이 때 사용되는 함수를 <strong>게이지 (gauge)</strong> 라고 하고 게이지를 통해 동일한 장을 만드는 다른 4-포텐셜로 변환시키는 것을 <strong>게이지 변환 (gauge transformatnion)</strong> 이라고 한다. 게이지 변환에 대해 장이 변화하지 않는 것을 <strong>게이지 불변 (gauge invariance)</strong> 라고 하고 한다<span class="math inline">\(^\dagger\)</span>.  특히 스칼라 포텐셜이 <span class="math inline">\(0\)</span> 인 게이지 변환은 항상 존재하지만 벡터 포텐셜이 <span class="math inline">\(0\)</span> 이 아닐 때 벡터포텐셜을 <span class="math inline">\(0\)</span> 으로 하는 게이지 변환은 일반적으로 존재하지 않는다.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="math inline">\(^\dagger\)</span> (From CTF by L&amp;L) 게이지 불변과 전하량 보존은 밀접한 관련이 있다.</span></div></div>
+<p>이다. 또한 당연하게도 4-포텐셜에 상수 4-벡터를 더한다고 해도 장은 변하지 않는다.</p>
+<div class="page-columns page-full"><p>이렇게 어떤 전기장&amp;자기장에 대해 4-포텐셜은 유일하게 정해지지 않으며 특정한 함수를 더해도 동일한 장이 기술되는데 이 때 사용되는 함수를 <strong>게이지 (gauge)</strong> 라고 하고 게이지를 통해 동일한 장을 만드는 다른 4-포텐셜로 변환시키는 것을 <strong>게이지 변환 (gauge transformatnion)</strong> 이라고 한다. 게이지 변환에 대해 장이 변화하지 않는 것을 <strong>게이지 불변 (gauge invariance)</strong> 라고 하고 한다<span class="math inline">\(^\dagger\)</span>.  특별히 스칼라 포텐셜이 <span class="math inline">\(0\)</span> 인 게이지 변환은 항상 존재하지만 벡터 포텐셜이 <span class="math inline">\(0\)</span> 이 아닐 때 벡터포텐셜을 <span class="math inline">\(0\)</span> 으로 하는 게이지 변환은 일반적으로 존재하지 않는다.</p><div class="no-row-height column-margin column-container"><span class="margin-aside"><span class="math inline">\(^\dagger\)</span> (From CTF by L&amp;L) 게이지 불변과 전하량 보존은 밀접한 관련이 있다.</span></div></div>
 <p><br></p>
 </section>
 <section id="일정한-전자기장" class="level2" data-number="3.5">
 <h2 data-number="3.5" class="anchored" data-anchor-id="일정한-전자기장"><span class="header-section-number">3.5</span> 일정한 전자기장</h2>
 <p>앞으로 어떤 특성이 시간의 변화와 무관할 때 <strong>일정하다(be constant)</strong> 라고 하고 위치의 변화에 대해 불변일 때 <strong>균일하다(be uniform)</strong> 이라고 표현한다.</p>
+<p><br></p>
 <section id="sec-CFT_gauge_transform_in_constant_electromagnetic_field" class="level3" data-number="3.5.1">
 <h3 data-number="3.5.1" class="anchored" data-anchor-id="sec-CFT_gauge_transform_in_constant_electromagnetic_field"><span class="header-section-number">3.5.1</span> 일정한 전자기장에서의 게이지 변환</h3>
-<p>시간에 대해 변화하지 않는 전자기장을 생각하자. 이 경우 <span class="math inline">\(\boldsymbol{E}=-\nabla \Phi,\ \boldsymbol{B}=\nabla \times\boldsymbol{A}\)</span> 이다. 게이지 불변을 생각하면 우선 시간에 대해 일정한 4-포텐셜을 정한 뒤 스칼라 포텐셜에 상수를 더했을 때만 게이지 변환이 된다. 일반적으로 스칼라 포텐셜 <span class="math inline">\(\Phi\)</span> 는 특정 지점에서 정해진 값을 가지며 <span class="math inline">\(\lim_{\|\boldsymbol{r}\|\to \infty}\Phi = 0\)</span> 이 되도록 정하는데 그렇다면 스칼라 포텐셜은 유일하게 정해진다. 반면 벡터 포텐셜은 시간에 대해 일정한 전자기장에 대해서도 유일하게 정해지지 않는다. 예를 들어 임의의 상수 벡터 <span class="math inline">\(\boldsymbol{a}\)</span> 에 대해 <span class="math inline">\(f=\boldsymbol{a\cdot r}\)</span> 는 게이지 함수이다.</p>
+<p>시간에 대해 변화하지 않는 전자기장을 생각하자. 이 경우 시간에 명시적으로 의존하지 않는, 즉 공간 좌표에 대한 함수인 포텐셜이 항상 존재하며 이 경우 <span class="math inline">\(\boldsymbol{E}=-\nabla \Phi,\ \boldsymbol{B}=\nabla \times\boldsymbol{A}\)</span> 이다. 게이지 불변을 생각하면 우선 시간에 대해 일정한 4-포텐셜을 정한 뒤 스칼라 포텐셜에 상수를 더했을 때만 게이지 변환이 된다.</p>
+<p>앞서 말했듯이 포텐셜은 유일하게 정해지지 않는다. 우리가 일정한 전자기장에 대한 일정한 4-포텐셜을 얻었다면 스칼라 포텐셜에 더해질 수 있는 것은 상수(즉 시간과 공간에 대해 일정한) 뿐이다(<a href="#exr-CFT_gauge_in_constant_fields" class="quarto-xref">연습문제&nbsp;<span>3.3</span></a>).</p>
+<p>일반적으로 스칼라 포텐셜 <span class="math inline">\(\Phi\)</span> 는 특정 지점에서 정해진 값을 가지며 <span class="math inline">\(\lim_{\|\boldsymbol{r}\|\to \infty}\Phi = 0\)</span> 이 되도록 정하는데 그렇다면 스칼라 포텐셜은 유일하게 정해진다. 반면 벡터 포텐셜은 시간에 대해 일정한 전자기장에 대해서도 유일하게 정해지지 않는다. 예를 들어 임의의 상수 벡터 <span class="math inline">\(\boldsymbol{a}\)</span> 에 대해 <span class="math inline">\(f=\boldsymbol{a\cdot r}\)</span> 는 게이지 함수이다.</p>
 </section>
 <section id="일정한-전자기장에서의-에너지" class="level3" data-number="3.5.2">
 <h3 data-number="3.5.2" class="anchored" data-anchor-id="일정한-전자기장에서의-에너지"><span class="header-section-number">3.5.2</span> 일정한 전자기장에서의 에너지</h3>
 <p>이제 일정한 전자기장 속의 입자의 에너지를 정해보자. 시간에 대해 일정한 전자기장에서는 라그랑지안 역시 시간에 명시적으로 의존하지 않으며 따라서 에너지는 해밀토니안과 동일해진다. <a href="#exr-CFT_CHG_hamiltonial_of_particle_in_electromagnetic_field" class="quarto-xref">연습문제&nbsp;<span>3.1</span></a> 로 부터 에너지 <span class="math inline">\(\mathcal{E}\)</span> 는 다음과 같다는 것을 안다.</p>
 <p><span id="eq-CFT_CHG_energy_of_particle_in_constant_electromagnetic_field"><span class="math display">\[
 \mathcal{E} = \dfrac{mc^2}{\sqrt{1-v^2/c^2}} + q\Phi.
-\tag{3.12}\]</span></span></p>
+\tag{3.16}\]</span></span></p>
 <p>장이 공간상의 모든 점에서 동일할 때 균일하다고 한다. 그렇다면 스칼라 포텐셜을 아래와 같이 쓸 수 있다.</p>
 <p><span id="eq-CFT_CHG_scala_potential_representation_for_uniform_and_constant_electromagnetic_field"><span class="math display">\[
 \Phi = - \boldsymbol{E \cdot r}.
-\tag{3.13}\]</span></span></p>
+\tag{3.17}\]</span></span></p>
 <p>또한 벡터 포텐셜은 아래와같이 쓸 수 있다.</p>
 <p><span id="eq-CFT_CHG_vector_potential_representation_for_uniform_and_constant_electromagnetic_field"><span class="math display">\[
 \boldsymbol{A} = \dfrac{1}{2} \boldsymbol{B} \times \boldsymbol{r}.
-\tag{3.14}\]</span></span></p>
+\tag{3.18}\]</span></span></p>
+<p><br></p>
+</section>
+<section id="연습문제-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제-2">연습문제</h3>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CFT_gauge_in_constant_fields" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 3.3</strong></span> 일정한 전자기장 <span class="math inline">\(\boldsymbol{E},\,\boldsymbol{B}\)</span> 에 대해 일정한 4-포텐셜 <span class="math inline">\((\Phi/c,\,\boldsymbol{A})\)</span> 이 존재한다고 하자. 게이지 변환에 대해서도 4-포텐셜이 시간에 대해 독립적이려면 스칼라 포텐셜에 더해지는 함수는 상수함수이어야 함을 보여라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span>시간에 의존하지 않는 4-운동량 <span class="math inline">\((\Phi/c,\,\boldsymbol{A})\)</span> 에 대해 <span class="math inline">\(\Phi' = \Phi + \alpha, \boldsymbol{A}'= \boldsymbol{A}+\boldsymbol{\beta}\)</span> 가 시간에 무관하려면 <span class="math inline">\(\alpha = \alpha (\boldsymbol{r}),\boldsymbol{\beta}=\boldsymbol{\beta}(\boldsymbol{r})\)</span> 이어야 한다.</p>
+<p><span class="math display">\[
+\boldsymbol{E}'=-\dfrac{\partial \boldsymbol{A}'}{\partial t} - \nabla \Phi' = \boldsymbol{E}+\nabla \alpha
+\]</span></p>
+<p>이어야 하므로 <span class="math inline">\(\nabla \alpha =0\)</span> 이다. 즉 <span class="math inline">\(\alpha\)</span> 시간과 공간에 대해 무관한 상수함수이다.</p>
+</div>
 <p><br></p>
 </section>
 </section>
 <section id="일정하고-균일한-전기장에서의-운동" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="일정하고-균일한-전기장에서의-운동"><span class="header-section-number">3.6</span> 일정하고 균일한 전기장에서의 운동</h2>
-<p>일정하고 균일한 전기장 <span class="math inline">\(\boldsymbol{E}=E\hat{\boldsymbol{x}}\)</span> 를 생각하자. <a href="#eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2" class="quarto-xref">식&nbsp;<span>3.9</span></a> 에 의해</p>
+<p>일정하고 균일한 전기장 <span class="math inline">\(\boldsymbol{E}=E\hat{\boldsymbol{x}}\)</span> 를 생각하자. <a href="#eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2" class="quarto-xref">식&nbsp;<span>3.11</span></a> 에 의해</p>
 <p><span class="math display">\[
 \dot{p}_x = qE,\qquad \dot{p}_y = \dot{p}_z=0
 \]</span></p>
@@ -476,7 +498,7 @@ p_x = qEt,\qquad p_y = p_0
 <p>이며 운동에너지 <span class="math inline">\(\mathcal{E}_\text{kin}\)</span> 은</p>
 <p><span id="eq-CFT_CHG_kinetic_energy_of_charge_q_in_uniform_electric_field"><span class="math display">\[
 \mathcal{E}_\text{kin} = c\sqrt{m^2c^2+p^2} = \sqrt{m^2c^4+c^2p_0^2+ (cqEt)^2}
-\tag{3.15}\]</span></span></p>
+\tag{3.19}\]</span></span></p>
 <p>이다. <a href="02_relativistic_mechanics.html#eq-CFT_relation_of_free_particls_between_momentum_velocity_and_energy" class="quarto-xref">식&nbsp;<span>2.7</span></a> 로부터 <span class="math inline">\(\boldsymbol{v} = \boldsymbol{p}c^2/\mathcal{E}_\text{kin}\)</span> 임을 안다. <span class="math inline">\(\mathcal{E}_0 = m^2c^4+c^2p_0^2\)</span> 라고 하면</p>
 <p><span class="math display">\[
 \dfrac{dx}{dt} = \dfrac{p_xc^2}{\mathcal{E}_\text{kin}} = \dfrac{c^2qEt}{\sqrt{{\mathcal{E}_0}^2 + (cqEt)^2}}
@@ -484,25 +506,25 @@ p_x = qEt,\qquad p_y = p_0
 <p>이며 이를 적분하면 다음을 얻는다.</p>
 <p><span id="eq-CFT_CHG_x_in_constant_uniform_electric_field"><span class="math display">\[
 x(t)=x_0 + \dfrac{1}{qE}\sqrt{{\mathcal{E}_0}^2 + (cqEt)^2} - \dfrac{\mathcal{E}_0}{qE}
-\tag{3.16}\]</span></span></p>
+\tag{3.20}\]</span></span></p>
 <p>같은 방법으로 <span class="math inline">\(y\)</span> 를 구하면 아래와 같다.</p>
 <p><span id="eq-CFT_CHG_y_in_constant_uniform_electric_field"><span class="math display">\[
 y(t) = y_0 + \dfrac{p_0 c}{qE}\,\sinh^{-1}\left(\dfrac{cqEt}{\mathcal{E}_0}\right)
-\tag{3.17}\]</span></span></p>
-<p>초기조건 <span class="math inline">\(x_0=y_0=0\)</span> 에 대해 운동의 경로를 구하면 아래와 같다.(<a href="#exr-CFT_CHG_trajectory_of_particle_in_constant_and_uniform_field" class="quarto-xref">연습문제&nbsp;<span>3.3</span></a>)</p>
+\tag{3.21}\]</span></span></p>
+<p>초기조건 <span class="math inline">\(x_0=y_0=0\)</span> 에 대해 운동의 경로를 구하면 아래와 같다.(<a href="#exr-CFT_CHG_trajectory_of_particle_in_constant_and_uniform_field" class="quarto-xref">연습문제&nbsp;<span>3.4</span></a>)</p>
 <p><span id="eq-CFT_CHG_trajectory_of_particle_in_constant_and_uniform_field"><span class="math display">\[
 x=\dfrac{\mathcal{E}_0}{qE}\left[\cosh \left(\dfrac{qEy}{p_0c} \right)-1\right].
-\tag{3.18}\]</span></span></p>
-<p>비상대론적 근사, 즉 <span class="math inline">\(v\ll c\)</span> 일 경우 <span class="math inline">\(\mathcal{E}_0=mc^2\)</span>, <span class="math inline">\(p_0 = mv_0\)</span> 이며 <span class="math inline">\(|z|\ll 1\)</span> 에 대해 <span class="math inline">\(\cosh (z) \approx 1 + \dfrac{x^2}{2}\)</span> 이므로</p>
+\tag{3.22}\]</span></span></p>
+<p>비상대론적 근사, 즉 <span class="math inline">\(v\ll c\)</span> 일 경우 <span class="math inline">\(\mathcal{E}_0=mc^2\)</span>, <span class="math inline">\(p_0 = mv_0\)</span> 이며 <span class="math inline">\(|z|\ll 1\)</span> 에 대해 <span class="math inline">\(\cosh (z) \approx 1 + \dfrac{z^2}{2}\)</span> 이므로</p>
 <p><span class="math display">\[
 x= \dfrac{qE}{mv_0^2}y^2
 \]</span></p>
 <p>이다.</p>
-<section id="연습문제-2" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="연습문제-2">연습문제</h3>
+<section id="연습문제-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제-3">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CFT_CHG_trajectory_of_particle_in_constant_and_uniform_field" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 3.3</strong></span> <a href="#eq-CFT_CHG_trajectory_of_particle_in_constant_and_uniform_field" class="quarto-xref">식&nbsp;<span>3.18</span></a> 를 구하라.</p>
+<p><span class="theorem-title"><strong>연습문제 3.4</strong></span> <a href="#eq-CFT_CHG_trajectory_of_particle_in_constant_and_uniform_field" class="quarto-xref">식&nbsp;<span>3.22</span></a> 를 구하라.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -541,11 +563,11 @@ x=x_0 + r\cos (\omega t + \theta_0),\quad y = y_0 + r \sin (\omega t + \theta_0)
 <p>…adiabatic invariance… 관련 내용….</p>
 <p><br></p>
 </section>
-<section id="연습문제-3" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="연습문제-3">연습문제</h3>
+<section id="연습문제-4" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="연습문제-4">연습문제</h3>
 <div class="border" style="background-color:#F0FFFF  ;padding:5px;">
 <div id="exr-CFT_landau_21.1" class="theorem exercise">
-<p><span class="theorem-title"><strong>연습문제 3.4 (Landau CTF 21.1)</strong></span> 단순조화진동을 하는 하전 입자가 일정하고 균일한 자기장에 있을 때 진동수를 구하라. 자기장이 없을 때의 진동수는 <span class="math inline">\(\omega_0\)</span> 이다.</p>
+<p><span class="theorem-title"><strong>연습문제 3.5 (Landau CTF 21.1)</strong></span> 단순조화진동을 하는 하전 입자가 일정하고 균일한 자기장에 있을 때 진동수를 구하라. 자기장이 없을 때의 진동수는 <span class="math inline">\(\omega_0\)</span> 이다.</p>
 </div>
 </div>
 <div class="proof solution">
@@ -563,12 +585,12 @@ m\dot{\boldsymbol{v}} = q\boldsymbol{E} + q\boldsymbol{v}\times \boldsymbol{B}
 <p>는 다음과 같이 쓸 수 있다.</p>
 <p><span id="eq-CFT_CHG_eom_in_constant_and_uniform_electric_and_magnetic_field"><span class="math display">\[
 m\ddot{x} = q\dot{y}B,\qquad m\ddot{y} = qE_y - q\dot{x}B,\qquad m\ddot{z} = qE_z.
-\tag{3.19}\]</span></span></p>
+\tag{3.23}\]</span></span></p>
 <p>우선</p>
 <p><span class="math display">\[
 z = v_{0z}t + \dfrac{qE_z}{2m}t^2
 \]</span></p>
-<p>이며 <a href="#eq-CFT_CHG_eom_in_constant_and_uniform_electric_and_magnetic_field" class="quarto-xref">식&nbsp;<span>3.19</span></a> 의 두번째 식에 허수 <span class="math inline">\(i\)</span> 를 곱하고 정리하면</p>
+<p>이며 <a href="#eq-CFT_CHG_eom_in_constant_and_uniform_electric_and_magnetic_field" class="quarto-xref">식&nbsp;<span>3.23</span></a> 의 두번째 식에 허수 <span class="math inline">\(i\)</span> 를 곱하고 정리하면</p>
 <p><span class="math display">\[
 m(\ddot{x}+i\ddot{y}) = -iqB(\dot{x}+i\dot{y}) + iqE_y
 \]</span></p>
@@ -583,7 +605,7 @@ m(\ddot{x}+i\ddot{y}) = -iqB(\dot{x}+i\dot{y}) + iqE_y
 <p>이며 여기서 <span class="math inline">\(\xi_0 \in \mathbb{C}\)</span> 이다. <span class="math inline">\(\xi_0 = |\xi_0|e^{i\alpha}\)</span> 형태인데 편의상 <span class="math inline">\(\alpha = 0\)</span> 으로 놓으면 <span class="math inline">\(\xi_0=a\)</span> 에 대해</p>
 <p><span id="eq-CFT_CHG_motion_in_constant_and_uniform_electric_and_magnetic_field"><span class="math display">\[
 \dot{x} = a \cos \omega_0 t + \dfrac{E_y}{B},\qquad \dot{y} = -a \sin \omega_0 t
-\tag{3.20}\]</span></span></p>
+\tag{3.24}\]</span></span></p>
 <p>이다. 즉 <span class="math inline">\(\xi_0\)</span> 의 위상 선택에 의해 <span class="math inline">\(t=0\)</span> 일 때 속도는 <span class="math inline">\(x\)</span> 방향이다. <span class="math inline">\(\dot{x},\, \dot{y}\)</span> 모두 주기함수이며 따라서 각 주기 마다의 평균 속도 <span class="math inline">\(\overline{\boldsymbol{v}}\)</span> 는 다음과 같다.</p>
 <p><span class="math display">\[
 \overline{\boldsymbol{v}}= \dfrac{\boldsymbol{E}\times\boldsymbol{B}}{B^2}
@@ -593,11 +615,67 @@ m(\ddot{x}+i\ddot{y}) = -iqB(\dot{x}+i\dot{y}) + iqE_y
 \dfrac{\overline{v}}{c} \approx \dfrac{E}{cB}
 \]</span></p>
 <p>이므로 <span class="math inline">\(E \ll cB\)</span> 이면 <span class="math inline">\(\overline{v}\ll c\)</span> 이다.</p>
-<p><a href="#eq-CFT_CHG_motion_in_constant_and_uniform_electric_and_magnetic_field" class="quarto-xref">식&nbsp;<span>3.20</span></a> 을 적분하면 그리고 <span class="math inline">\(x(0)=y(0)=0\)</span> 의 초기조건을 부여하면</p>
+<p><a href="#eq-CFT_CHG_motion_in_constant_and_uniform_electric_and_magnetic_field" class="quarto-xref">식&nbsp;<span>3.24</span></a> 을 적분하면 그리고 <span class="math inline">\(x(0)=y(0)=0\)</span> 의 초기조건을 부여하면</p>
 <p><span class="math display">\[
 x = \dfrac{a}{\omega_0} \sin \omega_0 t + \dfrac{E_y}{B}t,\qquad y = \dfrac{a}{\omega_0}(\cos \omega_0 t -1)
 \]</span></p>
 <p>이다.</p>
+<p><em>… to be fiiled ..</em></p>
+<p><br></p>
+</section>
+<section id="전자기장-텐서" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="전자기장-텐서"><span class="header-section-number">3.8</span> 전자기장 텐서</h2>
+<p>앞서 우리는 라그랑지안 <a href="#eq-CFT_lagrangian_of_particle_in_electromagnetic_fields" class="quarto-xref">식&nbsp;<span>3.3</span></a> 로부터 운동방정식 <a href="#eq-CFT_CHG_equation_of_motion_of_particle_in_electromagnetic_field_2" class="quarto-xref">식&nbsp;<span>3.11</span></a> 을 유도하였다. 이제 우리는 작용 <a href="#eq-CFT_action_of_particle_in_electromagnetic_field" class="quarto-xref">식&nbsp;<span>3.1</span></a> 을 이용하여 운동방정식을 구해보자. 최소작용의 원리로부터</p>
+<p><span class="math display">\[
+\delta S = \delta \int_a^b \left(-mc \,ds - qA_\mu \,dx^\mu\right) = 0
+\]</span></p>
+<p>을 만족해야 한다는 것을 안다. <span class="math inline">\(ds = \sqrt{dx_\mu dx^\mu}\)</span> 임을 이용하면</p>
+<p><span class="math display">\[
+\delta S = -\int_a^b\left(mc \dfrac{dx_\mu d(\delta x^\mu)}{ds} + qA_\mu d(\delta x^\mu) + q \delta A_\mu dx^\mu\right) = 0
+\]</span></p>
+<p>이다. 여기서 <span class="math inline">\(dx_\mu/ds = u_\mu\)</span> 임과 <span class="math inline">\(d(\delta x^\mu) = \delta (dx^\mu)\)</span> 임을 이용한다. 우선</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_a^b \dfrac{dx_\mu d(\delta x^\mu)}{ds} &amp;= \int_a^b u_\mu d(\delta x^\mu) = \left[u_\mu \delta x^\mu\right]_{a}^b - \int_a^b \delta x^\mu du_\mu = - \int \delta x^\mu du_\mu \\[0.3em]
+\int_a^b A_\mu d(\delta x^\mu) &amp;= \left[A_\mu \delta x^\mu\right]_a^b - \int_a^b \delta x^\mu dA_\mu = -\int_a^b \delta x^\mu dA_\mu
+\end{aligned}
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+0 = \delta S = \int_a^b mc\delta x^\mu du_\mu + q\delta x^\mu dA_\mu - q\delta A_\mu dx^\mu
+\]</span></p>
+<p>이다. 또한</p>
+<p><span class="math display">\[
+\delta A_\mu = \dfrac{\partial A_\mu}{\partial x^\nu}\delta x^\nu,\qquad dA_\mu = \dfrac{\partial A_\mu}{\partial x^\nu} dx^\nu
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+0 = \int \left(mc \, du_\mu \delta x^\mu + q\dfrac{\partial A_\mu}{\partial x^\nu}dx^\nu \delta x^\mu - q \dfrac{\partial A_\mu}{\partial x^\nu} \delta x^\nu dx^\mu\right)
+\]</span></p>
+<p>이다. 여기서 <span class="math inline">\(du_\mu = (du_\mu/ds)ds\)</span> 이고 <span class="math inline">\(dx^\mu = u^\mu ds\)</span> 이므로</p>
+<p><span class="math display">\[
+0 = \int \left[m c \dfrac{du_\mu}{ds} - q\left(\dfrac{\partial A_\nu}{\partial x^\mu} - \dfrac{\partial A_\mu}{\partial x^\nu}\right)u^\nu\right]\delta x^\mu ds
+\]</span></p>
+<p>이다. <span class="math inline">\(\delta x^\mu\)</span> 에 므관하게 성립해야 하므로 우리는 다음 식을 얻는다.</p>
+<p><span class="math display">\[
+mc \dfrac{du_\mu}{ds} = q\left(\dfrac{\partial A_\nu}{\partial x^\mu} - \dfrac{\partial A_\mu}{\partial x^\nu}\right)u^\nu
+\]</span></p>
+<p>여기서 우리는 전자기장 텐서 <span class="math inline">\(F_{\mu \nu}\)</span> 를 다음과 같이 정의하자.</p>
+<p><span id="eq-CFT_definition_of_electromagnetic_field_tensor"><span class="math display">\[
+\boxed{
+  F_{\mu\nu} :=  \dfrac{\partial A_\nu}{\partial x^\mu} - \dfrac{\partial A_\mu}{\partial x^\nu}.
+}
+\tag{3.25}\]</span></span></p>
+<p>그렇다면 운동방정식은 다음과 같다.</p>
+<p><span id="eq-CFT_equation_of_motion_of_particle_using_field_tensor"><span class="math display">\[
+\boxed{
+  mc \dfrac{du^\mu}{ds} = qF^{\mu \nu} u_\nu.
+}
+\tag{3.26}\]</span></span></p>
+<p><span class="math inline">\(A=(\Phi/c,\,\boldsymbol{A})\)</span> 에 대해 전자기장 텐서는 아래와 같다.</p>
+<p><span id="eq-CFT_elements_of_electromagnetic_field_tensor"><span class="math display">\[
+F_{\mu\nu} = \left[\begin{array}{rrrr} 0 &amp; E_x &amp; E_y &amp; E_z \\ -E_x &amp; 0 &amp; -B_z &amp; B_y \\ -E_y &amp; B_z &amp; 0 &amp; - B_x \\ -E_z &amp; -B_y &amp; B_x &amp; 0\end{array}\,\right], \;F^{\mu\nu} = \left[\begin{array}{rrrr} 0 &amp; -E_x &amp; -E_y &amp; -E_z \\ E_x &amp; 0 &amp; -B_z &amp; B_y \\ E_y &amp; B_z &amp; 0 &amp; - B_x \\ E_z &amp; -B_y &amp; B_x &amp; 0\end{array}\,\right]
+\tag{3.27}\]</span></span></p>
 
 
 </section>
@@ -654,13 +732,14 @@ x = \dfrac{a}{\omega_0} \sin \omega_0 t + \dfrac{E_y}{B}t,\qquad y = \dfrac{a}{\
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

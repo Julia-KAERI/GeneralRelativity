@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,14 +34,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../src/ClassicalFieldTheory/01_principle_of_relativity.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6a6044446bafb874b35005e6d630eb70.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-3e2728906df7980cb53b491a61d13d7e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -84,7 +85,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -517,26 +518,73 @@ M^2 &amp;= \dfrac{\mathcal{E}^2-p^2c^2}{c^4} = \dfrac{(\mathcal{E}_1+m_2c^2)^2 -
 </div>
 </div>
 <div class="proof solution">
-<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(C\)</span> 기준틀에서 붕괴 전 입자의 에너지 <span class="math inline">\(\mathcal{E}_0\)</span> 와 <span class="math inline">\(L\)</span> 시스템에서의 붕괴 전 입자의 에너지 <span class="math inline">\(\mathcal{E}\)</span> 를 생각하자. <span class="math inline">\(L\)</span> 시스템에서의 한 입자의 운동량 <span class="math inline">\(p\)</span> 에 대해 <span class="math inline">\(p_x = p \cos \theta\)</span> 이며, 4-운동량의 로렌츠 변환에 의해 (<span class="math inline">\(\beta=V/c\)</span>, <span class="math inline">\(\gamma = 1/\sqrt{1-\beta^2}\)</span>)</p>
+<p><span class="proof-title"><em>(해답)</em>. </span>이 입자의 붕괴는 <span class="math inline">\(xy\)</span> 평면상에서 이루어지며 <span class="math inline">\(\boldsymbol{V}=V\hat{\boldsymbol{x}}\)</span> 라고 하자. 붕괴된 두 입자 가운데 하나만을 생각하여 <span class="math inline">\(C\)</span>-기준틀에서의 운동량 <span class="math inline">\(\boldsymbol{p}_0 = (p_{0x}, p_{0y})\)</span> 와 에너지 <span class="math inline">\(\mathcal{E}_0\)</span>, 그리고 그 입자의 <span class="math inline">\(L\)</span> 시스템에서의 운동량 <span class="math inline">\(\boldsymbol{p}=(p_x,\,p_y)\)</span> 와 에너지 <span class="math inline">\(\mathcal{E}\)</span> 를 생각하자. 그렇다면 <span class="math inline">\(p_x = p \cos \theta\)</span> 이며, 4-운동량의 로렌츠 변환에 의해 (<span class="math inline">\(\beta=V/c\)</span>, <span class="math inline">\(\gamma = 1/\sqrt{1-\beta^2}\)</span>)</p>
 <p><span class="math display">\[
 \dfrac{\mathcal{E}_0}{c} = \gamma \left(\dfrac{\mathcal{E}}{c} - \beta p_x \right) = \gamma \left(\dfrac{\mathcal{E}}{c}- \beta p \cos \theta\right)
 \]</span></p>
 <p>이므로 <span class="math inline">\(pc = \sqrt{\mathcal{E}^2-m^2c^4}\)</span> 을 이용하면</p>
-<p><span class="math display">\[
+<p><span id="eq-exr_CFT_Landau_CFT_11_1_1"><span class="math display">\[
 \cos \theta = \dfrac{\mathcal{E} - \mathcal{E}_0/\gamma}{\beta p c} = \dfrac{\mathcal{E}-\mathcal{E}_0/\gamma}{\beta \sqrt{\mathcal{E}^2-m^2c^4}}
-\]</span></p>
+\tag{2.18}\]</span></span></p>
 <p>이다. 이로부터 <span class="math inline">\(\mathcal{E}\)</span> 에 대한 2차방정식을 얻는다.</p>
-<p><span class="math display">\[
-(1-\beta^2\cos^2\theta)\mathcal{E}^2 - \left(2\mathcal{E}_0 /\gamma\right) \mathcal{E} + \mathcal{E}_0^2/\gamma^2 + \beta^2 m^2 c^2 \cos^2\theta = 0
-\]</span></p>
+<p><span id="eq-exr_CFT_Landau_CFT_11_1_2"><span class="math display">\[
+(1-\beta^2\cos^2\theta)\mathcal{E}^2 - \left(2\mathcal{E}_0 /\gamma\right) \mathcal{E} + \mathcal{E}_0^2/\gamma^2 + \beta^2 m^2 c^4 \cos^2\theta = 0
+\tag{2.19}\]</span></span></p>
 <p>이 방정식의 해는</p>
-<p><span class="math display">\[
+<p><span id="eq-exr_CFT_Landau_CFT_11_1_3"><span class="math display">\[
 \begin{aligned}
-\mathcal{E} &amp;= \mathcal{E}_0 /\gamma \pm \sqrt{\beta^2m^2c^2\cos^2\theta - \beta^2 \mathcal{E}_0^2 \cos^2 \theta/\gamma ^2 - \beta^4m^2c^2\cos^4\theta} \\[0.3em]
-&amp;=\dfrac{\mathcal{E}_0}{\sqrt{1-\beta^2}} \pm \beta |\cos\theta| \sqrt{m^2c^2-(1-\beta^2)\mathcal{E}_0^2 -\beta^2m^2c^2\cos^2\theta}
+\mathcal{E} &amp;= \mathcal{E}_0 /\gamma \pm \sqrt{\beta^2m^2c^4\cos^2\theta - \beta^2 \mathcal{E}_0^2 \cos^2 \theta/\gamma ^2 - \beta^4m^2c^4\cos^4\theta} \\[0.3em]
+&amp;=\dfrac{\mathcal{E}_0}{\sqrt{1-\beta^2}} \pm \beta |\cos\theta| \sqrt{m^2c^4-(1-\beta^2)\mathcal{E}_0^2 -\beta^2m^2c^4\cos^2\theta}
 \end{aligned}
+\tag{2.20}\]</span></span></p>
+<p><a href="https://julia-kaeri.github.io/ClassicalPhysics/src/ClassicalMechanics/12_two_or_three_bodies_problems.html#sec-CM_spontaneous_disintegration_in_lab_frame">고전역학에서의 자발적 붕괴</a> 를 보면 실험실 좌표계에서 붕괴된 입자의 속력 <span class="math inline">\(v_0\)</span> 가 <span class="math inline">\(V\)</span> 보다 작으면 <span class="math inline">\(\theta\)</span> 에 제한이 존재한다.</p>
+<p>4-운동량의 로렌츠 변환에 의해</p>
+<p><span id="eq-exr_CFT_Landau_CFT_11_1_4"><span class="math display">\[
+p_x = \gamma (p_0 \cos\theta_0 + \beta \mathcal{E}_0/c),\qquad p_y = p_0 \sin \theta_0
+\tag{2.21}\]</span></span></p>
+<p>이며 <span class="math inline">\(\theta_0\)</span> 를 제거하면 아래와 같이 <span class="math inline">\(p_x,\,p_y\)</span> 에 대한 타원의 방정식을 얻는다.</p>
+<p><span id="eq-exr_CFT_Landau_CFT_11_1_5"><span class="math display">\[
+\left(p_x/\gamma-\beta \mathcal{E}_0/c\right)^2 + p_y^2= p_0^2.
+\tag{2.22}\]</span></span></p>
+<p>참고로 고전역학적 극한 <span class="math inline">\(v/c=0\)</span> 에서는 앞서의 고전역학의 경우와 같이 원이 된다.</p>
+<div id="fig-CFT_spontaneous_decay_in_L_system" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-CFT_spontaneous_decay_in_L_system-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/spontaneous_decay_in_L_system/spontaneous_decay2.png" class="img-fluid figure-img" width="500">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-CFT_spontaneous_decay_in_L_system-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+그림&nbsp;2.1: 실험실 좌표계에서의 자발적 붕괴
+</figcaption>
+</figure>
+</div>
+<p><span class="math inline">\(|A\mathcal{O}|=\gamma \beta \mathcal{E}_0/c\)</span> 이며 <span class="math inline">\(|A\mathcal{O}|&gt;\gamma p_0\)</span> 이면 점 <span class="math inline">\(A\)</span> 는 타원의 밖에 존재한다. 즉 <span class="math inline">\(V&gt; p_0 c^2/\mathcal{E}_0 = v_0\)</span> 이면 점 <span class="math inline">\(A\)</span> 는 타원 밖에 위치하므로 근을 두개 갖게 된다. 또한 <span class="math inline">\(\theta\)</span> 는 정해진 <span class="math inline">\(\theta_\textrm{max}\)</span> 보다 클 수 없다. 중근을 가질 조건은 <a href="#eq-exr_CFT_Landau_CFT_11_1_3" class="quarto-xref">식&nbsp;<span>2.20</span></a> 의 <span class="math inline">\(\sqrt{\cdots}=0\)</span> 일 때이며 <span class="math inline">\(\mathcal{E}_0^2 = m^2c^4+p_0^2c^2\)</span> 임을 이용하면 다음을 얻는다.</p>
+<p><span class="math display">\[
+\theta_\textrm{max} = \dfrac{ p_0}{\beta \gamma mc} = \dfrac{p_0\sqrt{1-V^2/c^2}}{mV}
 \]</span></p>
-<p><a href="https://julia-kaeri.github.io/ClassicalPhysics/src/ClassicalMechanics/12_two_or_three_bodies_problems.html#sec-CM_spontaneous_disintegration_in_lab_frame">고전역학에서의 자발적 붕괴</a> 를 보면 실험실 좌표계에서 붕괴된 입자의 속력 <span class="math inline">\(v_0\)</span> 가 <span class="math inline">\(V\)</span> 보다 크면 <span class="math inline">\(\theta\)</span> 에 제한이 존재한다.</p>
+</div>
+<br>
+<div class="border" style="background-color:#F0FFFF  ;padding:5px;">
+<div id="exr-CFT_Landau_CFT_11_2" class="theorem exercise">
+<p><span class="theorem-title"><strong>연습문제 2.3 (L&amp;L CTF 11.2)</strong></span> 많은 입자로 붕괴할때 <span class="math inline">\(L\)</span>-기준틀에서의 에너지 분포를 구하라.</p>
+</div>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>(해답)</em>. </span><span class="math inline">\(C\)</span>-기준틀에서는 모든 방향으로 등방적으로 발생하므로</p>
+<p><span class="math display">\[
+dN = \dfrac{d\Omega_0}{4\pi }= \dfrac{\sin \theta_0 d\theta_0}{2} = \dfrac{|d\cos\theta_0|}{2}
+\]</span></p>
+<p>이다. 4-운동량의 로렌츠 변환에 의해</p>
+<p><span class="math display">\[
+\mathcal{E}=\gamma (\mathcal{E}_0 + V p_0 \cos \theta_0)
+\]</span></p>
+<p>이므로</p>
+<p><span class="math display">\[
+d(\cos \theta_0) = -\sin \theta_0 d\theta_0 = -\dfrac{d\mathcal{E}}{\gamma Vp_0}
+\]</span></p>
+<p>이며, 따라서 다음을 얻는다.</p>
+<p><span class="math display">\[
+dN = \dfrac{\sqrt{1-V^2/c^2}}{Vp_0}d\mathcal{E}
+\]</span></p>
 </div>
 
 
@@ -595,13 +643,14 @@ M^2 &amp;= \dfrac{\mathcal{E}^2-p^2c^2}{c^4} = \dfrac{(\mathcal{E}_1+m_2c^2)^2 -
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
